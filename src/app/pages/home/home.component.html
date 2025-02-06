@@ -1,7 +1,6 @@
 <div class="alif-home">
   <section>
     <alif-header></alif-header>
-    hohoh
     <div class="hero" data-aos="fade-up" data-aos-duration="2000">
       <img
         src="../../../assets/images/home/boitier-new.svg"
@@ -13,9 +12,8 @@
         <h2>{{ "pages.home.welcome" | translate }}</h2>
         <div class="btns">
           <alif-primary-button btnText="Commander"></alif-primary-button>
-          <alif-secondary-button
-            btnText="En savoir plus"
-          ></alif-secondary-button>
+          <alif-secondary-button btnText="En savoir plus"></alif-secondary-button>
+          <button (click)="subscribeNewsletter()">Click rbk</button>
         </div>
       </div>
     </div>

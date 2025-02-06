@@ -1,5 +1,6 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MailchimpService } from 'src/app/core/services/mailchimp.service';
 @Component({
   selector: 'alif-home',
   templateUrl: './home.component.html',
@@ -126,6 +127,8 @@ export class HomeComponent implements OnInit {
 
   windowWidth = 0;
 
+  constructor(private mailChimp: MailchimpService) {}
+
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
     this.onResize;
@@ -135,6 +138,21 @@ export class HomeComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onResize(event: never) {
     this.windowWidth = window.innerWidth;
+  }
+
+  subscribeNewsletter() {
+    let bodyMailChimp = {
+      email_address: 'mohammedine19@gmail.com',
+      status: 'subscribed',
+      language: 'FR',
+      merge_fields: {
+        FNAME: 'Mohammed',
+        LNAME: 'LAHBIL',
+        PHONE: '+352691726413'
+      }
+    };
+
+    this.mailChimp.subscribeToNewsletter(bodyMailChimp).subscribe();
   }
 
 }
