@@ -1,0 +1,27 @@
+<div class="alif-experience" *ngIf="direction !== ''" [style.flex-direction]="direction === 'right' ? 'row' : 'row-reverse'">
+  <div class="content">
+    <h4>{{title}}</h4>
+    <p>{{description}}</p>
+  </div>
+  <div class="number">
+    <img [src]="number" alt="">
+    <img [src]="star" alt="">
+  </div>
+  <div class="img">
+    <img [src]="path" alt="">
+  </div>
+</div>
+<div class="alif-experience" *ngIf="direction === ''">
+  <div class="content">
+    <h4>{{title}}</h4>
+    <p>{{description}}</p>
+  </div>
+  <div class="number">
+    <img [src]="number" alt=""><sup><img [src]="star" alt=""></sup>
+  </div>
+  
+  <div class="img">
+    <img [src]="path" alt="">
+  </div>
+</div>
+

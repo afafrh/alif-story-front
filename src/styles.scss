@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/theming";
+
+$blue: #0281a1;
+$dark-blue: #056f89;
+$light-blue: #bbd9e9;
+$lighter-blue: #ddecf4;
+$background-brown: #dbd1be;
+$light-brown: #e9e2c8;
+$brown: #bfaf9b;
+$dark-brown: #403a34;
+$another-blue: #324054;
+$background-gold: #f2d780;
+$gold: #d9ae63;
+$gold-second: #dfb86a;
+$gold-hover: #c1923e;
+$gold-second-hover: #e8cea1;
+$bg: #f0efef;
+$primary-btn: linear-gradient(90deg, #daaf47 0%, #fce281 48%, #daaf47 100%);
+
+@font-face {
+  font-family: "Belle Allure CE - Light";
+  src: url("../src/assets/fonts/BelleAllureCE-Fin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Belle Allure CM - Light";
+  src: url("../src/assets/fonts/BelleAllureCM-Fin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Belle Allure CE - Bold";
+  src: url("../src/assets/fonts/BelleAllureGS-Gros.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans - Regular";
+  src: url("../src/assets/fonts/IBMPlexSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Letters for Learners";
+  src: url("../src/assets/fonts/Letters\ for\ Learners.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  overflow: auto;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+/*****************************************************
+	Custom styling example bellow.
+*****************************************************/
+.iti--allow-dropdown input[type="tel"] {
+  border-radius: 4px;
+  border: 1px solid var(--black-600-inactive, rgba(0, 0, 0, 0.54));
+  width: 300px;
+}

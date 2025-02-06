@@ -1,0 +1,70 @@
+{
+  "navbar":{
+    "home": "Home",
+    "who_we_are": "Who are we?",
+    "alif_story": "Alif Story",
+    "other_stories": "Other stories to download",
+    "educational_booklets": "Educational booklets",
+    "store": "Store",
+    "about_education": "About education",
+    "connexion": "Connexion",
+    "panel": "Cart"
+  },
+  "footer":{
+    "help_and_support": {
+      "title": "Help and support",
+      "who_we_are": "Who are we?",
+      "contact_us": "Contact-us",
+      "faq": "Frequently asked questions"
+    },
+    "politicy_legal_mention":{
+      "title": "Policies and legal notices",
+      "confidentiality": "Privacy policy",
+      "terms_of_use": "Terms of use",
+      "policy_of_return": "Refund or return policy",
+      "legal_mention": "Legal notices"
+    }
+  },
+  "pages":{
+    "home":{
+      "welcome":"Découvrez la boîte à histoire Alif Story",
+      "products": "Produits complémentaires",
+      "discover_product": "Découvrir les produits complémentaires",
+      "discover_product_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "view_store": "View store",
+      "experience_title": "My experience Alif Story",
+      "testimonial_title": "They trust us",
+      "view_testimonials": " View all feedbacks"
+    },
+    "alif_story": {
+      "other_category": "Other category ?",
+      "concept_title": "The concept",
+      "concept_description": "Offrir aux enfants la possibilité d'explorer des récits prophétiques authentiques de l'Islam. En plus des récits, ils incluent des éléments pédagogiques.. Conçus pour susciter l'intérêt, la curiosité et l'émerveillement.",
+      "how_it_works": "How it works ?",
+      "experience_title": "My experience Alif"
+    },
+    "stories": {
+      "welcome": "Enhance your experience with other stories",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "our_educational_booklets": "Our educational booklets",
+      "see_all_booklets": "See all booklets",
+      "story": {
+        "other_prophets_to_discover": "Other prophets to discover..."
+      }
+    },
+    "books": {
+      "nav": {
+        "booklets": "Booklets",
+        "utilities": "What are booklets used for?"
+      },
+      "title": "Educational booklets designed to help our children grow up",
+      "other_booklets": "Other booklets"
+    },
+    "sign_in":{
+      "welcome": "Welcome"
+    },
+    "sign_up":{
+      "welcome": "Create an account"
+    }
+  }
+}

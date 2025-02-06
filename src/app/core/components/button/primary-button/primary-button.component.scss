@@ -1,0 +1,21 @@
+@import "../../../../../styles";
+
+button{
+  width: max-content;
+  height: 34px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  background: $primary-btn;
+  font-size: 16px;
+  border: none;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover{
+    background: $gold-hover;
+  }
+}

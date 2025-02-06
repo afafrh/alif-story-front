@@ -1,0 +1,75 @@
+{
+  "navbar":{
+    "home": "Accueil",
+    "who_we_are": "Qui sommes nous ?",
+    "alif_story": "Alif Story",
+    "other_stories": "D'autres histoires à télécharger",
+    "educational_booklets": "Livrets pédagogiques",
+    "store": "Boutique",
+    "about_education": "À propos d'éducation",
+    "connexion": "Connexion",
+    "panel": "Panier"
+  },
+  "footer":{
+    "help_and_support": {
+      "title": "Aide et support",
+      "who_we_are": "Qui sommes nous ?",
+      "contact_us": "Contactez-nous",
+      "faq": "Foire aux question"
+    },
+    "politicy_legal_mention":{
+      "title": "Politiques et mentions légales",
+      "confidentiality": "Politique de confidentialité",
+      "terms_of_use": "Conditions d'usage",
+      "policy_of_return": "Politique de remboursement ou de retour",
+      "legal_mention": "Mentions légales"
+    }
+  },
+  "pages":{
+    "home":{
+      "welcome":"Découvrez la boîte à histoire Alif Story",
+      "products": "Produits complémentaires",
+      "discover_product": "Découvrir les produits complémentaires",
+      "discover_product_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "view_store": "Voir la boutique",
+      "experience_title": "Mon expérience Alif Story",
+      "testimonial_title": "Ils nous font confiance",
+      "view_testimonials": " Voir tous les avis"
+    },
+    "alif_story": {
+      "other_category": "Autres catégorie ?",
+      "concept_title": "Le concept",
+      "concept_description": "Offrir aux enfants la possibilité d'explorer des récits prophétiques authentiques de l'Islam. En plus des récits, ils incluent des éléments pédagogiques.. Conçus pour susciter l'intérêt, la curiosité et l'émerveillement.",
+      "how_it_works": "Comment ça marche ?",
+      "experience_title": "Mon expérience Alif"
+    },
+    "stories": {
+      "welcome": "Enrichissez votre expérience avec d’autres récits",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "our_educational_booklets": "Nos livrets pédagogiques",
+      "see_all_booklets": "Voir tous les livrets",
+      "story": {
+        "other_prophets_to_discover": "Les autres prophètes à découvrir..."
+      }
+    },
+    "books": {
+      "nav": {
+        "booklets": "Livrets",
+        "utilities": "À quoi servent les livrets ?"
+      },
+      "title": "Des livrets pédagogiques pensés pour faire grandir nos enfants",
+      "other_booklets": "D'autres livrets"
+    },
+    "sign_in":{
+      "welcome": "Bienvenue"
+    },
+    "sign_up":{
+      "welcome": "Créer un compte",
+      "more_Information": "Plus d'informations"
+    },
+    "reset_password":
+    {
+      "title": "Reset votre mot de Pass"
+    }
+  }
+}

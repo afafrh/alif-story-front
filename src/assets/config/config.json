@@ -1,0 +1,20 @@
+{
+  "urls":{
+    "api": "/api/",
+    "auth_sessions": "sessions/",
+    "auth_refresh": "sessions/refresh/",
+    "auth_logout": "sessions/logout/",
+    "users_all": "users/",
+    "users_create": "users/",
+    "users_verify_account": "users/verify/",
+    "users_change_password": "users/forgot-password/",
+    "users_new_password": "users/reset-password/",
+    "users_delete": "users/delete/",
+    "users_admin": "users/admin/"
+  },
+  "version": {
+    "alifFront": "Poste de dev",
+    "alifStoryFront": "Front de dev"
+  },
+  "env": "dev"
+}

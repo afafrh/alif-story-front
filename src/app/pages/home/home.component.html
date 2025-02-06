@@ -1,0 +1,137 @@
+<div class="alif-home">
+  <section>
+    <alif-header></alif-header>
+    hohoh
+    <div class="hero" data-aos="fade-up" data-aos-duration="2000">
+      <img
+        src="../../../assets/images/home/boitier-new.svg"
+        class="boite-img"
+        alt=""
+        *ngIf="windowWidth > 768"
+      />
+      <div class="content">
+        <h2>{{ "pages.home.welcome" | translate }}</h2>
+        <div class="btns">
+          <alif-primary-button btnText="Commander"></alif-primary-button>
+          <alif-secondary-button
+            btnText="En savoir plus"
+          ></alif-secondary-button>
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+      <alif-mini-card
+        *ngFor="let element of elements"
+        title="{{ element.title }}"
+        description="{{ element.description }}"
+        img="{{ element.img }}"
+        width="{{ element.width }}"
+      ></alif-mini-card>
+    </div>
+    <div>
+      <div class="widgets">
+        <div class="widget" *ngFor="let widget of widgets">
+          <div *ngIf="widget.type === 'content'" class="content">
+            <img alt="" [src]="widget.src" />
+            {{ widget.title }}
+          </div>
+          <div *ngIf="widget.type === 'separator' && windowWidth > 768" class="separator"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="for-you">
+    <h1>Alif Story est fait pour vous si</h1>
+    <div class="container">
+      <div class="list">
+        <ul>
+          <li><img src="../../../assets/images/home/bullet.svg"> Vous vous sentez démuni.e face aux crises de colère de votre enfant</li>
+          <li><img src="../../../assets/images/home/bullet.svg"> Vous voulez que votre enfant ait confiance en lui</li>
+          <li><img src="../../../assets/images/home/bullet.svg"> Vous aimeriez récupérer vos soirées et que le coucher soit plus serein et rapide</li>
+          <li><img src="../../../assets/images/home/bullet.svg"> Vous avez besoin d'un super partenaire pour vous épauler dans les situations du quotidien : repas, habillage, lavage de nez, pot...</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <section>
+    <alif-carousel></alif-carousel>
+  </section> -->
+  <section>
+    <div class="experiences">
+      <div class="experience" *ngFor="let experience of experiences" >
+        <alif-experience
+          [title]="experience.title"
+          [description]="experience.description"
+          [path]="experience.path"
+          [number]="experience.number"
+          [star]="experience.star"
+          [direction]="experience.direction"
+          *ngIf="windowWidth > 768"
+        ></alif-experience>
+        <alif-experience
+          title="{{ experience.title }}"
+          description="{{ experience.description }}"
+          path="{{ experience.path }}"
+          *ngIf="windowWidth <= 768"
+        ></alif-experience>
+      </div>
+    </div>
+  </section>
+
+  <div class="scroll-container">
+    <div
+      class="products"
+    >
+      <h3 *ngIf="windowWidth > 768">{{ "pages.home.products" | translate }}</h3>
+      <div class="content">
+        <div class="product">
+          <h4>{{ "pages.home.discover_product" | translate }}</h4>
+          <p>{{ "pages.home.discover_product_desc" | translate }}</p>
+          <alif-primary-button
+            btnText="{{ 'pages.home.view_store' | translate }} →"
+          ></alif-primary-button>
+        </div>
+        <div class="product-item" *ngFor="let product of products">
+          <alif-product
+            title="{{ product.title }}"
+            description="{{ product.description }}"
+            imgPath="{{ product.imgPath }}"
+          ></alif-product>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials">
+      <h3>{{ "pages.home.testimonial_title" | translate }}</h3>
+      <div class="testimonial">
+        <alif-testimonial *ngFor="let testimonial of testimonials" [name]="testimonial.name"
+          [message]="testimonial.message" [path]="testimonial.path" [stars]="testimonial.stars" [title]="testimonial.title"
+          ></alif-testimonial>
+      </div>
+    </div>
+    <div class="last-section">
+      <h1>LES QUESTIONS LES PLUS FREQUENTES</h1>
+      <div class="faq-section">
+        <alif-faq-card
+          *ngFor="let faq of faqs" [question]="faq.question" [answer]="faq.answer" [link]="faq.link"
+        ></alif-faq-card>
+      </div>
+
+      <div class="service-client">
+        <h1>Vous n'avez pas trouvé la réponse ?</h1>
+        <alif-primary-button [btnText]="'Contacter le service client'"></alif-primary-button>
+      </div>
+
+      <div class="icons">
+        <div class="icon" *ngFor="let icon of icons">
+          <img [src]="icon.src">
+          <span>{{ icon.txt }}</span>
+        </div>
+      </div>
+    </div>
+    <alif-footer></alif-footer>
+  </div>
+
+</div>
