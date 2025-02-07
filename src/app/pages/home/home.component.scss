@@ -105,11 +105,19 @@
       }
     }
   }
+
+  .carousel {
+    margin-top: 48px;
+    height: 100vh;
+    background: linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%);
+    border-radius: 28px;
+  }
+
   .baleine{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 48px;
+    margin: 0px 48px 48px 48px;
   }
   .experiences{
     display: flex;

@@ -39,6 +39,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ValueCardComponent } from './pages/about-us/value-card/value-card.component';
 import { LatestArticleCardComponent } from './pages/about-us/latest-article/latest-article-card.component';
 import { NewsletterPopupComponent } from './core/components/newsletter-popup/newsletter-popup.component';
+import { SliderComponent } from './pages/home/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { NewsletterPopupComponent } from './core/components/newsletter-popup/new
     ValueCardComponent,
     LatestArticleCardComponent,
     NewsletterPopupComponent,
+    SliderComponent,
   ],
   imports: [
     AppRoutingModule,
