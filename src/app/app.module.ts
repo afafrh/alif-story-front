@@ -22,6 +22,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { MiniCardComponent } from './pages/home/mini-card/mini-card.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import {
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -64,6 +65,7 @@ import { NewsletterPopupComponent } from './core/components/newsletter-popup/new
     ReactiveFormsModule,
     NgbModule,
     MatIconModule,
+    MatCheckboxModule,
     MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,

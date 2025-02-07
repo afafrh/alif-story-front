@@ -10,7 +10,7 @@ export class NewsletterPopupComponent {
   firstName!: string;
   lastName!: string;
   email!: string;
-  isChecked: boolean = false;
+  isChecked!: boolean
 
   constructor(private mailchimp: MailchimpService) {}
 
