@@ -1,25 +1,27 @@
 .carousel {
   width: 100%;
   max-width: 100vw; // Prevents overflow beyond the screen width
-  height: 400px; // Set a fixed height
   overflow: hidden; // Prevents vertical scrolling
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center; // Ensures cards are vertically centered
 }
 
 .carousel-track {
   display: flex;
-  gap: 70px;
+  gap: 20px; // Reduce gap between cards
   transition: transform 0.5s ease-in-out;
-  overflow-x: auto; // Enables horizontal scrolling
-  overflow-y: hidden; // Prevents vertical scrolling
-  white-space: nowrap; // Ensures all items stay in a single row
-  scrollbar-width: none; // Hide scrollbar for Firefox
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  padding: 0 20px; // Add horizontal padding
 
   &::-webkit-scrollbar {
-    display: none; // Hide scrollbar for Chrome/Safari
+    display: none;
   }
-  padding-left: 287px;
+
+  @media (min-width: 768px) {
+    padding: 0 40px; // Increase padding on larger screens
+    padding-left: 287px;
+    gap: 70px;
+  }
 }

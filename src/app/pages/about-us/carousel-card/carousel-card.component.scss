@@ -1,6 +1,6 @@
 .card {
-  width: 710px;
-  height: 372px;
+  width: 280px; // Smaller base width
+  height: 146px; // Maintain aspect ratio
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -34,14 +34,32 @@
 
   .card-title {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 10px;
+    left: 10px;
     color: rgba(233, 226, 200, 1);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    padding: 10px 15px;
-    font-size: 21.81px;
+    padding: 5px 10px;
+    font-size: 16px; // Smaller font size
     border-radius: 5px;
-    z-index: 2; // Ensures title is above the gradient
+    z-index: 2;
+  }
+
+  @media (min-width: 768px) {
+    width: 710px;
+    height: 372px;
+
+    .card-title {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 710px;
+    height: 372px;
+
+    .card-title {
+      font-size: 20px;
+    }
   }
 }
