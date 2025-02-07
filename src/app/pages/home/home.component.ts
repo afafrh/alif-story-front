@@ -1,5 +1,8 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NewsletterPopupComponent } from 'src/app/core/components/newsletter-popup/newsletter-popup.component';
+import { MailchimpService } from 'src/app/core/services/mailchimp.service';
 @Component({
   selector: 'alif-home',
   templateUrl: './home.component.html',
@@ -126,6 +129,8 @@ export class HomeComponent implements OnInit {
 
   windowWidth = 0;
 
+  constructor(private dialog: MatDialog) {}
+
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
     this.onResize;
@@ -137,4 +142,11 @@ export class HomeComponent implements OnInit {
     this.windowWidth = window.innerWidth;
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(NewsletterPopupComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
