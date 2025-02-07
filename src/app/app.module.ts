@@ -42,6 +42,7 @@ import { NewsletterPopupComponent } from './core/components/newsletter-popup/new
 import { CarouselCardComponent } from './pages/about-us/carousel-card/carousel-card.component';
 import { CarouselComponent } from './pages/about-us/carousel/carousel.component';
 import { HeroComponent } from './pages/about-us/hero/hero.component';
+import { SliderComponent } from './pages/home/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { HeroComponent } from './pages/about-us/hero/hero.component';
     CarouselCardComponent,
     CarouselComponent,
     HeroComponent,
+    SliderComponent,
   ],
   imports: [
     AppRoutingModule,

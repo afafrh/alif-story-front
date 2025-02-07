@@ -2,14 +2,17 @@
   <section>
     <alif-header></alif-header>
     <div class="hero" data-aos="fade-up" data-aos-duration="2000">
-      <img
-        src="../../../assets/images/home/boitier-new.svg"
-        class="boite-img"
-        alt=""
-        *ngIf="windowWidth > 768"
-      />
+      <div class="img">
+        <img
+          src="../../../assets/images/home/boitier-new.svg"
+          class="boite-img"
+          alt=""
+          *ngIf="windowWidth > 768"
+        />
+      </div>
       <div class="content">
-        <h2>{{ "pages.home.welcome" | translate }}</h2>
+        <h2>Découvrez la boîte à histoires </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
         <div class="btns">
           <alif-primary-button btnText="Commander"></alif-primary-button>
           <alif-secondary-button btnText="En savoir plus"></alif-secondary-button>
@@ -26,6 +29,13 @@
         width="{{ element.width }}"
       ></alif-mini-card>
     </div>
+    <div class="quote">
+      <h4>
+        “Simple d’utilisation, sans onde, et conçu pour les enfants : voici comment notre conteuse rend l’apprentissage accessible et apaisant. 
+Partons ensemble à la découverte de notre histoire et de notre héritage”
+      </h4>
+      <img src="../../../assets/images/home/taous.svg" alt="">
+    </div>
     <div>
       <div class="widgets">
         <div class="widget" *ngFor="let widget of widgets">
@@ -33,7 +43,7 @@
             <img alt="" [src]="widget.src" />
             {{ widget.title }}
           </div>
-          <div *ngIf="widget.type === 'separator' && windowWidth > 768" class="separator"></div>
+          <div *ngIf="widget.type === 'separator' && windowWidth > 768"><img src="../../../assets/images/home/separator.svg" alt=""></div>
         </div>
       </div>
     </div>
@@ -43,20 +53,25 @@
     <h1>Alif Story est fait pour vous si</h1>
     <div class="container">
       <div class="list">
-        <ul>
-          <li><img src="../../../assets/images/home/bullet.svg"> Vous vous sentez démuni.e face aux crises de colère de votre enfant</li>
-          <li><img src="../../../assets/images/home/bullet.svg"> Vous voulez que votre enfant ait confiance en lui</li>
-          <li><img src="../../../assets/images/home/bullet.svg"> Vous aimeriez récupérer vos soirées et que le coucher soit plus serein et rapide</li>
-          <li><img src="../../../assets/images/home/bullet.svg"> Vous avez besoin d'un super partenaire pour vous épauler dans les situations du quotidien : repas, habillage, lavage de nez, pot...</li>
-        </ul>
+        <div class="bullets">
+          <p><img src="../../../assets/images/home/bullet.svg"> Vous vous sentez démuni.e face aux crises de colère de votre enfant</p>
+          <p><img src="../../../assets/images/home/bullet.svg"> Vous aimeriez récupérer vos soirées et que le coucher soit plus serein et rapide</p>
+        </div>
+        <div class="bullets">
+          <p><img src="../../../assets/images/home/bullet.svg"> Vous voulez que votre enfant ait confiance en lui</p>
+          <p><img src="../../../assets/images/home/bullet.svg"> Vous avez besoin d'un super partenaire pour vous épauler dans les situations du quotidien : repas, habillage, lavage de nez, pot...</p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="carousel">
+    <alif-slider></alif-slider>
+  </div>
 
-  <!-- <section>
-    <alif-carousel></alif-carousel>
-  </section> -->
+  <div class="baleine">
+    <img src="../../../assets/images/home/baleine.svg" alt="" [style.margin]="'auto'">
+  </div>
   <section>
     <div class="experiences">
       <div class="experience" *ngFor="let experience of experiences" >
@@ -80,9 +95,7 @@
   </section>
 
   <div class="scroll-container">
-    <div
-      class="products"
-    >
+    <div class="products">
       <h3 *ngIf="windowWidth > 768">{{ "pages.home.products" | translate }}</h3>
       <div class="content">
         <div class="product">
@@ -119,7 +132,7 @@
 
       <div class="service-client">
         <h1>Vous n'avez pas trouvé la réponse ?</h1>
-        <alif-primary-button [btnText]="'Contacter le service client'"></alif-primary-button>
+        <alif-primary-button [style.width]="'400px'" [btnText]="'Contacter le service client'"></alif-primary-button>
       </div>
 
       <div class="icons">

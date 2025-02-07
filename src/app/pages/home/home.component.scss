@@ -2,15 +2,24 @@
 .alif-home{
   
   .hero{
-    background: $light-brown;
+    background-image: url("../../../assets/images/home/background.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 38px 299px 87px 300px;
+    padding: 38px 120px 87px 120px;
     gap: 100px;
-    // height: 100vh;
-    img{
-      width: 360px;
+    height: 80vh;
+    .img{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 360px;
+      }
       //box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     }
     .content{
@@ -20,12 +29,16 @@
       h2{
         color: $dark-brown;
         font-family: "Belle Allure CE - Bold", serif;
-        font-size: 24px;
+        font-size: 36px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         align-self: stretch;
         margin-bottom: 32px;
+      }
+      p{
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
       }
       .btns{
         display: flex;
@@ -40,6 +53,24 @@
     margin: 50px 100px;
     gap: 24px;
   }
+  .quote {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 0px 40px;
+    h4 {
+      font-family: 'Belle Allure CE - Light', sans-serif;
+      text-align: center;
+      line-height: 24px;
+      margin: 24px 48px 60px 48px;
+    }
+    img {
+      height: 25%;
+      width: 25%;
+      margin: auto;
+      margin-bottom: -60px;
+    }
+  }
+
   .widgets{
     margin-bottom: 32px;
     padding: 60px 240px;
@@ -74,9 +105,19 @@
       }
     }
   }
-  .slider{
-    background: white;
-    height: 32rem;
+
+  .carousel {
+    margin-top: 48px;
+    height: 100vh;
+    background: linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%);
+    border-radius: 28px;
+  }
+
+  .baleine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 48px 48px 48px;
   }
   .experiences{
     display: flex;
@@ -106,19 +147,23 @@
       gap: 40px;
       margin-top: 20px;
       .list {
-        text-align: left;
-        ul {
-          list-style: none;
-          padding: 0;
-          columns: 2;
-          -webkit-columns: 2;
-          -moz-columns: 2;
-          li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .bullets {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 50%;
+          
+          p {
             font-size: 18px;
             color: rgba(0, 53, 66, 1);
             margin-bottom: 15px;
             position: relative;
-            padding-left: 25px;
+            padding-left: 24px;
+            padding-top: 24px;
             display: flex;
             justify-content: center;
             img{
@@ -126,12 +171,16 @@
             }
           }
         }
+        
       }
     }
   }
   .products{
-    padding: 32px 140px 32px 140px;
-    background: white;
+    padding: 64px 140px 64px 140px;
+    background-image: url("../../../assets/images/home/background-products.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     h3{
       color: $dark-brown;
       text-align: center;
@@ -177,10 +226,7 @@
   }
   .testimonials{
     margin: 32px 0 0 0;
-    border-top: 1px solid $lighter-blue;
-    border-bottom: 1px solid $lighter-blue;
     background: #FFF;
-    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.10);
     display: flex;
     padding: 32px 0px 56px 0px;
     flex-direction: column;
@@ -197,7 +243,7 @@
     }
     .testimonial{
       display: flex;
-      padding: 0px 178px 0px 211px;
+      padding: 0px 120px 0px 120px;
       justify-content: flex-end;
       align-items: center;
     }
@@ -223,8 +269,8 @@
       flex-direction: column;
       align-items: center;
       h1 {
-        font-family: "Letter for Learners", sans-serif;
-        font-size: 36px;
+        font-family: "Letters for Learners", sans-serif;
+        font-size: 48px;
         text-align: center;
         text-transform: uppercase;
         color: rgba(78, 81, 126, 1);
@@ -328,7 +374,7 @@
     .widgets{
       margin: 32px 0px;
       padding: 24px 240px 24px 240px;
-      background: linear-gradient(0deg, red -0.06%, #E9E2C8 100%);
+      background: linear-gradient(0deg, #fff -0.06%, #E9E2C8 100%);
       min-height: 300px;
       display: flex;
       flex-direction: row;
