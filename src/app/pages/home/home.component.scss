@@ -1,7 +1,6 @@
 @import "../../../styles.scss";
-.alif-home{
-  
-  .hero{
+.alif-home {
+  .hero {
     background-image: url("../../../assets/images/home/background.svg");
     background-repeat: no-repeat;
     background-position: top;
@@ -12,7 +11,7 @@
     padding: 38px 120px 87px 120px;
     gap: 100px;
     height: 80vh;
-    .img{
+    .img {
       width: 50%;
       display: flex;
       flex-direction: column;
@@ -22,11 +21,11 @@
       }
       //box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     }
-    .content{
+    .content {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      h2{
+      h2 {
         color: $dark-brown;
         font-family: "Belle Allure CE - Bold", serif;
         font-size: 36px;
@@ -36,17 +35,17 @@
         align-self: stretch;
         margin-bottom: 32px;
       }
-      p{
+      p {
         font-family: "Poppins", sans-serif;
         font-size: 18px;
       }
-      .btns{
+      .btns {
         display: flex;
-        gap: 24px
+        gap: 24px;
       }
     }
   }
-  .cards{
+  .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
@@ -58,7 +57,7 @@
     flex-direction: column;
     padding: 40px 40px 0px 40px;
     h4 {
-      font-family: 'Belle Allure CE - Light', sans-serif;
+      font-family: "Belle Allure CE - Light", sans-serif;
       text-align: center;
       line-height: 24px;
       margin: 24px 48px 60px 48px;
@@ -71,18 +70,18 @@
     }
   }
 
-  .widgets{
+  .widgets {
     margin-bottom: 32px;
     padding: 60px 240px;
-    background: linear-gradient(0deg, #FFFFFF -0.06%, #E9E2C8 100%);
+    background: linear-gradient(0deg, #ffffff -0.06%, #e9e2c8 100%);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    .widget{
+    .widget {
       display: flex;
       flex-direction: row;
-      .content{
+      .content {
         color: $dark-brown;
         font-family: "Poppins", sans-serif;
         font-size: 20px;
@@ -92,13 +91,13 @@
         line-height: normal;
         display: flex;
         flex-direction: column;
-        img{
+        img {
           margin: auto;
           margin-bottom: 24px;
           width: 80px;
         }
       }
-      .separator{
+      .separator {
         width: 0px;
         border: solid 1px $dark-brown;
         height: 284px;
@@ -109,22 +108,22 @@
   .carousel {
     margin-top: 48px;
     height: 100vh;
-    background: linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #e9e2c8 0%, #ffffff 100%);
     border-radius: 28px;
   }
 
-  .baleine{
+  .baleine {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0px 48px 48px 48px;
   }
-  .experiences{
+  .experiences {
     display: flex;
     flex-direction: column;
     gap: 80px;
     padding: 2rem 15rem 2rem 15rem;
-    h3{
+    h3 {
       color: $dark-brown;
       text-align: center;
       font-family: "Belle Allure CE - Light", serif;
@@ -136,12 +135,12 @@
   }
   .for-you {
     h1 {
-      font-family: 'Belle Allure CE - Light', sans-serif;
+      font-family: "Belle Allure CE - Light", sans-serif;
       color: #464577;
       font-size: 32px;
       text-align: center;
     }
-    .container{
+    .container {
       display: flex;
       justify-content: center;
       gap: 40px;
@@ -156,7 +155,7 @@
           flex-direction: column;
           align-items: flex-start;
           width: 50%;
-          
+
           p {
             font-size: 18px;
             color: rgba(0, 53, 66, 1);
@@ -166,22 +165,21 @@
             padding-top: 24px;
             display: flex;
             justify-content: center;
-            img{
+            img {
               margin-right: 16px;
             }
           }
         }
-        
       }
     }
   }
-  .products{
+  .products {
     padding: 64px 140px 64px 140px;
     background-image: url("../../../assets/images/home/background-products.svg");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    h3{
+    h3 {
       color: $dark-brown;
       text-align: center;
       font-family: "Belle Allure CE - Light", serif;
@@ -191,48 +189,48 @@
       line-height: 25px;
       margin-bottom: 1.5rem;
     }
-    .content{
+    .content {
       display: flex;
       flex-direction: row-reverse;
       justify-content: center;
       align-items: center;
-        .product{
-          margin-left: 40px;
-          flex: 1;
-          flex-grow: 1;
-          h4{
-            color: $dark-brown;
-            font-family: "Letters for Learners", serif;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 25px;
-            text-transform: uppercase;
-          }
-          p{
-            color: $dark-brown;
-            font-family: "Letters for Learners", serif;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-          }
+      .product {
+        margin-left: 40px;
+        flex: 1;
+        flex-grow: 1;
+        h4 {
+          color: $dark-brown;
+          font-family: "Letters for Learners", serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 25px;
+          text-transform: uppercase;
+        }
+        p {
+          color: $dark-brown;
+          font-family: "Letters for Learners", serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
       }
-      .product-item{
+      .product-item {
         flex: 1;
         flex-grow: 1;
       }
     }
   }
-  .testimonials{
+  .testimonials {
     margin: 32px 0 0 0;
-    background: #FFF;
+    background: #fff;
     display: flex;
     padding: 32px 0px 56px 0px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    h3{
+    h3 {
       color: $dark-brown;
       text-align: center;
       font-family: "Belle Allure CE - Light", serif;
@@ -241,7 +239,7 @@
       font-weight: 700;
       line-height: 25px;
     }
-    .testimonial{
+    .testimonial {
       display: flex;
       padding: 0px 120px 0px 120px;
       justify-content: flex-end;
@@ -249,8 +247,8 @@
     }
   }
 
-  .last-section{
-    background: linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%);
+  .last-section {
+    background: linear-gradient(180deg, #e9e2c8 0%, #ffffff 100%);
     h1 {
       font-family: "Letter for Learners", sans-serif;
       font-size: 36px;
@@ -258,13 +256,13 @@
       text-transform: uppercase;
       color: rgba(78, 81, 126, 1);
     }
-    .faq-section{
+    .faq-section {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 24px;
     }
-    .service-client{
+    .service-client {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -276,18 +274,18 @@
         color: rgba(78, 81, 126, 1);
       }
     }
-    .icons{
+    .icons {
       margin-top: 24px;
       display: flex;
       justify-content: space-around;
-      .icon{
+      .icon {
         display: flex;
         flex-direction: column;
         align-items: center;
-        img{
+        img {
           margin: 8px;
         }
-        p{
+        p {
           margin: 8px;
           font-family: "Poppins", sans-serif;
           font-size: 18px;
@@ -300,7 +298,6 @@
     }
   }
 }
-
 
 // .alif-home > section {
 //     height: 100vh;
@@ -334,21 +331,21 @@
 //   }
 
 @media (max-width: 1024px) {
-  .alif-home{
-    .hero{
+  .alif-home {
+    .hero {
       background: $light-brown;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 37px 150px 75px 150px;
       gap: 100px;
-      img{
+      img {
         width: 240px;
       }
-      .content{
+      .content {
         display: flex;
         flex-direction: column;
-        h2{
+        h2 {
           color: $dark-brown;
           font-family: "Belle Allure CE - Bold";
           font-size: 16px;
@@ -358,32 +355,32 @@
           align-self: stretch;
           margin-bottom: 32px;
         }
-        .btns{
+        .btns {
           display: flex;
-          gap: 24px
+          gap: 24px;
         }
       }
     }
-    .cards{
+    .cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
       margin: -25px 0px 25px 0px;
       gap: 24px;
     }
-    .widgets{
+    .widgets {
       margin: 32px 0px;
       padding: 24px 240px 24px 240px;
-      background: linear-gradient(0deg, #fff -0.06%, #E9E2C8 100%);
+      background: linear-gradient(0deg, #fff -0.06%, #e9e2c8 100%);
       min-height: 300px;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
-      .widget{
+      .widget {
         display: flex;
         flex-direction: row;
-        .content{
+        .content {
           color: $dark-brown;
           font-family: "Belle Allure CE - Light";
           font-size: 24px;
@@ -393,25 +390,26 @@
           line-height: normal;
           display: flex;
           flex-direction: column;
-          img{
+          img {
             margin: auto;
             width: 40px;
           }
         }
-        .separator{
+        .separator {
           width: 0px;
-          border: solid 1px linear-gradient(180deg, #EAE3C9 0%, #4E517E 50.5%, #FFFFFF 100%);
+          border: solid 1px
+            linear-gradient(180deg, #eae3c9 0%, #4e517e 50.5%, #ffffff 100%);
           height: 84px;
         }
       }
     }
-    .experiences{
+    .experiences {
       margin: 1rem 0rem 3rem 0rem;
       padding: 2rem 1rem 2rem 1rem;
-      h3{
+      h3 {
         color: $dark-brown;
         text-align: center;
-        font-family: 'Letters for Learners';
+        font-family: "Letters for Learners";
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -419,10 +417,10 @@
         text-transform: uppercase;
       }
     }
-    .products{
+    .products {
       padding: 32px 140px 32px 140px;
       background: white;
-      h3{
+      h3 {
         color: $blue;
         text-align: center;
         font-family: "Letters for Learners";
@@ -432,61 +430,61 @@
         line-height: 25px;
         text-transform: uppercase;
       }
-      .content{
+      .content {
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
-          .product{
-            margin-left: 80px;
-            flex: 1;
-            flex-grow: 1;
-            h4{
-              color: $blue;
-              font-family: "Letters for Learners";
-              font-size: 20px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 25px;
-              text-transform: uppercase;
-            }
-            p{
-              color: $dark-brown;
-              font-family: "Letters for Learners";
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
-            }
+        .product {
+          margin-left: 80px;
+          flex: 1;
+          flex-grow: 1;
+          h4 {
+            color: $blue;
+            font-family: "Letters for Learners";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25px;
+            text-transform: uppercase;
+          }
+          p {
+            color: $dark-brown;
+            font-family: "Letters for Learners";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
         }
-        .product-item{
+        .product-item {
           flex: 1;
           flex-grow: 1;
         }
       }
     }
-    .testimonials{
+    .testimonials {
       margin: 32px 0px 32px 0px;
       border-top: 1px solid $lighter-blue;
       border-bottom: 1px solid $lighter-blue;
-      background: #FFF;
-      box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.10);
+      background: #fff;
+      box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
       display: flex;
       padding: 32px 0px 24px 0px;
       flex-direction: column;
       align-items: center;
       gap: 24px;
-      h3{
-        color: var(--blue-primary, #0281A1);
+      h3 {
+        color: var(--blue-primary, #0281a1);
         text-align: center;
-        font-family: 'Belle Allure CE - Bold';
+        font-family: "Belle Allure CE - Bold";
         font-size: 16px;
         font-style: normal;
         align-self: stretch;
         font-weight: 700;
         line-height: normal;
       }
-      .testimonial{
+      .testimonial {
         display: flex;
         padding: 0px 178px 0px 211px;
         justify-content: flex-end;
@@ -497,16 +495,16 @@
 }
 
 @media (max-width: 768px) {
-  .alif-home{
+  .alif-home {
     height: 100vh;
-    .hero{
+    .hero {
       background: $light-brown;
       padding: 0px;
       height: 256px;
-      .content{
+      .content {
         display: flex;
         flex-direction: column;
-        h2{
+        h2 {
           color: $dark-brown;
           font-family: "Belle Allure CE - Bold";
           font-size: 16px;
@@ -516,31 +514,31 @@
           align-self: stretch;
           margin-bottom: 32px;
         }
-        .btns{
+        .btns {
           display: flex;
-          gap: 24px
+          gap: 24px;
         }
       }
     }
-    .cards{
+    .cards {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       justify-items: center;
       margin: -25px 0px 25px 0px;
       gap: 24px;
     }
-    .widgets{
+    .widgets {
       margin: 32px 0px;
       padding: 24px 100px 24px 100px;
-      background: linear-gradient(0deg, #FFFFFF -0.06%, #E9E2C8 100%);
+      background: linear-gradient(0deg, #ffffff -0.06%, #e9e2c8 100%);
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
-      .widget{
+      .widget {
         display: flex;
-        .content{
+        .content {
           padding: 10px;
           color: $dark-brown;
           font-family: "Belle Allure CE - Light";
@@ -551,25 +549,25 @@
           line-height: normal;
           display: flex;
           flex-direction: column;
-          img{
+          img {
             margin: auto;
             width: 40px;
           }
         }
-        .separator{
+        .separator {
           width: 0px;
           border: solid 1px $dark-brown;
           height: 84px;
         }
       }
     }
-    .experiences{
-        width: 100%;
-        padding: 2rem 1rem 2rem 1rem;
-      h3{
+    .experiences {
+      width: 100%;
+      padding: 2rem 1rem 2rem 1rem;
+      h3 {
         color: $dark-brown;
         text-align: center;
-        font-family: 'Letters for Learners';
+        font-family: "Letters for Learners";
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -577,10 +575,10 @@
         text-transform: uppercase;
       }
     }
-    .products{
+    .products {
       padding: 10px;
-      background:white;
-      h3{
+      background: white;
+      h3 {
         color: $blue;
         text-align: center;
         font-family: "Letters for Learners";
@@ -590,35 +588,35 @@
         line-height: 25px;
         text-transform: uppercase;
       }
-      .content{
+      .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-          .product{
-            margin: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            h4{
-              color: $blue;
-              font-family: "Letters for Learners";
-              font-size: 20px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 25px;
-              text-transform: uppercase;
-            }
-            p{
-              color: $dark-brown;
-              font-family: "Letters for Learners";
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
-            }
+        .product {
+          margin: 1rem 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          h4 {
+            color: $blue;
+            font-family: "Letters for Learners";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25px;
+            text-transform: uppercase;
+          }
+          p {
+            color: $dark-brown;
+            font-family: "Letters for Learners";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
         }
-        .product-item{
+        .product-item {
           margin-top: 10px;
           margin-bottom: 10px;
           flex: 1;
@@ -626,28 +624,28 @@
         }
       }
     }
-    .testimonials{
+    .testimonials {
       margin: 32px 0px 32px 0px;
       border-top: 1px solid $lighter-blue;
       border-bottom: 1px solid $lighter-blue;
-      background: #FFF;
-      box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.10);
+      background: #fff;
+      box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
       display: flex;
       padding: 32px 0px 24px 0px;
       flex-direction: column;
       align-items: center;
       gap: 24px;
-      h3{
-        color: var(--blue-primary, #0281A1);
+      h3 {
+        color: var(--blue-primary, #0281a1);
         text-align: center;
-        font-family: 'Belle Allure CE - Bold';
+        font-family: "Belle Allure CE - Bold";
         font-size: 16px;
         font-style: normal;
         align-self: stretch;
         font-weight: 700;
         line-height: normal;
       }
-      .testimonial{
+      .testimonial {
         display: flex;
         flex-direction: column;
         padding: 0px 25px 0px 25px;
@@ -655,8 +653,8 @@
         align-items: center;
       }
     }
-}
-.alif-home > section {
+  }
+  .alif-home > section {
     height: auto;
     display: flex;
     flex-direction: column;
@@ -664,27 +662,27 @@
     // scroll-snap-stop: always;
     overflow: hidden;
 
-    .experiences{
+    .experiences {
       height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 2rem 1rem 2rem 1rem;
-    background: $light-brown;
-    h3{
-      color: $dark-brown;
-      text-align: center;
-      font-family: "Belle Allure CE - Light", serif;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 2rem 1rem 2rem 1rem;
+      background: $light-brown;
+      h3 {
+        color: $dark-brown;
+        text-align: center;
+        font-family: "Belle Allure CE - Light", serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+      }
     }
-  }
   }
 }
 
-
-alif-header, alif-footer{
+alif-header,
+alif-footer {
   margin: 0;
 }
