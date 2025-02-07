@@ -1,0 +1,25 @@
+.carousel {
+  width: 100%;
+  max-width: 100vw; // Prevents overflow beyond the screen width
+  height: 400px; // Set a fixed height
+  overflow: hidden; // Prevents vertical scrolling
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; // Ensures cards are vertically centered
+}
+
+.carousel-track {
+  display: flex;
+  gap: 70px;
+  transition: transform 0.5s ease-in-out;
+  overflow-x: auto; // Enables horizontal scrolling
+  overflow-y: hidden; // Prevents vertical scrolling
+  white-space: nowrap; // Ensures all items stay in a single row
+  scrollbar-width: none; // Hide scrollbar for Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Hide scrollbar for Chrome/Safari
+  }
+  padding-left: 287px;
+}

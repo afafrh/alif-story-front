@@ -39,6 +39,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ValueCardComponent } from './pages/about-us/value-card/value-card.component';
 import { LatestArticleCardComponent } from './pages/about-us/latest-article/latest-article-card.component';
 import { NewsletterPopupComponent } from './core/components/newsletter-popup/newsletter-popup.component';
+import { CarouselCardComponent } from './pages/about-us/carousel-card/carousel-card.component';
+import { CarouselComponent } from './pages/about-us/carousel/carousel.component';
+import { HeroComponent } from './pages/about-us/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { NewsletterPopupComponent } from './core/components/newsletter-popup/new
     ValueCardComponent,
     LatestArticleCardComponent,
     NewsletterPopupComponent,
+    CarouselCardComponent,
+    CarouselComponent,
+    HeroComponent,
   ],
   imports: [
     AppRoutingModule,

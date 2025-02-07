@@ -1,10 +1,10 @@
 /* Parent Container */
-.alif-about-us {
+.alif-about-us-content {
   display: flex;
+  overflow-x: hidden;
   flex-direction: column; /* Stack sections vertically */
   align-items: center; /* Center sections horizontally */
   width: 100%; /* Ensure the container takes full width */
-  padding: 20px; /* Add padding for spacing */
 }
 
 /* Section Styling */
@@ -56,6 +56,7 @@
 
 .icons {
   margin-top: 24px; /* Add space above the section */
+  margin-bottom: 24px;
   display: flex;
   justify-content: space-around; /* Space icons evenly */
   gap: 80px; /* Space between icons */

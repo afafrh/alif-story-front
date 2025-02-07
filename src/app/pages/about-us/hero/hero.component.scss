@@ -1,0 +1,31 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px; // Adjust spacing
+  height: 100vh; // Ensures it fits within the viewport
+
+  .hero-content {
+    max-width: 607px;
+    margin-bottom: 20px; // Reduce margin to prevent extra height
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: bold;
+      color: rgba(78, 81, 126, 1);
+      font-family: "Belle Allure CE - Light", sans-serif;
+    }
+
+    .hero-description {
+      font-family: "poppins", sans-serif;
+      font-size: 18px;
+      color: rgba(0, 53, 66, 1);
+      margin-top: 10px;
+    }
+  }
+}

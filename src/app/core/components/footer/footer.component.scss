@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 30px; /* Add space above the section */
   display: flex;
   justify-content: space-between;
   padding: 68px;
@@ -40,6 +41,7 @@
 
     /* Aides et Support Section */
     &.support {
+      max-width: 250px;
       ul {
         list-style: none;
         padding: 0;
@@ -51,7 +53,7 @@
 
     /* Politique et Mentions Légales Section */
     &.legal {
-      max-width: 10px;
+      max-width: 250px;
       ul {
         list-style: none;
         padding: 0;
