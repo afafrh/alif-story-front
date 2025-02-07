@@ -3,7 +3,7 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpClientJsonpModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SecondaryButtonComponent } from './core/components/button/secondary-button/secondary-button.component';
 import { ExperienceComponent } from './core/components/experience/experience.component';
@@ -21,6 +21,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CookieService } from 'ngx-cookie-service';
 import { MiniCardComponent } from './pages/home/mini-card/mini-card.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 import {
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -33,6 +34,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimaryButtonComponent } from './core/components/button/primary-button/primary-button.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NewsletterPopupComponent } from './core/components/newsletter-popup/newsletter-popup.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { HomeComponent } from './pages/home/home.component';
     ExperienceComponent,
     TestimonialComponent,
     FaqCardComponent,
+    NewsletterPopupComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -58,6 +61,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,
+    MatDialogModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
@@ -66,6 +70,7 @@ import { HomeComponent } from './pages/home/home.component';
     FlexLayoutModule,
     NgbPaginationModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

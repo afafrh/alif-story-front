@@ -1,5 +1,7 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NewsletterPopupComponent } from 'src/app/core/components/newsletter-popup/newsletter-popup.component';
 import { MailchimpService } from 'src/app/core/services/mailchimp.service';
 @Component({
   selector: 'alif-home',
@@ -127,7 +129,7 @@ export class HomeComponent implements OnInit {
 
   windowWidth = 0;
 
-  constructor(private mailChimp: MailchimpService) {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
@@ -140,19 +142,11 @@ export class HomeComponent implements OnInit {
     this.windowWidth = window.innerWidth;
   }
 
-  subscribeNewsletter() {
-    let bodyMailChimp = {
-      email_address: 'mohammedine19@gmail.com',
-      status: 'subscribed',
-      language: 'FR',
-      merge_fields: {
-        FNAME: 'Mohammed',
-        LNAME: 'LAHBIL',
-        PHONE: '+352691726413'
-      }
-    };
+  openDialog() {
+    const dialogRef = this.dialog.open(NewsletterPopupComponent);
 
-    this.mailChimp.subscribeToNewsletter(bodyMailChimp).subscribe();
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-
 }

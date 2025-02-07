@@ -1,0 +1,22 @@
+<mat-dialog-content class="newsletter-popup">
+    <div class="left">
+        <img src="../../../../assets/images/popup/popup-img.png" alt="">
+    </div>
+    <div class="right">
+        <h2>Save 10% off your purchase</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <label for="firstName">Prénom</label>
+        <input type="text" required [(ngModel)]="firstName" name="firstName" />
+
+        <label for="lastName">Nom</label>
+        <input type="text" required [(ngModel)]="lastName" name="lastName" />
+        
+        <label for="email">Adresse mail</label>
+        <input type="text" required [(ngModel)]="email" name="email" />
+
+        <label for="privacy">Je reconnais avoir lu et accepté(e) la <a>politique de confidentialité</a></label>
+        <input type="checkbox" required [(ngModel)]="isChecked" name="privacy" />
+
+        <alif-primary-button btnText="Souscrire à la newsletter" (click)="subscribeNewsletter()"></alif-primary-button>
+    </div>
+</mat-dialog-content>
