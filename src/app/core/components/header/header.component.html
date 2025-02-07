@@ -1,95 +1,28 @@
-<!-- <nav class="navbar navbar-expand-lg" [style.background]="background">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <img class="navbar-brand" alt="logo" src="../../../../assets/images/logo/logo-gold.svg" routerLink="/">
-    <div class="collapse navbar-collapse">
-      <div class="nav-list">
-        <a class="nav-item-route" routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact: true}" [style.color]="navListColor">{{ "navbar.home" | translate }}</a>
-        <a class="nav-item-route" [style.color]="navListColor">{{ "navbar.who_we_are" | translate }}<img alt="chevron" src="../../../../assets/images/icons/chevron_down.svg"></a>
-        <a class="nav-item-route" routerLinkActive="active" routerLink="/alif-story" [style.color]="navListColor">{{ "navbar.alif_story" | translate }}<img alt="chevron" src="../../../../assets/images/icons/chevron_down.svg"></a>
-        <a class="nav-item-route" routerLinkActive="active" routerLink="/stories" [style.color]="navListColor">{{ "navbar.other_stories" | translate }}</a>
-        <a class="nav-item-route" routerLinkActive="active" routerLink="/books" [style.color]="navListColor">{{ "navbar.educational_booklets" | translate }}</a>
-        <a class="nav-item-route" routerLinkActive="active" routerLink="/blog" [style.color]="navListColor">{{ "navbar.about_education" | translate }}</a>
-      </div>
-    </div>
-    <div class="account">
-      <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth > 768" routerLink="/login" routerLinkActive="active"><img alt="user" src="../../../../assets/images/icons/user.svg">{{ "navbar.connexion" | translate }}</a>
-      <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth <= 768" routerLink="/login" routerLinkActive="active" ><img alt="user" src="../../../../assets/images/icons/user.svg"></a>
-      <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth > 768"><img alt="panier" src="../../../../assets/images/icons/panier.svg">{{ "navbar.panel" | translate }}</a>
-      <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth <= 768"><img alt="panier" src="../../../../assets/images/icons/panier.svg"></a>
-    </div>
+<mat-toolbar class="navbar">
+
+  <!-- Logo -->
+  <img
+    class="navbar-brand"
+    alt="Logo"
+    src="../../../../assets/images/logo/logo-dark.svg"
+    routerLink="/"
+  />
+
+  <!-- Navbar Links (Visible on Large Screens) -->
+  <div fxShow="true" fxHide.lt-md class="nav-links">
+    <a mat-button routerLink="/about-us">{{
+      "navbar.who_we_are" | translate
+    }}</a>
   </div>
-</nav> -->
 
-<div  class="navbar">
-  <mat-toolbar [style.background]="background">
-    <mat-toolbar-row class="navbar-second">
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
-        <mat-icon>menu</mat-icon>
-      </button>
-      <img class="navbar-brand" alt="logo" src="../../../../assets/images/logo/logo-gold.svg" routerLink="/">
-      <span class="menu-spacer"></span>
-      <div class="account" fxShow="true" fxHide.gt-sm>
-        <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth > 768" routerLink="/login"
-          routerLinkActive="active"><img alt="user" src="../../../../assets/images/icons/user.svg">{{ "navbar.connexion" |
-          translate }}</a>
-        <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth <= 768" routerLink="/login"
-          routerLinkActive="active"><img alt="user" src="../../../../assets/images/icons/user.svg"></a>
-        <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth > 768"><img alt="panier"
-            src="../../../../assets/images/icons/panier.svg">{{ "navbar.panel" | translate }}</a>
-        <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth <= 768"><img alt="panier"
-            src="../../../../assets/images/icons/panier.svg"></a>
-      </div>
-      <div fxShow="true" fxHide.lt-md class="collapse">
-        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <div class="nav-list">
-          <a class="nav-item-route" routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact: true}"
-            [style.color]="navListColor">{{ "navbar.home" | translate }}</a>
-          <a class="nav-item-route" [style.color]="navListColor" routerLink="/about-us">{{ "navbar.who_we_are" | translate }}<img alt="chevron"
-              src="../../../../assets/images/icons/chevron_down.svg"></a>
-          <a class="nav-item-route" routerLinkActive="active" routerLink="/alif-story" [style.color]="navListColor">{{
-            "navbar.alif_story" | translate }}<img alt="chevron" src="../../../../assets/images/icons/chevron_down.svg"></a>
-          <a class="nav-item-route" routerLinkActive="active" routerLink="/stories" [style.color]="navListColor">{{
-            "navbar.other_stories" | translate }}</a>
-          <a class="nav-item-route" routerLinkActive="active" routerLink="/books" [style.color]="navListColor">{{
-            "navbar.educational_booklets" | translate }}</a>
-          <a class="nav-item-route" routerLinkActive="active" routerLink="/blog" [style.color]="navListColor">{{
-            "navbar.about_education" | translate }}</a>
-        </div>
-        <div class="account" >
-          <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth > 768" routerLink="/login"
-            routerLinkActive="active"><img alt="user" src="../../../../assets/images/icons/user.svg">{{ "navbar.connexion" |
-            translate }}</a>
-          <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth <= 768" routerLink="/login"
-            routerLinkActive="active"><img alt="user" src="../../../../assets/images/icons/user.svg"></a>
-          <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth > 768"><img alt="panier"
-              src="../../../../assets/images/icons/panier.svg">{{ "navbar.panel" | translate }}</a>
-          <a class="account-item" [style.color]="accountListColor" *ngIf="windowWidth <= 768"><img alt="panier"
-              src="../../../../assets/images/icons/panier.svg"></a>
-        </div>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
-
-  <mat-sidenav-container  [style.height]="mobileView ? '100vh' : 'auto'">
-    <mat-sidenav #sidenav (opened)="close()"
-                (closed)="close()">
-      <mat-nav-list class="sidenav-list">
-          <a class="nav-item-route"  mat-list-item routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact: true}"
-            [style.color]="navListColor">{{ "navbar.home" | translate }}</a>
-          <a class="nav-item-route"  mat-list-item [style.color]="navListColor" routerLink="/about-us">{{ "navbar.who_we_are" | translate }}</a>
-          <a class="nav-item-route"  mat-list-item routerLinkActive="active" routerLink="/alif-story" [style.color]="navListColor">{{
-            "navbar.alif_story" | translate }}</a>
-          <a class="nav-item-route"  mat-list-item routerLinkActive="active" routerLink="/stories" [style.color]="navListColor">{{
-            "navbar.other_stories" | translate }}</a>
-          <a class="nav-item-route"  mat-list-item routerLinkActive="active" routerLink="/books" [style.color]="navListColor">{{
-            "navbar.educational_booklets" | translate }}</a>
-          <a class="nav-item-route"  mat-list-item routerLinkActive="active" routerLink="/blog" [style.color]="navListColor">{{
-            "navbar.about_education" | translate }}</a>
-      </mat-nav-list>
-    </mat-sidenav>
-  </mat-sidenav-container>
-</div>
+  <!-- User & Cart Icons (Visible on All Screens) -->
+  <div class="account">
+    <a mat-icon-button routerLink="/login" routerLinkActive="active">
+      <img alt="user" src="../../../../assets/images/icons/user.svg" />
+    </a>
+    <a mat-icon-button routerLink="/cart" routerLinkActive="active">
+      <img alt="panier" src="../../../../assets/images/icons/panier2.svg" />
+    </a>
+  </div>
+</mat-toolbar>
 
