@@ -1,0 +1,82 @@
+<div class="alif-about-us">
+  <section>
+    <alif-header></alif-header>
+  </section>
+
+  <section class="value-cards-section">
+    <div class="value-cards-container">
+      <alif-value-card
+        [title]="'Des récits authentiques'"
+        [description]="
+          'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  '
+        "
+        [backgroundImage]="'assets/images/about-us/card-1.jpg'"
+        [isReversed]="false"
+        [icon]="'assets/images/about-us/golden-kaaba.png'"
+      ></alif-value-card>
+
+      <alif-value-card
+        [title]="'Un accompagnement éducatifs complet'"
+        [description]="
+          'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum'
+        "
+        [backgroundImage]="'assets/images/about-us/card-2.jpg'"
+        [isReversed]="true"
+        [icon]="'assets/images/about-us/golden-glob.png'"
+      ></alif-value-card>
+
+      <alif-value-card
+        [title]="'Un environnement apprenant'"
+        [description]="
+          'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum'
+        "
+        [backgroundImage]="'assets/images/about-us/card-3.jpg'"
+        [isReversed]="false"
+        [icon]="'assets/images/about-us/golden-well.png'"
+      ></alif-value-card>
+
+      <alif-value-card
+        [title]="'Un ancrage dans nos valeurs'"
+        [description]="
+          'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum'
+        "
+        [backgroundImage]="'assets/images/about-us/card-4.jpg'"
+        [isReversed]="true"
+        [icon]="'assets/images/home/globe.svg'"
+      ></alif-value-card>
+    </div>
+  </section>
+
+  <section class="latest-articles-section">
+    <!-- Centered Title -->
+    <h3 class="latest-article-title">Nos derniers articles</h3>
+
+    <!-- Card Container -->
+    <div class="card-container">
+      <alif-latest-article-card
+        imageUrl="assets/images/about-us/news-card-1.jpeg"
+        title="41 récits / 7 prophètes"
+        description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  "
+      ></alif-latest-article-card>
+      <alif-latest-article-card
+        imageUrl="assets/images/about-us/news-card-2.jpeg"
+        title="3h d’écoute et sans onde"
+        description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  "
+      ></alif-latest-article-card>
+      <alif-latest-article-card
+        imageUrl="assets/images/about-us/news-card-3.jpeg"
+        title="J’enrichie mon expérience"
+        description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  "
+      ></alif-latest-article-card>
+    </div>
+  </section>
+
+  <section>
+    <div class="icons">
+      <div class="icon" *ngFor="let icon of icons">
+        <img [src]="icon.src">
+        <span>{{ icon.txt }}</span>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,36 @@
+<div class="card-container">
+  <div
+    class="card"
+    [ngClass]="{ 'reverse-layout': isReversed }"
+    [style.backgroundImage]="'url(' + backgroundImage + ')'"
+  >
+    <!-- Gradient Overlay -->
+    <div
+      class="gradient-overlay"
+      [ngStyle]="{
+        background: isReversed
+          ? 'linear-gradient(270deg, #545782 4.4%, rgba(0, 0, 0, 0) 100%)'
+          : 'linear-gradient(90deg, #545782 4.4%, rgba(0, 0, 0, 0) 100%)'
+      }"
+    ></div>
+
+    <!-- Content and Icon -->
+    <div class="content-container" [ngClass]="{ 'reverse-layout': isReversed }">
+      <!-- Text Content -->
+      <div class="content">
+        <h3 class="card-title">{{ title }}</h3>
+        <p class="card-description">{{ description }}</p>
+      </div>
+
+      <!-- Icon Wrapper -->
+      <div class="icon-wrapper">
+        <img *ngIf="icon" [src]="icon" alt="Card Icon" class="card-icon" />
+      </div>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container" [ngClass]="{ 'reverse-layout': isReversed }">
+      <alif-primary-button btnText="en savoir plus"></alif-primary-button>
+    </div>
+  </div>
+</div>

@@ -1,242 +1,95 @@
-@import "../../../../styles.scss";
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 68px;
+  background: rgba(233, 226, 200, 1); /* Background color for footer */
 
-.footer{
-  background-image: url('./../../../../assets/images/footer/background.svg') ;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: 14rem;
-  .footer-content {
+  .footer-section {
     display: flex;
-    height: 20rem;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-bottom: 4%;
-    .footer-section {
-      margin-top: 4%;
-      flex-basis: 30%;
-      text-wrap: nowrap;
-      color: $dark-brown;
-      display: flex;
-      flex-direction: column;
-      h3{
-        font-size: 1rem;
-        font-family: 'Belle Allure CE - Light', sans-serif;
-        color: $dark-brown;
-      }
-      a{
-        margin: 3px 0px 3px 0px;
-        font-size: 1.2rem;
-        font-family: 'Letters for Learners', sans-serif;
-        text-decoration: none;
-        color: $dark-brown;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-    }
-    .footer-section-newsletter {
-      margin-top: 4%;
-      flex-basis: 30%;
-      text-wrap: nowrap;
-      color: $dark-brown;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      h3{
-        font-size: 1.375rem;
-        font-family: 'Letters for Learners', sans-serif;
-        color: $dark-brown;
-        margin-bottom: 2rem;
-      }
-      form{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 1rem;
-        input{
-          padding-left: 1rem;
-          width: 18.5rem;
-          height: 3rem;
-          border-bottom: 1px solid $dark-brown;
-          border-left: none;
-          border-right: none;
-          border-top: none;
-          border-radius: 4px 4px 0 0;
-          background: #FFF;
-          &::placeholder{
-            color: $dark-brown;
-            font-family: Roboto, sans-serif;
-          }
-        }
-      }
-    }
-    .footer-section-0{
-        margin-top: 4%;
-        flex-basis: 30%;
-        text-wrap: nowrap;
-        color: $dark-brown;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        img{
-          cursor: pointer;
-        }
-        a{
-          margin: 3px 0px 3px 0px;
-          font-size: 1.2rem;
-          font-family: 'Letters for Learners', sans-serif;
-          text-decoration: none;
-          color: $dark-brown;
-          &:hover{
-            text-decoration: underline;
-          }
-        }
-      .social-media{
-        margin-top: 10px;
-        display: flex;
-        flex-direction: row;
-        .instagram, .facebook, .youtube{
-          margin-right: 10px;
-          &:hover{
-            cursor: pointer;
-          }
-        }
+    flex-direction: column;
+    gap: 15px; /* Space between elements in each section */
 
+    h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(78, 81, 126, 1);
+    }
+
+    a {
+      color: rgba(0, 53, 66, 1);
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* Logo + Mail Section */
+    &.logo-mail {
+      align-items: flex-start;
+      .logo {
+        img {
+          width: 100px; /* Adjust logo size */
+        }
+      }
+      .mail {
+        a {
+          font-size: 14px;
+          color: rgba(0, 53, 66, 1);
+        }
+      }
+    }
+
+    /* Aides et Support Section */
+    &.support {
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    /* Politique et Mentions Légales Section */
+    &.legal {
+      max-width: 10px;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    /* Social Media Icons Section */
+    &.social-media {
+      align-items: flex-start;
+      gap: 10px;
+
+      .social-icon {
+        width: 30px;
+        height: 30px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
 }
-.footer > ul {
-    position: absolute;
-    display: flex;
-    gap: 4em;
-    margin: -11rem 4rem 15rem 10rem;
-    text-align: center;
 
-}
-.footer > ul > li{
-    font-size: 1.25rem;
-    max-width: 20%;
-          font-family: 'Letters for Learners', sans-serif;
-          text-decoration: none;
-          color: $dark-brown;
-
-}
 @media (max-width: 768px) {
-  .footer{
-    background: $light-brown;
-    padding-top: 25px;
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: fit-content;
-      padding-left: 4%;
-      padding-right: 4%;
-      .footer-section {
-        margin-top: 10%;
-        flex-basis: 30%;
-        text-wrap: nowrap;
-        color: $dark-brown;
-        display: flex;
-        flex-direction: column;
-        h3{
-          font-size: 1rem;
-          font-family: 'Belle Allure CE - Light', sans-serif;
-          color: $dark-brown;
-        }
-        a{
-          margin: 3px 0px 3px 0px;
-          font-size: 1.2rem;
-          font-family: 'Letters for Learners', sans-serif;
-          text-decoration: none;
-          color: $dark-brown;
-          &:hover{
-            text-decoration: underline;
-          }
-        }
-      }
-      .footer-section-newsletter {
-      margin-top: 4%;
-      flex-basis: 30%;
-      text-wrap: nowrap;
-      color: $dark-brown;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h3{
-        font-size: 1.375rem;
-        font-family: 'Letters for Learners', sans-serif;
-        color: $dark-brown;
-        margin-bottom: 2rem;
-      }
-      form{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 1rem;
-        input{
-          padding-left: 1rem;
-          width: 18.5rem;
-          height: 3rem;
-          border-bottom: 1px solid $dark-brown;
-          border-left: none;
-          border-right: none;
-          border-top: none;
-          border-radius: 4px 4px 0 0;
-          background: #FFF;
-          &::placeholder{
-            color: $dark-brown;
-            font-family: Roboto, sans-serif;
-          }
-        }
-      }
-    }
-      .footer-section-3{
-          margin-top: 10%;
-          flex-basis: 30%;
-          text-wrap: nowrap;
-          color: $dark-brown;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-around;
-          .contact{
-            .social-media{
-              justify-content: center;
-            }
-          }
-      }
-    }
-  }
-
-
-  .footer .footer-icons {
-    display: none;
-
-  }
-}
-
-
-
-@media (max-width: 1024px){
- .footer > ul {
-    position: absolute;
-    display: flex;
-    gap: 4em;
-    margin: -12rem 4rem 15rem 1rem;
+  .footer {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 
-}
-.footer > ul > li{
-    font-size: 1.25rem;
-    max-width: 20%;
-          font-family: 'Letters for Learners', sans-serif;
-          text-decoration: none;
-          color: $dark-brown;
-
-}
+    .footer-section {
+      align-items: center;
+      width: 100%;
+      .social-icon {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

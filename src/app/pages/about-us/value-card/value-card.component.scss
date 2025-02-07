@@ -1,0 +1,103 @@
+@import "../../../../styles.scss";
+
+.card-container {
+  position: relative;
+  width: 995px;
+  height: 445px;
+  border-radius: 8px 0 0 0;
+  border: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Default alignment for content */
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  padding: 46px;
+
+  /* Gradient Overlay */
+  .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 0;
+  }
+
+  &.reverse-layout {
+    align-items: flex-end; /* Align everything to the right */
+    text-align: right;
+  }
+
+  /* Content + Icon Container */
+  .content-container {
+    display: flex;
+    flex-direction: column; /* Default: stack content and icon vertically */
+    gap: 20px; /* Space between content and icon */
+    z-index: 1;
+
+    &.reverse-layout {
+      flex-direction: column; /* Keep the column layout */
+      align-items: flex-end; /* Align items to the right */
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Vertical gap between title and description */
+    max-width: 450px; /* Fixed width for content */
+
+    .card-title {
+      font-family: "Belle Allure CE - Light", sans-serif;
+      font-size: 37.29px;
+      font-weight: 700;
+      line-height: 68.37px;
+      color: $light-brown;
+    }
+
+    .card-description {
+      font-family: "Poppins", sans-serif;
+      font-size: 13.98px;
+      font-weight: 400;
+      line-height: 24.08px;
+      color: $light-brown;
+    }
+  }
+
+  /* Icon Wrapper */
+  .icon-wrapper {
+    display: flex;
+    justify-content: flex-start; /* Default: align icon to the left */
+
+    &.reverse-layout {
+      justify-content: flex-end; /* Align icon to the right when reversed */
+    }
+  }
+
+  .card-icon {
+    width: 100.75px;
+    height: 76.19px;
+    opacity: 1;
+    fill: $light-brown;
+  }
+
+  /* Button Container */
+  .button-container {
+    z-index: 1;
+    align-self: flex-end; /* Button on the right by default */
+    margin-top: auto; /* Push the button to the bottom of the container */
+
+    &.reverse-layout {
+      align-self: flex-start; /* Button on the left when reversed */
+    }
+  }
+}

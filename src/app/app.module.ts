@@ -33,6 +33,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimaryButtonComponent } from './core/components/button/primary-button/primary-button.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ValueCardComponent } from './pages/about-us/value-card/value-card.component';
+import { LatestArticleCardComponent } from './pages/about-us/latest-article/latest-article-card.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { HomeComponent } from './pages/home/home.component';
     ExperienceComponent,
     TestimonialComponent,
     FaqCardComponent,
+    AboutUsComponent,
+    ValueCardComponent,
+    LatestArticleCardComponent,
   ],
   imports: [
     AppRoutingModule,

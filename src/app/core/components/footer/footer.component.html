@@ -1,51 +1,71 @@
-<div class="footer">
-  <ul class="footer-icons">
-    <li>
-      <img src="../../../../assets/images/footer/livraison.svg" alt="">
-      <p>livraison Rapide a Partir de ?</p>
-    </li>
-    <li>
-      <img src="../../../../assets/images/footer/paiment.svg" alt="">
-      <p>Paiment Rapide, Pratique et sécurise</p>
-    </li>
-    <li>
-      <img src="../../../../assets/images/footer/client.svg" alt="">
-      <p>Service client en ligne et par téléphone</p>
-    </li>
-  </ul>
-  <div class="footer-content">
-    <div class="footer-section-0">
-      <img src="./../../../../assets/images/logo/logo-blue.svg" routerLink="/" style="width: 8rem;height: 8rem;" alt="logo">
-      <div class="contact">
-        <a [href]="'mailto:' + email">{{ email }}</a>
-        <div class="social-media">
-          <a class="instagram"><img alt="instagram" src="../../../../assets/images/icons/instagram.svg"></a>
-          <a class="facebook"><img alt="facebook" src="../../../../assets/images/icons/facebook.svg"></a>
-          <a class="youtube"><img alt="youtube" src="../../../../assets/images/icons/youtube.svg"></a>
-        </div>
-      </div>
+<footer class="footer">
+  <div class="footer-section logo-mail">
+    <div class="logo">
+      <img
+        src="./../../../../assets/images/logo/logo-blue.svg"
+        routerLink="/"
+        style="width: 8rem; height: 8rem"
+        alt="logo"
+      />
     </div>
-    <div class="footer-section">
-      <h3>{{ "footer.help_and_support.title" | translate}}</h3>
-      <a href="#">{{ "footer.help_and_support.who_we_are" | translate}}</a>
-      <a href="#">{{ "footer.help_and_support.contact_us" | translate}}</a>
-      <a href="#">{{ "footer.help_and_support.faq" | translate}}</a>
-    </div>
-    <div class="footer-section">
-      <h3>{{ "footer.politicy_legal_mention.title" | translate}}</h3>
-      <a href="#">{{ "footer.politicy_legal_mention.confidentiality" | translate}}</a>
-      <a href="#">{{ "footer.politicy_legal_mention.terms_of_use" | translate}}</a>
-      <a href="#">{{ "footer.politicy_legal_mention.policy_of_return" | translate}}</a>
-      <a href="#">{{ "footer.politicy_legal_mention.legal_mention" | translate}}</a>
-    </div>
-    <div class="footer-section-newsletter">
-      <h3>Inscrivez-vous à notre newsletter pour ne rien louper !</h3>
-      <form [formGroup]="subscribeForm" (ngSubmit)="subscribe()">
-        <input type="text" placeholder="Votre prénom" formControlName="firstName">
-        <input type="email" placeholder="Votre email" formControlName="email">
-        <alif-primary-button [btnText]="'Subscribe'" type="submit"></alif-primary-button>
-      </form>
+    <div class="mail">
+      <a href="mailto:alif.story@contact.com">alif.story@contact.com</a>
     </div>
   </div>
-</div>
 
+  <div class="footer-section support">
+    <h3>{{ "footer.help_and_support.title" | translate }}</h3>
+    <ul>
+      <li>
+        <a href="#">{{ "footer.help_and_support.who_we_are" | translate }}</a>
+      </li>
+      <li>
+        <a href="#">{{ "footer.help_and_support.contact_us" | translate }}</a>
+      </li>
+      <li>
+        <a href="#">{{ "footer.help_and_support.faq" | translate }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-section legal">
+    <h3>Politiques et mentions légales</h3>
+    <ul>
+      <li>
+        <a href="#">{{
+          "footer.politicy_legal_mention.confidentiality" | translate
+        }}</a>
+      </li>
+      <li>
+        <a href="#">{{
+          "footer.politicy_legal_mention.terms_of_use" | translate
+        }}</a>
+      </li>
+      <li>
+        <a href="#">{{
+          "footer.politicy_legal_mention.policy_of_return" | translate
+        }}</a>
+      </li>
+      <li>
+        <a href="#">{{
+          "footer.politicy_legal_mention.legal_mention" | translate
+        }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-section social-media">
+    <div class="social-icon">
+      <img src="../../../../assets/images/icons/facebook.svg" alt="Facebook" />
+    </div>
+    <div class="social-icon">
+      <img src="../../../../assets/images/icons/twitter.svg" alt="Twitter" />
+    </div>
+    <div class="social-icon">
+      <img
+        src="../../../../assets/images/icons/instagram.svg"
+        alt="Instagram"
+      />
+    </div>
+  </div>
+</footer>

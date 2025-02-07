@@ -1,0 +1,84 @@
+/* Parent Container */
+.alif-about-us {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center sections horizontally */
+  width: 100%; /* Ensure the container takes full width */
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* Section Styling */
+.value-cards-section {
+  display: flex;
+  justify-content: center; /* Center the container horizontally */
+  align-items: center; /* Center the container vertically */
+  padding: 40px 20px; /* Add padding for spacing */
+  width: 100%; /* Ensure the section takes full width */
+}
+
+/* Card Container */
+.value-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: center; /* Center the cards horizontally */
+  gap: 80px; /* Space between cards */
+  max-width: 1200px; /* Optional: Limit the maximum width of the container */
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* Latest Articles Section */
+.latest-articles-section {
+  margin-top: 40px; /* Add space between this section and the previous one */
+  text-align: center; /* Center the title */
+  padding: 77px 109px 131px 109px; /* Add padding for better spacing */
+  width: 100%; /* Ensure the section takes full width */
+
+  /* Centered Title */
+  .latest-article-title {
+    font-size: 38px; /* Adjust font size as needed */
+    font-family: "Belle Allure CE - Light", sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px; /* Space between title and cards */
+    line-height: 85px;
+    color: rgba(78, 81, 126, 1);
+  }
+
+  /* Card Container */
+  .card-container {
+    display: flex; /* Align cards horizontally */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 74px; /* Space between cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+    max-width: 1200px; /* Optional: Limit the maximum width of the container */
+    width: 100%; /* Ensure the container takes full width */
+  }
+}
+
+.icons {
+  margin-top: 24px; /* Add space above the section */
+  display: flex;
+  justify-content: space-around; /* Space icons evenly */
+  gap: 80px; /* Space between icons */
+
+  .icon {
+    width: 186px; /* Fixed width for each icon container */
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center icon and text horizontally */
+    justify-content: center; /* Center icon and text vertically */
+
+    img {
+      margin: 8px; /* Add spacing around the icon */
+    }
+
+    span {
+      margin: 8px; /* Add spacing around the text */
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+      text-align: center; /* Center the text */
+      color: rgba(0, 53, 66, 1);
+    }
+  }
+}
