@@ -73,15 +73,13 @@
         ></alif-latest-article-card>
       </div>
     </section>
+  </div>
 
-    <section>
-      <div class="icons">
-        <div class="icon" *ngFor="let icon of icons">
-          <img [src]="icon.src" />
-          <span>{{ icon.txt }}</span>
-        </div>
-      </div>
-    </section>
+  <div class="icons">
+    <div class="icon" *ngFor="let icon of icons">
+      <img [src]="icon.src" />
+      <span>{{ icon.txt }}</span>
+    </div>
   </div>
   <alif-footer></alif-footer>
 </div>

@@ -66,67 +66,35 @@
 }
 
 .icons {
-  margin-top: 24px; /* Espace au-dessus de la section */
-  margin-bottom: 24px;
+  margin-top: 6rem;
   display: flex;
-  justify-content: space-around; /* Espacement uniforme entre les icônes */
-  gap: 80px; /* Espace entre les icônes */
-
-  /* Media query pour les écrans moyens */
-  @media (max-width: 1200px) {
-    gap: 40px; /* Réduire l'espacement entre les icônes */
-  }
-
-  /* Media query pour les petits écrans */
-  @media (max-width: 768px) {
-    flex-wrap: wrap; /* Permettre aux icônes de passer à la ligne suivante */
-    gap: 20px; /* Réduire encore l'espacement entre les icônes */
-  }
-
+  justify-content: space-around;
   .icon {
-    width: 186px; /* Largeur fixe pour chaque conteneur d'icône */
     display: flex;
-    flex-direction: column; /* Aligner l'icône et le texte verticalement */
-    align-items: center; /* Centrer horizontalement */
-    justify-content: center; /* Centrer verticalement */
-
-    /* Media query pour les petits écrans */
-    @media (max-width: 768px) {
-      width: 150px; /* Réduire la largeur des icônes pour les petits écrans */
-    }
-
-    @media (max-width: 480px) {
-      width: 120px; /* Réduire encore la largeur pour les très petits écrans */
-    }
-
+    flex-direction: column;
+    align-items: center;
     img {
-      margin: 8px; /* Espace autour de l'icône */
-
-      /* Media query pour les petits écrans */
-      @media (max-width: 768px) {
-        width: 50px; /* Réduire la taille de l'icône pour les petits écrans */
-        height: 50px; /* Réduire la taille de l'icône pour les petits écrans */
-      }
+      margin: 8px;
     }
-
     span {
-      margin: 8px; /* Espace autour du texte */
+      margin: 8px;
       font-family: "Poppins", sans-serif;
-      font-size: 18px; /* Taille de police originale pour les grands écrans */
+      font-size: 18px;
       font-weight: 400;
       line-height: 27px;
-      text-align: center; /* Centrer le texte */
+      text-align: center;
+      color: rgba(0, 53, 66, 1);
+    }
+  }
+}
 
-      /* Media query pour les petits écrans */
-      @media (max-width: 768px) {
-        font-size: 16px; /* Réduire la taille de police pour les petits écrans */
-        line-height: 24px; /* Ajuster l'interligne */
-      }
-
-      @media (max-width: 480px) {
-        font-size: 14px; /* Réduire encore la taille de police pour les très petits écrans */
-        line-height: 20px; /* Ajuster l'interligne */
-      }
+@media (max-width: 768px){
+  .icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    .icon {
+      width: 50%;
+      margin-bottom: 20px;
     }
   }
 }

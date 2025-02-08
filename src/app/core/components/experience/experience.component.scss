@@ -1,6 +1,6 @@
-@import '../../../../styles';
+@import "../../../../styles";
 
-.alif-experience{
+.alif-experience {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +8,10 @@
   max-height: 360px;
   background: white;
 
-  .content{
+  .content {
     padding: 16px;
     width: 39%;
-    h4{
+    h4 {
       color: $blue;
       font-family: "Letters for Learners";
       font-size: 32px;
@@ -19,7 +19,7 @@
       font-weight: 700;
       text-transform: uppercase;
     }
-    p{
+    p {
       color: $dark-brown;
       font-family: "Poppins", sans-serif;
       font-size: 18px;
@@ -30,16 +30,16 @@
   }
   .number {
     padding: 12px;
-    display: flex;
+    display: none;
     align-items: start;
     img {
       min-height: 2rem;
       min-width: 2rem;
     }
   }
-  .img{
+  .img {
     width: 53%;
-    img{
+    img {
       object-fit: cover;
       max-height: 360px;
       width: 100%;
@@ -48,26 +48,33 @@
 }
 
 @media (max-width: 768px) {
-  .alif-experience{
+  .alif-experience {
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 25px;
     gap: 10px;
-    .content{
-      h4{
+
+    .number {
+      display: none;
+    }
+
+    .content {
+      h4 {
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 25px;
       }
-      p{
-        font-size: 18px;
+      p {
+        font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
       }
     }
-    
-    .img{
-      img{
+
+    .img {
+      img {
         object-fit: cover;
         max-height: 250px;
         width: 100%;
