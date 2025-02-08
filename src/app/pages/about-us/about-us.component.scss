@@ -41,7 +41,7 @@
 .latest-articles-section {
   margin-top: 40px; /* Add space between this section and the previous one */
   text-align: center; /* Center the title */
-  padding: 77px 109px 131px 109px; /* Add padding for better spacing */
+  padding: 77px 131px; /* Add padding for better spacing */
   width: 100%; /* Ensure the section takes full width */
 
   /* Centered Title */
@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .icons {
     flex-wrap: wrap;
     justify-content: center;
