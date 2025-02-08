@@ -1,96 +1,141 @@
 .footer {
-  margin-top: 30px; /* Add space above the section */
+  margin-top: 30px; /* Espace au-dessus de la section */
   display: flex;
   justify-content: space-between;
   padding: 68px;
-  background: rgba(233, 226, 200, 1); /* Background color for footer */
+  background: rgba(233, 226, 200, 1); /* Couleur de fond du footer */
+
+  /* Media query pour les écrans moyens */
+  @media (max-width: 1200px) {
+    padding: 40px; /* Réduire le padding pour les écrans moyens */
+  }
+
+  /* Media query pour les petits écrans */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Afficher les sections en colonne */
+    align-items: center; /* Centrer les sections horizontalement */
+    text-align: center; /* Centrer le texte */
+    padding: 20px; /* Réduire encore le padding pour les petits écrans */
+  }
 
   .footer-section {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between elements in each section */
+    gap: 15px; /* Espace entre les éléments dans chaque section */
 
     h3 {
       margin-bottom: 10px;
       font-size: 18px;
       font-weight: 700;
       color: rgba(78, 81, 126, 1);
+
+      /* Media query pour les petits écrans */
+      @media (max-width: 768px) {
+        font-size: 16px; /* Réduire la taille de police pour les petits écrans */
+      }
     }
 
     a {
       color: rgba(0, 53, 66, 1);
       text-decoration: none;
       font-size: 18px;
+
+      /* Media query pour les petits écrans */
+      @media (max-width: 768px) {
+        font-size: 16px; /* Réduire la taille de police pour les petits écrans */
+      }
     }
 
-    /* Logo + Mail Section */
+    /* Section Logo + Mail */
     &.logo-mail {
       align-items: flex-start;
+
+      /* Media query pour les petits écrans */
+      @media (max-width: 768px) {
+        align-items: center; /* Centrer les éléments pour les petits écrans */
+      }
+
       .logo {
         img {
-          width: 100px; /* Adjust logo size */
+          width: 100px; /* Ajuster la taille du logo */
+
+          /* Media query pour les petits écrans */
+          @media (max-width: 768px) {
+            width: 80px; /* Réduire la taille du logo pour les petits écrans */
+          }
         }
       }
+
       .mail {
         a {
           font-size: 14px;
           color: rgba(0, 53, 66, 1);
+
+          /* Media query pour les petits écrans */
+          @media (max-width: 768px) {
+            font-size: 12px; /* Réduire la taille de police pour les petits écrans */
+          }
         }
       }
     }
 
-    /* Aides et Support Section */
+    /* Section Aides et Support */
     &.support {
       max-width: 250px;
+      padding-top: 25px;
+      /* Media query pour les petits écrans */
+      @media (max-width: 768px) {
+        max-width: 100%; /* Prendre toute la largeur pour les petits écrans */
+      }
+
       ul {
         list-style: none;
         padding: 0;
+
         li {
           margin-bottom: 5px;
         }
       }
     }
 
-    /* Politique et Mentions Légales Section */
+    /* Section Politique et Mentions Légales */
     &.legal {
       max-width: 250px;
+
+      /* Media query pour les petits écrans */
+      @media (max-width: 768px) {
+        max-width: 100%; /* Prendre toute la largeur pour les petits écrans */
+      }
+
       ul {
         list-style: none;
         padding: 0;
+
         li {
           margin-bottom: 5px;
         }
       }
     }
 
-    /* Social Media Icons Section */
+    /* Section Réseaux Sociaux */
     &.social-media {
       align-items: flex-start;
       gap: 10px;
 
+      /* Media query pour les petits écrans */
+      @media (max-width: 768px) {
+        flex-direction: row;
+        align-items: center; /* Centrer les icônes pour les petits écrans */
+      }
+
       .social-icon {
         width: 30px;
         height: 30px;
+
         img {
           width: 100%;
           height: 100%;
         }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    .footer-section {
-      align-items: center;
-      width: 100%;
-      .social-icon {
-        margin-bottom: 10px;
       }
     }
   }
