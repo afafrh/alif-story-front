@@ -7,23 +7,34 @@
   width: 100%; /* Ensure the container takes full width */
 }
 
-/* Section Styling */
 .value-cards-section {
   display: flex;
-  justify-content: center; /* Center the container horizontally */
-  align-items: center; /* Center the container vertically */
-  padding: 40px 20px; /* Add padding for spacing */
-  width: 100%; /* Ensure the section takes full width */
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
 }
 
-/* Card Container */
 .value-cards-container {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
-  justify-content: center; /* Center the cards horizontally */
-  gap: 80px; /* Space between cards */
-  max-width: 1200px; /* Optional: Limit the maximum width of the container */
-  width: 100%; /* Ensure the container takes full width */
+  flex-direction: column; /* Afficher les cartes en colonne (verticalement) */
+  align-items: center; /* Centrer les cartes horizontalement */
+  gap: 93.23px; /* Espacement entre les cartes pour les grands écrans */
+  width: 100%;
+  max-width: 994.46px; /* Largeur maximale pour les grands écrans */
+
+  /* Media query pour les petits écrans */
+  @media (max-width: 1200px) {
+    gap: 60px; /* Réduire l'espacement pour les écrans moyens */
+  }
+
+  @media (max-width: 768px) {
+    gap: 40px; /* Réduire l'espacement pour les petits écrans */
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px; /* Réduire l'espacement pour les très petits écrans */
+  }
 }
 
 /* Latest Articles Section */

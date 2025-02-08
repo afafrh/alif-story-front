@@ -2,18 +2,34 @@
 
 .card-container {
   position: relative;
-  width: 995px;
-  height: 445px;
+  width: 994.46px; /* Largeur fixe pour les grands écrans */
+  height: 445.18px; /* Hauteur fixe pour les grands écrans */
   border-radius: 8px 0 0 0;
   border: none;
   opacity: 1;
   transition: opacity 0.5s ease;
+
+  /* Media query pour les petits écrans */
+  @media (max-width: 1200px) {
+    width: 100%; /* Largeur à 100% pour les écrans moyens */
+    max-width: 800px; /* Limite la largeur maximale */
+    height: 400px; /* Ajuste la hauteur pour les écrans moyens */
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%; /* Largeur à 100% pour les petits écrans */
+    height: 350px; /* Ajuste la hauteur pour les petits écrans */
+  }
+
+  @media (max-width: 480px) {
+    height: 300px; /* Ajuste la hauteur pour les très petits écrans */
+  }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Default alignment for content */
+  align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
   height: 100%;
@@ -22,9 +38,17 @@
   transition: all 0.3s ease;
   background-size: cover;
   background-position: center;
-  padding: 46px;
+  padding: 46px; /* Padding original pour les grands écrans */
 
-  /* Gradient Overlay */
+  /* Media query pour les petits écrans */
+  @media (max-width: 1200px) {
+    padding: 30px; /* Réduit le padding pour les écrans moyens */
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px; /* Réduit le padding pour les petits écrans */
+  }
+
   .gradient-overlay {
     position: absolute;
     inset: 0;
@@ -33,71 +57,123 @@
   }
 
   &.reverse-layout {
-    align-items: flex-end; /* Align everything to the right */
+    align-items: flex-end;
     text-align: right;
   }
 
-  /* Content + Icon Container */
   .content-container {
     display: flex;
-    flex-direction: column; /* Default: stack content and icon vertically */
-    gap: 20px; /* Space between content and icon */
+    flex-direction: column;
+    gap: 20px; /* Espacement original pour les grands écrans */
     z-index: 1;
 
     &.reverse-layout {
-      flex-direction: column; /* Keep the column layout */
-      align-items: flex-end; /* Align items to the right */
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    /* Media query pour les petits écrans */
+    @media (max-width: 1200px) {
+      gap: 15px; /* Réduit l'espacement pour les écrans moyens */
+    }
+
+    @media (max-width: 768px) {
+      gap: 10px; /* Réduit l'espacement pour les petits écrans */
     }
   }
 
   .content {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Vertical gap between title and description */
-    max-width: 450px; /* Fixed width for content */
+    gap: 20px; /* Espacement original pour les grands écrans */
+    max-width: 450px; /* Largeur maximale du contenu pour les grands écrans */
+
+    /* Media query pour les petits écrans */
+    @media (max-width: 1200px) {
+      max-width: 400px; /* Ajuste la largeur maximale pour les écrans moyens */
+      gap: 15px; /* Réduit l'espacement pour les écrans moyens */
+    }
+
+    @media (max-width: 768px) {
+      max-width: 100%; /* Largeur maximale à 100% pour les petits écrans */
+      gap: 10px; /* Réduit l'espacement pour les petits écrans */
+    }
 
     .card-title {
       font-family: "Belle Allure CE - Light", sans-serif;
-      font-size: 37.29px;
+      font-size: 37.29px; /* Taille de police originale pour les grands écrans */
       font-weight: 700;
       line-height: 68.37px;
       color: $light-brown;
+
+      /* Media query pour les petits écrans */
+      @media (max-width: 1200px) {
+        font-size: 32px; /* Réduit la taille de police pour les écrans moyens */
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 28px; /* Réduit la taille de police pour les petits écrans */
+      }
+
+      @media (max-width: 480px) {
+        font-size: 24px; /* Réduit la taille de police pour les très petits écrans */
+      }
     }
 
     .card-description {
       font-family: "Poppins", sans-serif;
-      font-size: 13.98px;
+      font-size: 13.98px; /* Taille de police originale pour les grands écrans */
       font-weight: 400;
       line-height: 24.08px;
       color: $light-brown;
+
+      /* Media query pour les petits écrans */
+      @media (max-width: 1200px) {
+        font-size: 12px; /* Réduit la taille de police pour les écrans moyens */
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 11px; /* Réduit la taille de police pour les petits écrans */
+      }
     }
   }
 
-  /* Icon Wrapper */
   .icon-wrapper {
     display: flex;
-    justify-content: flex-start; /* Default: align icon to the left */
+    justify-content: flex-start;
 
     &.reverse-layout {
-      justify-content: flex-end; /* Align icon to the right when reversed */
+      justify-content: flex-end;
     }
   }
 
   .card-icon {
-    width: 100.75px;
-    height: 76.19px;
+    width: 100.75px; /* Taille originale de l'icône pour les grands écrans */
+    height: 76.19px; /* Taille originale de l'icône pour les grands écrans */
     opacity: 1;
     fill: $light-brown;
+
+    /* Media query pour les petits écrans */
+    @media (max-width: 1200px) {
+      width: 90px; /* Réduit la taille de l'icône pour les écrans moyens */
+      height: 70px; /* Réduit la taille de l'icône pour les écrans moyens */
+    }
+
+    @media (max-width: 768px) {
+      width: 80px; /* Réduit la taille de l'icône pour les petits écrans */
+      height: 60px; /* Réduit la taille de l'icône pour les petits écrans */
+    }
   }
 
-  /* Button Container */
   .button-container {
     z-index: 1;
-    align-self: flex-end; /* Button on the right by default */
-    margin-top: auto; /* Push the button to the bottom of the container */
+    align-self: flex-end;
+    margin-top: auto;
 
     &.reverse-layout {
-      align-self: flex-start; /* Button on the left when reversed */
+      align-self: flex-start;
     }
   }
 }
