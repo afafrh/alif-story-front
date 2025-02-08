@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class MailchimpService {
 
-  apiKey = "f08478374cb9289c0d4c26838cab9607-us19";
+  apiKey = "74276f113e6d17aa45f353077bbab2d2-us19";
 
   baseUrl = "https://us19.api.mailchimp.com/3.0/lists/130c1c99c0/members";
   

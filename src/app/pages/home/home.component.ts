@@ -68,7 +68,6 @@ export class HomeComponent implements OnInit {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       path: "../../../../assets/images/home/exp 1.png",
       number: "../../../../assets/images/home/1.svg",
-      star: "../../../../assets/images/home/1star.svg",
       direction: "right"
     },
     {
@@ -76,7 +75,6 @@ export class HomeComponent implements OnInit {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       path: "../../../../assets/images/home/exp 2.png",
       number: "../../../../assets/images/home/2.svg",
-      star: "../../../../assets/images/home/2star.svg",
       direction: "left"
     },
     {
@@ -84,7 +82,6 @@ export class HomeComponent implements OnInit {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       path: "../../../../assets/images/home/exp 3.png",
       number: "../../../../assets/images/home/3.svg",
-      star: "../../../../assets/images/home/3star.svg",
       direction: "right"
     }];
 

@@ -32,6 +32,10 @@
     padding: 12px;
     display: flex;
     align-items: start;
+    img {
+      min-height: 2rem;
+      min-width: 2rem;
+    }
   }
   .img{
     width: 53%;
@@ -45,34 +49,29 @@
 
 @media (max-width: 768px) {
   .alif-experience{
-        margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    margin-bottom: 25px;
     gap: 10px;
     .content{
       h4{
-        color: $blue;
-        font-family: "Letters for Learners";
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 25px; /* 125% */
-        text-transform: uppercase;
+        line-height: 25px;
       }
       p{
-        color: $dark-brown;
-        font-family: "Letters for Learners";
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
       }
     }
+    
     .img{
-      width: 400px;
-      height: 250px;
+      img{
+        object-fit: cover;
+        max-height: 250px;
+        width: 100%;
+      }
     }
   }
 }

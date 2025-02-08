@@ -16,7 +16,6 @@
         <div class="btns">
           <alif-primary-button btnText="Commander"></alif-primary-button>
           <alif-secondary-button btnText="En savoir plus"></alif-secondary-button>
-          <button (click)="openDialog()">Click rbk</button>
         </div>
       </div>
     </div>
@@ -80,7 +79,6 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
           [description]="experience.description"
           [path]="experience.path"
           [number]="experience.number"
-          [star]="experience.star"
           [direction]="experience.direction"
           *ngIf="windowWidth > 768"
         ></alif-experience>
@@ -96,13 +94,13 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
 
   <div class="scroll-container">
     <div class="products">
-      <h3 *ngIf="windowWidth > 768">{{ "pages.home.products" | translate }}</h3>
+      <h3>NOS LIVRETS PÉDAGOGIQUES</h3>
       <div class="content">
         <div class="product">
-          <h4>{{ "pages.home.discover_product" | translate }}</h4>
-          <p>{{ "pages.home.discover_product_desc" | translate }}</p>
+          <h4>découvrir nos produits complémentaires</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <alif-primary-button
-            btnText="{{ 'pages.home.view_store' | translate }} →"
+            btnText="Découvrir →"
           ></alif-primary-button>
         </div>
         <div class="product-item" *ngFor="let product of products">
@@ -115,7 +113,8 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
       </div>
     </div>
     <div class="testimonials">
-      <h3>{{ "pages.home.testimonial_title" | translate }}</h3>
+      <h3>LES FIERS TEMOIGNAGES DES PARENTS</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
       <div class="testimonial">
         <alif-testimonial *ngFor="let testimonial of testimonials" [name]="testimonial.name"
           [message]="testimonial.message" [path]="testimonial.path" [stars]="testimonial.stars" [title]="testimonial.title"
@@ -132,7 +131,7 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
 
       <div class="service-client">
         <h1>Vous n'avez pas trouvé la réponse ?</h1>
-        <alif-primary-button [style.width]="'400px'" [btnText]="'Contacter le service client'"></alif-primary-button>
+        <alif-primary-button [btnText]="'Contacter le service client'"></alif-primary-button>
       </div>
 
       <div class="icons">

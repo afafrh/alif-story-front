@@ -157,14 +157,14 @@
     position: relative;
   }
   
-  @media (max-width: 1200px) {
+@media (max-width: 1200px) {
     .slide {
-      min-width: calc(50% - 1rem);
+        min-width: calc(33% - 1rem);
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .slide {
-      min-width: 100%;
+        min-width: 80%;
     }
-  }
+}
