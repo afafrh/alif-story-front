@@ -1,6 +1,7 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { NewsletterPopupComponent } from 'src/app/core/components/newsletter-popup/newsletter-popup.component';
 import { MailchimpService } from 'src/app/core/services/mailchimp.service';
 @Component({
@@ -126,11 +127,26 @@ export class HomeComponent implements OnInit {
 
   windowWidth = 0;
 
-  constructor(private dialog: MatDialog) {}
+  alreadyOpen = false;
+
+  constructor(private dialog: MatDialog, private router: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
     this.onResize;
+
+    this.router.queryParamMap.subscribe({
+      next: data => {
+        if (data.get('isFromSocial') === 'true') {
+          this.alreadyOpen = true;
+          this.openDialog();
+        }
+        else if (!this.alreadyOpen) {
+          setTimeout(() => this.openDialog(), 10000);
+          this.alreadyOpen = true;
+        }
+      }
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -140,10 +156,13 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog() {
+    this.dialog.closeAll();
+    
     const dialogRef = this.dialog.open(NewsletterPopupComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
+  
 }

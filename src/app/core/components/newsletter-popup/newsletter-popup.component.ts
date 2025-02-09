@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { MailchimpService } from '../../services/mailchimp.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import emailjs from '@emailjs/browser';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-newsletter-popup',
@@ -13,7 +12,7 @@ export class NewsletterPopupComponent {
   
   signupForm: FormGroup;
 
-  constructor(private mailchimp: MailchimpService, private http: HttpClient, private fb: FormBuilder) {
+  constructor(private mailchimp: MailchimpService, private fb: FormBuilder, private dialogRef: DialogRef<NewsletterPopupComponent>) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       firstName: ['', [Validators.required]],
@@ -22,53 +21,23 @@ export class NewsletterPopupComponent {
     });
   }
 
-  sendEmail() {
+  subscribeNewsletter() {
+    let bodyMailChimp = {
+      email: this.signupForm.value.email,
+      firstName: this.signupForm.value.firstName,
+      lastName: this.signupForm.value.lastName
+    };
+
     if (this.signupForm.valid && this.signupForm.value.isChecked) {
-      emailjs.init('HqwUL4sxAROmfcBKk');
-      emailjs.send("service_k06ov0z","template_93xhr9m",{
-        to_name: "Alif story",
-        from_first_name: this.signupForm.value.firstName,
-        from_last_name: this.signupForm.value.lastName,
-        from_email: this.signupForm.value.email,
+      this.mailchimp.subscribeToNewsletter(bodyMailChimp).subscribe({
+        next: () => {
+          this.dialogRef.close();
+        }
       });
     } else {
-      this.signupForm.markAsDirty();
+      this.signupForm.markAllAsTouched();
     }
   }
 
-  subscribeNewsletter() {
-    let bodyMailChimp = {
-      email_address: this.signupForm.value.email,
-      status: 'subscribed',
-      language: 'FR',
-      merge_fields: {
-        FNAME: this.signupForm.value.firstName,
-        LNAME: this.signupForm.value.lastName
-      }
-    };
-
-    this.mailchimp.subscribeToNewsletter(bodyMailChimp).subscribe();
-  }
-
-  subscribeUser() {
-    if (this.signupForm.invalid) return;
-    const mailchimpUrl = 'https://alifstory.us19.list-manage.com/subscribe/post?u=0046a81f00298c470c5a91ecf&id=130c1c99c0&f_id=00ed72e7f0'; 
-
-    let bodyMailChimp = {
-      email_address: this.signupForm.value.email,
-      status: 'subscribed',
-      language: 'FR',
-      merge_fields: {
-        FNAME: this.signupForm.value.firstName,
-        LNAME: this.signupForm.value.lastName
-      }
-    };
-
-
-    this.http.post(mailchimpUrl, bodyMailChimp, {
-      headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': '*' }),
-      responseType: 'text',
-    }).subscribe();
-  }
-
+  
 }
