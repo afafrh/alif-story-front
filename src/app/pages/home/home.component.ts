@@ -12,36 +12,36 @@ import { MailchimpService } from 'src/app/core/services/mailchimp.service';
 export class HomeComponent implements OnInit {
   elements = [{
     title: "Un environnement apprenant",
-    description: "Ubiquitous models rather than parallel initiatives. Seamlessly reinvent success.",
+    description: "Conçue pour susciter l’intérêt, la curiosité et l’émerveillement.",
     img: "../../../assets/images/home/pencil_stars.svg",
     width: "5rem"
   }, {
     title: "Des récits authentiques",
-    description: "Ubiquitous models rather than parallel initiatives. Seamlessly reinvent success.",
+    description: "Offrir à nos enfants la possibilité d’explorer les récits authentiques de nos prophètes selon une méthodologie rigoureuse.",
     img: "../../../assets/images/home/globe.svg",
     width: "6rem"
   }, {
     title: "L'ancrage dans nos valeurs",
-    description: "Ubiquitous models rather than parallel initiatives. Seamlessly reinvent success.",
+    description: "Des ressources qui renforcent et préservent les valeurs fondamentales de l’Islam.",
     img: "../../../assets/images/home/pyramids.svg",
     width: "7rem"
   }, {
     title: "Un accompagnement éducatif complet",
-    description: "Ubiquitous models rather than parallel initiatives. Seamlessly reinvent success.",
+    description: "En plus des récits, des livrets pédagogiques qui favorisent le développement coginitif.",
     img: "../../../assets/images/home/kaaba.svg",
     width: "4rem"
   }];
 
   widgets = [{
-    title: "47 récits",
-    src: "../../../assets/images/icons/vocabulary.svg",
+    title: "4 univers",
+    src: "../../../assets/images/icons/moon.svg",
     isLastOne: false,
     type: "content"
   }, {
     type: "separator"
   }, {
-    title: "7 prophètes",
-    src: "../../../assets/images/icons/moon.svg",
+    title: "80 épisodes",
+    src: "../../../assets/images/icons/vocabulary.svg",
     isLastOne: false,
     type: "content"
   }, {

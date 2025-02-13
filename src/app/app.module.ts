@@ -43,6 +43,7 @@ import { CarouselCardComponent } from './pages/about-us/carousel-card/carousel-c
 import { CarouselComponent } from './pages/about-us/carousel/carousel.component';
 import { HeroComponent } from './pages/about-us/hero/hero.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { SliderComponent } from './pages/home/slider/slider.component';
     CarouselComponent,
     HeroComponent,
     SliderComponent,
+    ComingSoonComponent,
   ],
   imports: [
     AppRoutingModule,
