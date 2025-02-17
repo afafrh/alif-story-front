@@ -6,20 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class MailchimpService {
 
-  apiKey = "74276f113e6d17aa45f353077bbab2d2-us19";
-
-  baseUrl = "https://us19.api.mailchimp.com/3.0/lists/130c1c99c0/members";
-  
-  headers = new HttpHeaders({
-    'Content-type': 'application/json',
-    'Authorization': 'Bearer ' + this.apiKey,
-    'Access-Control-Allow-Origin': '*'
-  });
+  baseUrl = "https://alif-story-services.onrender.com/api/subscribe";
 
   
   constructor(private httpClient: HttpClient) { }
   
   subscribeToNewsletter(body: any) {
-    return this.httpClient.post(this.baseUrl, body, { headers: this.headers })
+    return this.httpClient.post(this.baseUrl, body)
   }
 }
