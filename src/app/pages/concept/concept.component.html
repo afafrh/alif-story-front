@@ -1,0 +1,49 @@
+<div class="alif-concept">
+  <section>
+    <alif-header></alif-header>
+  </section>
+
+  <section>
+    <div class="hero" data-aos="fade-up" data-aos-duration="2000">
+      <div class="img">
+        <img
+          src="../../../assets/images/home/boitier-new.svg"
+          class="boite-img"
+          alt=""
+          *ngIf="windowWidth > 768"
+        />
+      </div>
+      <div class="content">
+        <h2>le concept</h2>
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore.
+          </p>
+          <div class="audio-extrait">
+            <p>écouter un extrait</p>
+            <img src="../../../assets/images/icons/audio-dark.svg" alt="" />
+          </div>
+        </div>
+        <div class="btns">
+          <alif-primary-button
+            [btnText]="'70€&nbsp;&nbsp;<s>85€</s>'"
+          ></alif-primary-button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <img
+      src="assets/images/about-us/news-card-3.jpeg"
+      alt="Background Image"
+      class="background-img"
+    />
+    <button class="play-button">
+      <svg viewBox="0 0 59.15 68.15" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,0 59.15,34.07 0,68.15" fill="white" />
+      </svg>
+    </button>
+  </section>
+</div>
