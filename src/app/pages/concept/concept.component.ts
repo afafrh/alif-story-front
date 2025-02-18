@@ -8,18 +8,19 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./concept.component.scss'],
 })
 export class ConceptComponent {
-  windowWidth = 0;
+  icons = [
+    {
+      src: '../../../../assets/images/home/icon1.svg',
+      txt: 'Paiement rapide, pratique et sécurisé',
+    },
+    {
+      src: '../../../../assets/images/home/icon2.svg',
+      txt: 'Livraison rapide à partir de ?',
+    },
+    {
+      src: '../../../../assets/images/home/icon3.svg',
+      txt: 'Service client en ligne et par téléphone',
+    },
+  ];
 
-  constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {
-    this.windowWidth = window.innerWidth;
-    this.onResize;
-  }
-
-  @HostListener('window:resize', ['$event'])
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onResize(event: never) {
-    this.windowWidth = window.innerWidth;
-  }
 }

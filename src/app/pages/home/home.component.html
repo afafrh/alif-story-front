@@ -14,7 +14,9 @@
         <h2>La conteuse Alif</h2>
         <p>Voyager à travers notre Histoire & notre Héritage.</p>
         <div class="btns">
-          <alif-secondary-button btnText="En savoir plus"></alif-secondary-button>
+          <alif-secondary-button
+            btnText="En savoir plus"
+          ></alif-secondary-button>
         </div>
       </div>
     </div>
@@ -29,10 +31,11 @@
     </div>
     <div class="quote">
       <h4>
-        “Simple d’utilisation, sans onde, et conçu pour les enfants : voici comment notre conteuse rend l’apprentissage accessible et apaisant. 
-Partons ensemble à la découverte de notre histoire et de notre héritage”
+        “Simple d’utilisation, sans onde, et conçu pour les enfants : voici
+        comment notre conteuse rend l’apprentissage accessible et apaisant.
+        Partons ensemble à la découverte de notre histoire et de notre héritage”
       </h4>
-      <img src="../../../assets/images/home/taous.svg" alt="">
+      <img src="../../../assets/images/home/taous.svg" alt="" />
     </div>
     <div>
       <div class="widgets">
@@ -41,26 +44,57 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
             <img alt="" [src]="widget.src" />
             {{ widget.title }}
           </div>
-          <div *ngIf="widget.type === 'separator' && windowWidth > 768"><img src="../../../assets/images/home/separator.svg" alt=""></div>
+          <div *ngIf="widget.type === 'separator' && windowWidth > 768">
+            <img src="../../../assets/images/home/separator.svg" alt="" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <div class="for-you">
-    <h1>Les 5 raisons d’adopter Alif : </h1>
+    <h1>Les 5 raisons d’adopter Alif :</h1>
     <div class="container">
       <div class="list">
         <div class="bullets">
-          <p><img src="../../../assets/images/home/bullet.svg"><b>Des histoires inspirantes :</b> soigneusement sélectionnées pour offrir aux enfants des récits imprégnés de sagesse.</p>
-          <p><img src="../../../assets/images/home/bullet.svg"><b>Sans ondes :</b> une alternative saine aux écrans favorisant ainsi l’imagination, la concentration, la détente...</p>
+          <p>
+            <img src="../../../assets/images/home/bullet.svg" /><b
+              >Des histoires inspirantes :</b
+            >
+            soigneusement sélectionnées pour offrir aux enfants des récits
+            imprégnés de sagesse.
+          </p>
+          <p>
+            <img src="../../../assets/images/home/bullet.svg" /><b
+              >Sans ondes :</b
+            >
+            une alternative saine aux écrans favorisant ainsi l’imagination, la
+            concentration, la détente...
+          </p>
         </div>
         <div class="bullets">
-          <p><img src="../../../assets/images/home/bullet.svg"><b>Un expérience sonore immersive :</b> grâce à des effets sonores et une narration dynamique, chaque histoire prend vie.</p>
-          <p><img src="../../../assets/images/home/bullet.svg"><b>Un outil divertissant et éducatif :</b> apprendre tout en s’amusant afin d’éveiller la curiosité de nos enfants autour de notre riche histoire.</p>
+          <p>
+            <img src="../../../assets/images/home/bullet.svg" /><b
+              >Un expérience sonore immersive :</b
+            >
+            grâce à des effets sonores et une narration dynamique, chaque
+            histoire prend vie.
+          </p>
+          <p>
+            <img src="../../../assets/images/home/bullet.svg" /><b
+              >Un outil divertissant et éducatif :</b
+            >
+            apprendre tout en s’amusant afin d’éveiller la curiosité de nos
+            enfants autour de notre riche histoire.
+          </p>
         </div>
         <div class="bullets">
-          <p><img src="../../../assets/images/home/bullet.svg"><b>Nomade, facile à transporter :</b> Alif vous accompagne où que vous alliez.</p>
+          <p>
+            <img src="../../../assets/images/home/bullet.svg" /><b
+              >Nomade, facile à transporter :</b
+            >
+            Alif vous accompagne où que vous alliez.
+          </p>
         </div>
       </div>
     </div>
@@ -71,11 +105,15 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
   </div>
 
   <div class="baleine">
-    <img src="../../../assets/images/home/baleine.svg" alt="" [style.margin]="'auto'">
+    <img
+      src="../../../assets/images/home/baleine.svg"
+      alt=""
+      [style.margin]="'auto'"
+    />
   </div>
   <section>
     <div class="experiences">
-      <div class="experience" *ngFor="let experience of experiences" >
+      <div class="experience" *ngFor="let experience of experiences">
         <alif-experience
           [title]="experience.title"
           [description]="experience.description"
@@ -95,55 +133,34 @@ Partons ensemble à la découverte de notre histoire et de notre héritage”
   </section>
 
   <div class="scroll-container">
-    <div class="products">
-      <h3>NOS LIVRETS PÉDAGOGIQUES</h3>
-      <div class="content">
-        <div class="product">
-          <h4>découvrir nos produits complémentaires</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <alif-primary-button
-            btnText="Découvrir →"
-          ></alif-primary-button>
-        </div>
-        <div class="product-item" *ngFor="let product of products">
-          <alif-product
-            title="{{ product.title }}"
-            description="{{ product.description }}"
-            imgPath="{{ product.imgPath }}"
-          ></alif-product>
-        </div>
-      </div>
-    </div>
-    <div class="testimonials">
-      <h3>LES FIERS TEMOIGNAGES DES PARENTS</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt.</p>
-      <div class="testimonial">
-        <alif-testimonial *ngFor="let testimonial of testimonials" [name]="testimonial.name"
-          [message]="testimonial.message" [path]="testimonial.path" [stars]="testimonial.stars" [title]="testimonial.title"
-          ></alif-testimonial>
-      </div>
-    </div>
+    <app-products />
+
+    <app-testimonials />
     <div class="last-section">
       <h1>LES QUESTIONS LES PLUS FREQUENTES</h1>
       <div class="faq-section">
         <alif-faq-card
-          *ngFor="let faq of faqs" [question]="faq.question" [answer]="faq.answer" [link]="faq.link"
+          *ngFor="let faq of faqs"
+          [question]="faq.question"
+          [answer]="faq.answer"
+          [link]="faq.link"
         ></alif-faq-card>
       </div>
 
       <div class="service-client">
         <h1>Vous n'avez pas trouvé la réponse ?</h1>
-        <alif-primary-button [btnText]="'Contacter le service client'"></alif-primary-button>
+        <alif-primary-button
+          [btnText]="'Contacter le service client'"
+        ></alif-primary-button>
       </div>
 
       <div class="icons">
         <div class="icon" *ngFor="let icon of icons">
-          <img [src]="icon.src">
+          <img [src]="icon.src" />
           <span>{{ icon.txt }}</span>
         </div>
       </div>
     </div>
     <alif-footer></alif-footer>
   </div>
-
 </div>

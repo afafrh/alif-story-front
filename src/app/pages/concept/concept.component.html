@@ -10,7 +10,6 @@
           src="../../../assets/images/home/boitier-new.svg"
           class="boite-img"
           alt=""
-          *ngIf="windowWidth > 768"
         />
       </div>
       <div class="content">
@@ -46,4 +45,44 @@
       </svg>
     </button>
   </section>
+
+  <section style="margin-top: 64px">
+    <app-uses-steps />
+  </section>
+
+  <app-products />
+
+  <section class="latest-articles-section">
+    <!-- Centered Title -->
+    <h3 class="latest-article-title">Nos derniers articles</h3>
+
+    <!-- Card Container -->
+    <div class="card-container">
+      <alif-latest-article-card
+        imageUrl="assets/images/about-us/news-card-1.jpeg"
+        title="41 récits / 7 prophètes"
+        description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  "
+      ></alif-latest-article-card>
+      <alif-latest-article-card
+        imageUrl="assets/images/about-us/news-card-2.jpeg"
+        title="3h d’écoute et sans onde"
+        description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  "
+      ></alif-latest-article-card>
+      <alif-latest-article-card
+        imageUrl="assets/images/about-us/news-card-3.jpeg"
+        title="J’enrichie mon expérience"
+        description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum  "
+      ></alif-latest-article-card>
+    </div>
+  </section>
+
+  <app-testimonials [golden]="true" />
+
+  <div class="icons">
+    <div class="icon" *ngFor="let icon of icons">
+      <img [src]="icon.src" />
+      <span>{{ icon.txt }}</span>
+    </div>
+  </div>
+  <alif-footer></alif-footer>
 </div>

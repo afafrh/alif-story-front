@@ -1,0 +1,24 @@
+<div
+  class="testimonials"
+  [ngStyle]="{
+    background: golden
+      ? 'linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%)'
+      : 'white'
+  }"
+>
+  <h3>Ils nous font confiance</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod
+    tempor incididunt.
+  </p>
+  <div class="testimonial">
+    <alif-testimonial
+      *ngFor="let testimonial of testimonials"
+      [name]="testimonial.name"
+      [message]="testimonial.message"
+      [path]="testimonial.path"
+      [stars]="testimonial.stars"
+      [title]="testimonial.title"
+    ></alif-testimonial>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+.steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.title {
+  font-size: 48px;
+  text-align: center;
+  font-family: "Belle Allure CE - Bold", serif;
+  font-weight: 700;
+  line-height: normal;
+  color: rgba(78, 81, 126, 1);
+}
+
+.circle-container {
+  position: relative;
+  width: 638px;
+  height: 640px;
+  margin: auto;
+}
+
+.circle-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.circle-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Belle Allure CE - Bold", serif;
+  color: rgba(78, 81, 126, 1);
+  max-width: 350px;
+}
+
+/* Position des 4 éléments autour du cercle */
+.item1 {
+  top: 10%;
+  left: 50%;
+  transform: translateX(50%);
+}
+.item2 {
+  top: 83%;
+  right: -30%;
+  transform: translateY(-50%);
+}
+.item3 {
+  bottom: 10%;
+  left: 5%;
+  transform: translateX(-50%);
+}
+.item4 {
+  top: 20%;
+  left: -35%;
+  transform: translateY(-50%);
+}
+
+.icon {
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Texte au centre du cercle */
+.circle-center-text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+
+  h3 {
+    font-size: 38px;
+    font-weight: bold;
+    font-family: "Belle Allure CE - Bold", serif;
+    color: rgba(78, 81, 126, 1);
+  }
+
+  p {
+    font-size: 13px;
+    font-family: "poppins", sans-serif;
+    color: rgba(78, 81, 126, 1);
+  }
+}

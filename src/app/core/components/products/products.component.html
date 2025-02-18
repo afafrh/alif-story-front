@@ -1,0 +1,22 @@
+<div class="products">
+  <h3>NOS LIVRETS PÉDAGOGIQUES</h3>
+  <div class="content">
+    <div class="product">
+      <h4>découvrir nos produits complémentaires</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <alif-primary-button btnText="Découvrir →"></alif-primary-button>
+    </div>
+    <div class="product-item" *ngFor="let product of products">
+      <alif-product
+        title="{{ product.title }}"
+        description="{{ product.description }}"
+        imgPath="{{ product.imgPath }}"
+      ></alif-product>
+    </div>
+  </div>
+</div>

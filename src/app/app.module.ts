@@ -45,6 +45,10 @@ import { HeroComponent } from './pages/about-us/hero/hero.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
 import { ConceptComponent } from './pages/concept/concept.component';
 import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+import { UsesStepsComponent } from './pages/concept/uses-steps/uses-steps.component';
+import { AppStarsComponent } from './core/components/stars/stars.component';
+import { TestimonialsComponent } from './core/components/testimonials/testimonials.component';
+import { ProductsComponent } from './core/components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,10 @@ import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
     SliderComponent,
     ConceptComponent,
     ComingSoonComponent,
+    UsesStepsComponent,
+    AppStarsComponent,
+    TestimonialsComponent,
+    ProductsComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -105,6 +105,57 @@
     height: 68.15px;
   }
 
+  .icons {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        margin: 8px;
+      }
+      span {
+        margin: 8px;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: center;
+        color: rgba(0, 53, 66, 1);
+      }
+    }
+  }
+
+  /* Latest Articles Section */
+  .latest-articles-section {
+    margin-top: 40px; /* Add space between this section and the previous one */
+    text-align: center; /* Center the title */
+    padding: 77px 131px; /* Add padding for better spacing */
+    width: 100%; /* Ensure the section takes full width */
+
+    /* Centered Title */
+    .latest-article-title {
+      font-size: 38px; /* Adjust font size as needed */
+      font-family: "Belle Allure CE - Light", sans-serif;
+      font-weight: 700;
+      margin-bottom: 20px; /* Space between title and cards */
+      line-height: 85px;
+      color: rgba(78, 81, 126, 1);
+    }
+
+    /* Card Container */
+    .card-container {
+      display: flex; /* Align cards horizontally */
+      justify-content: center; /* Center the cards horizontally */
+      gap: 74px; /* Space between cards */
+      flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+      max-width: 1200px; /* Optional: Limit the maximum width of the container */
+      width: 100%; /* Ensure the container takes full width */
+    }
+  }
+
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
@@ -131,6 +182,36 @@
           gap: 23px;
           align-items: center;
         }
+      }
+    }
+    .icons {
+      flex-wrap: wrap;
+      justify-content: center;
+      .icon {
+        width: 50%;
+        margin-bottom: 20px;
+      }
+    }
+    .testimonials {
+      margin: 32px 0px 32px 0px;
+      display: flex;
+      padding: 32px 20px 24px;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      h3 {
+        font-size: 2rem;
+        font-style: normal;
+        align-self: stretch;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .testimonial {
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px;
+        justify-content: flex-end;
+        align-items: center;
       }
     }
   }

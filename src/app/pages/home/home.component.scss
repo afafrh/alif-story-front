@@ -109,7 +109,7 @@
   .carousel {
     margin-top: 48px;
     height: 90vh;
-    background: linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #e9e2c8 0%, #ffffff 100%);
     border-radius: 28px;
   }
 
@@ -174,96 +174,9 @@
       }
     }
   }
-  .products{
-    padding: 4rem 8rem 4rem 8rem;
-    background-image: url("../../../assets/images/home/background-products.svg");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    h3 {
-      color: $dark-brown;
-      text-align: center;
-      font-family: "Letters for Learners", serif;
-      font-size: 4rem;
-      font-style: normal;
-      line-height: 25px;
-      margin-bottom: 1.5rem;
-    }
-    p {
-      font-family: "Quicksand", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 22.5px;
-      text-align: left;
-      color: rgba(0, 53, 66, 1);
-    }
-    .content{
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
-      align-items: center;
-      .product {
-        margin-left: 40px;
-        flex: 1;
-        flex-grow: 1;
-        h4 {
-          color: $dark-brown;
-          font-family: "Letters for Learners", serif;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 25px;
-          text-transform: uppercase;
-        }
-        p {
-          color: $dark-brown;
-          font-family: "Letters for Learners", serif;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
-      }
-      .product-item {
-        flex: 1;
-        flex-grow: 1;
-      }
-    }
-  }
-  .testimonials {
-    margin: 32px 0 0 0;
-    background: #fff;
-    display: flex;
-    padding: 32px 0px 56px 0px;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    h3{
-      color: rgba(78, 81, 126, 1);
-      text-align: center;
-      font-family: "Letters for Learners", serif;
-      font-size: 4rem;
-      font-style: normal;
-      line-height: 25px;
-    }
-    p {
-      color: rgba(0, 53, 66, 1);
-      font-family: "Poppins", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 27px;
-      text-align: center;
-    }
-    .testimonial{
-      display: flex;
-      padding: 0px 120px 0px 120px;
-      justify-content: flex-end;
-      align-items: center;
-    }
-  }
 
-  .last-section{
-    background: linear-gradient(180deg, #E9E2C8 0%, #FFFFFF 100%);
+  .last-section {
+    background: linear-gradient(180deg, #e9e2c8 0%, #ffffff 100%);
     margin: 4rem 0;
     h1 {
       font-family: "Letters for Learners", sans-serif;
@@ -278,7 +191,7 @@
       align-items: center;
       margin-bottom: 24px;
     }
-    .service-client{
+    .service-client {
       margin-top: 4rem;
       display: flex;
       flex-direction: column;
@@ -291,7 +204,7 @@
         color: rgba(78, 81, 126, 1);
       }
     }
-    .icons{
+    .icons {
       margin-top: 6rem;
       display: flex;
       justify-content: space-around;
@@ -302,7 +215,7 @@
         img {
           margin: 8px;
         }
-        span{
+        span {
           margin: 8px;
           font-family: "Poppins", sans-serif;
           font-size: 18px;
@@ -316,9 +229,8 @@
   }
 }
 
-
 @media (max-width: 1024px) {
-  .alif-home{
+  .alif-home {
     .hero {
       background: $light-brown;
       display: flex;
@@ -326,14 +238,14 @@
       align-items: center;
       padding: 37px 50px 75px;
       gap: 50px;
-      img{
+      img {
         width: 200px;
       }
       .content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        h2{
+        h2 {
           color: $dark-brown;
           font-family: "Belle Allure CE - Bold";
           font-size: 28px;
@@ -343,13 +255,13 @@
           align-self: stretch;
           margin-bottom: 24px;
         }
-        p{
+        p {
           font-size: 16px;
         }
         .btns {
           display: flex;
           flex-direction: column;
-          gap: 16px
+          gap: 16px;
         }
       }
     }
@@ -360,13 +272,13 @@
       margin: 25px 50px;
       gap: 24px;
     }
-    .carousel{
+    .carousel {
       height: 70%;
     }
-    .widgets{
+    .widgets {
       margin: 32px 0px;
       padding: 24px 50px;
-      background: linear-gradient(0deg, #fff -0.06%, #E9E2C8 100%);
+      background: linear-gradient(0deg, #fff -0.06%, #e9e2c8 100%);
       min-height: 300px;
       display: flex;
       flex-direction: row;
@@ -392,7 +304,8 @@
         }
         .separator {
           width: 0px;
-          border: solid 1px linear-gradient(180deg, #EAE3C9 0%, #4E517E 50.5%, #FFFFFF 100%);
+          border: solid 1px
+            linear-gradient(180deg, #eae3c9 0%, #4e517e 50.5%, #ffffff 100%);
           height: 120px;
         }
       }
@@ -400,7 +313,7 @@
     .experiences {
       margin: 1rem 0rem 3rem 0rem;
       padding: 2rem 2rem;
-      h3{
+      h3 {
         color: $dark-brown;
         text-align: center;
         font-family: "Letters for Learners";
@@ -411,71 +324,8 @@
         text-transform: uppercase;
       }
     }
-    .products{
-      padding: 32px 50px;
-      background: white;
-      h3{
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 25px;
-      }
-      .content {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-          .product{
-            margin: 3rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            flex-grow: 1;
-            text-align: center;
-            h4{
-              font-size: 20px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 25px;
-              text-transform: uppercase;
-            }
-            p{
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
-            }
-        }
-        .product-item {
-          flex: 1;
-          flex-grow: 1;
-        }
-      }
-    }
-    .testimonials {
-      margin: 32px 0px 32px 0px;
-      display: flex;
-      padding: 32px 0px 24px 0px;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      h3{
-        text-align: center;
-        font-size: 36px;
-        font-style: normal;
-        align-self: stretch;
-        font-weight: 700;
-        line-height: normal;
-      }
-      .testimonial {
-        display: flex;
-        padding: 0 50px;
-        justify-content: flex-end;
-        align-items: center;
-      }
-    }
-    .last-section{
-      .faq-section{
+    .last-section {
+      .faq-section {
         flex-wrap: wrap;
         justify-content: center;
       }
@@ -494,7 +344,7 @@
       align-items: center;
       height: auto;
       padding: 30px 20px;
-      .img{
+      .img {
         width: 100%;
         margin-bottom: 30px;
         display: flex;
@@ -504,11 +354,11 @@
           width: 180px;
         }
       }
-      .content{
+      .content {
         display: flex;
         flex-direction: column;
         text-align: center;
-        h2{
+        h2 {
           color: $dark-brown;
           font-family: "Belle Allure CE - Bold";
           font-size: 24px;
@@ -531,13 +381,13 @@
       margin: 25px 20px;
       gap: 24px;
     }
-    .carousel{
+    .carousel {
       height: 80%;
     }
-    .widgets{
+    .widgets {
       margin: 32px 0px;
       padding: 24px 20px;
-      background: linear-gradient(0deg, #FFFFFF -0.06%, #E9E2C8 100%);
+      background: linear-gradient(0deg, #ffffff -0.06%, #e9e2c8 100%);
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -547,7 +397,7 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 30px;
-        .content{
+        .content {
           padding: 10px;
           color: $dark-brown;
           font-family: "Belle Allure CE - Light";
@@ -586,80 +436,16 @@
         text-transform: uppercase;
       }
     }
-    .products{
-      padding: 32px 20px;
-      background:white;
-      h3{
-        font-size: 2rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 25px;
-        text-transform: uppercase;
-      }
-      .content {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-          .product{
-            margin: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            h4{
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 25px;
-              text-transform: uppercase;
-            }
-            p{
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: normal;
-            }
-        }
-        .product-item {
-          margin-top: 10px;
-          margin-bottom: 10px;
-          flex: 1;
-          flex-grow: 1;
-        }
-      }
-    }
-    .testimonials {
-      margin: 32px 0px 32px 0px;
-      display: flex;
-      padding: 32px 20px 24px;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      h3{
-        font-size: 2rem;
-        font-style: normal;
-        align-self: stretch;
-        font-weight: 700;
-        line-height: normal;
-      }
-      .testimonial {
-        display: flex;
-        flex-direction: column;
-        padding: 0 25px;
-        justify-content: flex-end;
-        align-items: center;
-      }
-    }
-    .last-section{
+    .last-section {
       h1 {
         margin-top: 24px;
         font-size: 24px;
         font-weight: 700;
       }
-      .icons{
+      .icons {
         flex-wrap: wrap;
         justify-content: center;
-        .icon{
+        .icon {
           width: 50%;
           margin-bottom: 20px;
         }
@@ -676,13 +462,13 @@
   // scroll-snap-stop: always;
   overflow: hidden;
 
-  .experiences{
+  .experiences {
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 2rem 1rem 2rem 1rem;
-    h3{
+    h3 {
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
