@@ -2,16 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MailchimpService {
+  baseUrl = 'https://alif-story-services.onrender.com/api/subscribe';
 
-  baseUrl = "https://alif-story-services.onrender.com/api/subscribe";
+  constructor(private httpClient: HttpClient) {}
 
-  
-  constructor(private httpClient: HttpClient) { }
-  
   subscribeToNewsletter(body: any) {
-    return this.httpClient.post(this.baseUrl, body)
+    return this.httpClient.post(this.baseUrl, body);
   }
 }
