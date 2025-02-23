@@ -175,7 +175,7 @@ export class HomeComponent implements OnInit {
     this.windowWidth = window.innerWidth;
     this.onResize;
 
-    this.router.queryParamMap.subscribe({
+    /*  this.router.queryParamMap.subscribe({
       next: (data) => {
         if (data.get('isFromSocial') === 'true') {
           this.alreadyOpen = true;
@@ -185,7 +185,7 @@ export class HomeComponent implements OnInit {
           this.alreadyOpen = true;
         }
       },
-    });
+    }); */
   }
 
   @HostListener('window:resize', ['$event'])

@@ -15,7 +15,7 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.closeAll();
-    
+
     const dialogRef = this.dialog.open(NewsletterPopupComponent);
 
     dialogRef.afterClosed().subscribe(result => {
