@@ -16,8 +16,48 @@
     </div>
 
     <div class="navbar-links">
-      <a routerLink="/concept">Concept</a>
-      <a routerLink="/about-us">Qui-sommes-nous</a>
+      <a
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Alif Story
+      </a>
+      <a
+        routerLink="/concept"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Concept
+      </a>
+      <a
+        routerLink="/about-us"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Qui-sommes-nous
+      </a>
+      <a
+        routerLink="#"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        D’autres histoires à télécharger
+      </a>
+      <a
+        routerLink="#"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Livrets pédagogiques
+      </a>
+      <a
+        routerLink="#"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        A propos d’éducation
+      </a>
     </div>
 
     <div class="navbar-icons">
@@ -33,5 +73,9 @@
   <div class="navbar-mobile-dropdown" [ngClass]="{ active: isMobileMenuOpen }">
     <a routerLink="/concept">Concept</a>
     <a routerLink="/about-us">Qui-sommes-nous</a>
+    <a routerLink="/">Alif Story</a>
+    <a routerLink="/">D’autres histoires à télécharger</a>
+    <a routerLink="/">Livrets pédagogiques</a>
+    <a routerLink="/">A propos d’éducation</a>
   </div>
 </nav>

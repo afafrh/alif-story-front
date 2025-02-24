@@ -5,7 +5,8 @@
   color: black;
   padding: 0px 46px;
   box-shadow: none;
-  height: fit-content;
+  height: 100px;
+  justify-content: center;
   .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -16,12 +17,19 @@
 
 .navbar-links {
   display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 0px 30px;
   flex-direction: row;
   gap: 20px;
   a {
     color: black;
     text-decoration: none;
   }
+}
+
+.navbar-links a.active-link {
+  border-bottom: 1.5px solid rgba(64, 58, 52, 1); /* Couleur du soulignement */
 }
 
 .navbar-icons {
@@ -63,16 +71,25 @@
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .navbar {
     padding: 0px 23px;
+    height: fit-content;
   }
 
   .navbar-logo {
     padding-left: 30px;
   }
+
   .navbar-links {
     display: none;
+    flex-grow: 0;
+    justify-content: initial;
+    padding: 0;
+  }
+
+  .navbar-links a.active-link {
+    border-bottom: none;
   }
 
   .navbar-mobile-menu {

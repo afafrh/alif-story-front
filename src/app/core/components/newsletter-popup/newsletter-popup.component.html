@@ -4,28 +4,35 @@
   </div>
   <div class="right" [formGroup]="signupForm">
     <h2>Save 10% off your purchase</h2>
-    <label for="firstName">Prénom</label>
-    <input type="text" required formControlName="firstName" name="firstName" />
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt.
+    </p>
 
-    <label for="lastName">Nom</label>
-    <input type="text" required formControlName="lastName" name="lastName" />
-
-    <label for="email">Adresse mail</label>
-    <input type="text" required formControlName="email" name="email" />
-
-    <mat-checkbox
-      [color]="'rgba(2, 129, 161, 1)'"
+    <input
+      type="text"
       required
-      [disableRipple]="false"
-      formControlName="isChecked"
-      >Je reconnais avoir lu et accepté(e) la
-      <a>politique de confidentialité</a></mat-checkbox
-    >
+      formControlName="firstName"
+      name="firstName"
+      placeholder="Prénom"
+    />
 
-    <alif-primary-button
-      btnText="Souscrire à la newsletter"
-      (click)="subscribeNewsletter()"
-    ></alif-primary-button>
+    <input
+      type="text"
+      required
+      formControlName="lastName"
+      name="lastName"
+      placeholder="Nom"
+    />
+
+    <input
+      type="text"
+      required
+      formControlName="email"
+      name="email"
+      placeholder="Adresse mail"
+    />
+    <button (click)="subscribeNewsletter()">Subscribe to the newsletter</button>
 
     <!--      <div id="mc_embed_shell">
             <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">

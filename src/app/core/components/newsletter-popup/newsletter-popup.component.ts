@@ -23,7 +23,6 @@ export class NewsletterPopupComponent {
       email: ['', [Validators.required, Validators.email]],
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      isChecked: [false, [Validators.required]],
     });
   }
 
@@ -34,7 +33,7 @@ export class NewsletterPopupComponent {
       lastName: this.signupForm.value.lastName,
     };
 
-    if (this.signupForm.valid && this.signupForm.value.isChecked) {
+    if (this.signupForm.valid && this.signupForm.dirty) {
       this.mailchimp.subscribeToNewsletter(bodyMailChimp).subscribe({
         next: () => {
           this.openDialog(
@@ -54,11 +53,7 @@ export class NewsletterPopupComponent {
       });
     } else {
       this.signupForm.markAllAsTouched();
-      this.openDialog(
-        'Veuillez remplir tous les champs et accepter les conditions',
-        false,
-        true
-      );
+      this.openDialog('Veuillez remplir tous les champs', false, true);
     }
   }
 
