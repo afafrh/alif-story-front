@@ -4,6 +4,7 @@
   flex-direction: row;
   height: 700px;
   padding: 16px 20px;
+  max-width: 1000px;
 
   .left {
     width: 50%;
@@ -39,27 +40,29 @@
       color: #3e3d3d;
       margin-bottom: 40px;
     }
-    input {
-      box-shadow: none;
-      border: none;
-      max-width: 350px;
-      height: 25px;
-      padding: 10px 24px 10px 24px;
-      gap: 10px;
-      opacity: 0px;
-      background: white;
+    form {
+      input {
+        box-shadow: none;
+        border: none;
+        max-width: 350px;
+        height: 25px;
+        padding: 10px 24px 10px 24px;
+        gap: 10px;
+        opacity: 0px;
+        background: white;
 
-      font-size: 16px;
-      border-radius: 6px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px;
-      background: rgba(217, 174, 99, 1);
-      border: none;
-      font-size: 16px;
-      color: white;
-      border-radius: 20px;
+        font-size: 16px;
+        border-radius: 6px;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px;
+        background: rgba(217, 174, 99, 1);
+        border: none;
+        font-size: 16px;
+        color: white;
+        border-radius: 20px;
+      }
     }
   }
 }
