@@ -12,32 +12,38 @@ export class StripeService {
 
   constructor(private http: HttpClient) {}
 
-  async initStripe(): Promise<Stripe | null> {
+  /** Initialize Stripe */
+  async initStripe(): Promise<Stripe> {
     if (!this.stripe) {
-      this.stripe = await loadStripe("pk_test_51QuN7TDbiVvEefs3oAAkgexLli8r8LUI3Q0JBTwToyiuPz4YzZ1C8bQdhw9tt5y3Uaw5spvDTSrayqIyCkgj8DSg00roL10vNO"); // Replace with your public key
+      const stripeInstance = await loadStripe("pk_test_51QuN7TDbiVvEefs3oAAkgexLli8r8LUI3Q0JBTwToyiuPz4YzZ1C8bQdhw9tt5y3Uaw5spvDTSrayqIyCkgj8DSg00roL10vNO"); // Replace with your public key
+      if (!stripeInstance) {
+        throw new Error("Failed to initialize Stripe");
+      }
+      this.stripe = stripeInstance;
     }
     return this.stripe;
   }
 
-  createPaymentMethod(cardElement: StripeCardElement, name: string, email: string): Observable<any> {
+  /** Create Payment Method */
+  createPaymentMethod(
+    cardElement: StripeCardElement,
+    name: string,
+    email: string
+  ): Observable<string> {
     return from(this.initStripe()).pipe(
       switchMap((stripe) => {
         if (!stripe) return throwError(() => new Error("Stripe is not initialized"));
         return from(stripe.createPaymentMethod({ 
           type: "card",
           card: cardElement,
-          billing_details: {
-            name: name,
-            email: email
-          } 
+          billing_details: { name, email }
         }));
       }),
-      switchMap(({ paymentMethod, error }) => {
-        if (error) return throwError(() => error);
-        return new Observable((observer) => {
-          observer.next(paymentMethod.id);
-          observer.complete();
-        });
+      switchMap((result) => {
+        if (result.error) {
+          return throwError(() => new Error(result.error.message));
+        }
+        return from([result.paymentMethod.id]); // Emit the paymentMethodId
       }),
       catchError((error) => {
         console.error("Payment Method Creation Error:", error);
@@ -47,8 +53,22 @@ export class StripeService {
   }
 
   /** Process Payment */
-  processPayment(paymentMethodId: string, amount: number = 7000): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { paymentMethodId, amount }).pipe(
+  processPayment(
+    paymentMethodId: string,
+    amount: number = 7000,
+    shipping: {
+      name: string;
+      address: {
+        line1: string;
+        line2?: string;
+        city: string;
+        state?: string;
+        postal_code: string;
+        country: string;
+      };
+    }
+  ): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { paymentMethodId, amount, shipping }).pipe(
       catchError((error) => {
         console.error("Payment failed", error);
         return throwError(() => error);
