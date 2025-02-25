@@ -49,6 +49,7 @@ import { UsesStepsComponent } from './pages/concept/uses-steps/uses-steps.compon
 import { AppStarsComponent } from './core/components/stars/stars.component';
 import { TestimonialsComponent } from './core/components/testimonials/testimonials.component';
 import { ProductsComponent } from './core/components/products/products.component';
+import { PaymentComponent } from './core/components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ProductsComponent } from './core/components/products/products.component
     AppStarsComponent,
     TestimonialsComponent,
     ProductsComponent,
+    PaymentComponent,
   ],
   imports: [
     AppRoutingModule,

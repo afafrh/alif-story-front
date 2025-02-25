@@ -1,9 +1,9 @@
 /* eslint-disable @angular-eslint/component-selector */
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NewsletterPopupComponent } from 'src/app/core/components/newsletter-popup/newsletter-popup.component';
-import { MailchimpService } from 'src/app/core/services/mailchimp.service';
+
 @Component({
   selector: 'alif-home',
   templateUrl: './home.component.html',
@@ -128,14 +128,15 @@ export class HomeComponent implements OnInit {
   windowWidth = 0;
 
   alreadyOpen = false;
+  willPay = false;
 
-  constructor(private dialog: MatDialog, private router: ActivatedRoute) {}
+  constructor(private dialog: MatDialog, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
     this.onResize;
 
-    this.router.queryParamMap.subscribe({
+    this.activatedRoute.queryParamMap.subscribe({
       next: data => {
         if (data.get('isFromSocial') === 'true') {
           this.alreadyOpen = true;
@@ -163,6 +164,16 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  pay() {
+    // event.preventDefault();
+    // this.stripeService.createCheckoutSession().subscribe((res) => {
+    //   console.log(res)
+    //   window.open(res.url);
+    // });
+
+    this.router.navigateByUrl("/payment");
   }
   
 }

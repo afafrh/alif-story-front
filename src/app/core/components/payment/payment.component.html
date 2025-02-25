@@ -1,0 +1,67 @@
+<div class="payment-container">
+    <form [formGroup]="paymentForm" (ngSubmit)="pay()">
+      
+      <!-- Left Column: Shipping Information -->
+      <div class="payment-card left">
+        <h2>Adresse de Livraison</h2>
+  
+        <div class="form-group">
+          <label>Nom et Prénom</label>
+          <input type="text" formControlName="fullName" placeholder="John Doe" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Adresse</label>
+          <input type="text" formControlName="address" placeholder="123 Rue de Paris" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Code Postal</label>
+          <input type="text" formControlName="zipCode" placeholder="75000" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Ville</label>
+          <input type="text" formControlName="city" placeholder="Paris" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Pays</label>
+          <mat-form-field appearance="outline">
+            <mat-select formControlName="country" required>
+              <mat-option *ngFor="let country of countries" [value]="country.value">
+                {{ country.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <!-- Right Column: Payment Details -->
+      <div class="payment-card right">
+        <h2>Paiement Sécurisé</h2>
+  
+        <div class="form-group">
+          <label>Nom du titulaire</label>
+          <input type="text" formControlName="name" placeholder="John Doe" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Adresse mail</label>
+          <input type="email" formControlName="email" placeholder="john.doe@gmail.com" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Données de paiement</label>
+          <div id="card-element"></div>
+        </div>
+  
+        <button type="submit" [disabled]="loading">Payer</button>
+  
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+  </div>
+  

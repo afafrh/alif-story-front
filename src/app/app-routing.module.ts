@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ConceptComponent } from './pages/concept/concept.component';
+import { PaymentComponent } from './core/components/payment/payment.component';
 
 const routes: Routes = [
   {path: 'concept', component: ConceptComponent}, // Route to ConceptComponent
   { path: 'about-us', component: AboutUsComponent }, // Route to AboutUsComponent
+  { path: "payment", component: PaymentComponent },
   { path: '', component: HomeComponent }, // Ensure HomeComponent is your default route
 
 ];

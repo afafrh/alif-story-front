@@ -17,8 +17,12 @@
           <alif-secondary-button
             btnText="En savoir plus"
           ></alif-secondary-button>
+          <alif-primary-button btnText="70 € &nbsp;<s>80 €</s>" (click)="pay()"></alif-primary-button>
         </div>
       </div>
+    </div>
+    <div class="payment" *ngIf="willPay">
+      <app-payment></app-payment>
     </div>
     <div class="cards">
       <alif-mini-card

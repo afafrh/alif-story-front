@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MailchimpService } from '../../services/mailchimp.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogRef } from '@angular/cdk/dialog';
+import { MailchimpService } from '../../services/mailchimp/mailchimp.service';
 
 @Component({
   selector: 'app-newsletter-popup',
@@ -39,5 +39,4 @@ export class NewsletterPopupComponent {
     }
   }
 
-  
 }
