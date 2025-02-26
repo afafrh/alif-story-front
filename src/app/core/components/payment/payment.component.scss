@@ -1,111 +1,373 @@
+// Variables to match Morphée's color scheme
+$primary-color: #2a9d8f;
+$secondary-color: #e76f51;
+$background-color: #ffffff;
+$light-bg-color: #f8f9fa;
+$text-color: #333333;
+$border-color: #e0e0e0;
+$error-color: #e74c3c;
+$success-color: #27ae60;
+
+// Mixins
+@mixin card-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@mixin input-focus {
+  border-color: $primary-color;
+  box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+}
+
+// Main container
 .payment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+  color: $text-color;
+}
+
+// Header styles
+.payment-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0;
+  }
+}
+
+// Cards container
+.payment-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+}
+
+// Card styles
+.payment-card {
+  background-color: $background-color;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  @include card-shadow;
+  
+  &.shipping-info, &.payment-info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .card-header {
+    display: flex;
     align-items: center;
-    height: 100vh;
-    background: #f4f4f4;
-    padding: 20px;
-  
-    form {
+    margin-bottom: 1.5rem;
+    
+    .icon-container {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba($primary-color, 0.1);
       display: flex;
-      gap: 2rem;
-      max-width: 900px;
-      width: 100%;
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      
+      i {
+        color: $primary-color;
+        font-size: 1.2rem;
+      }
     }
+    
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      color: $text-color;
+    }
+  }
+}
+
+// Form styles
+.form-group {
+  margin-bottom: 1.25rem;
   
-    .payment-card {
-      flex: 1;
-      padding: 1.5rem;
-      border-radius: 8px;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+  }
   
-      &.left {
-        background: #f9f9f9;
-        border-right: 2px solid #e0e0e0;
+  input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      @include input-focus;
+    }
+    
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+  
+  // Style for Material form field
+  mat-form-field {
+    width: 100%;
+    
+    ::ng-deep {
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
       }
-  
-      &.right {
-        background: white;
+      
+      .mat-form-field-outline {
+        color: $border-color;
       }
-  
-      h2 {
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-        color: #333;
-        text-align: center;
+      
+      .mat-form-field-outline-thick {
+        color: $primary-color;
       }
-  
-      .form-group {
-        margin-bottom: 1rem;
-  
-        label {
-          display: block;
-          font-weight: bold;
-          margin-bottom: 0.4rem;
-          color: #555;
-        }
-  
-        input {
-          width: 100%;
-          padding: 0.75rem;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-          font-size: 1rem;
-        }
-  
-        #card-element {
-          padding: 12px;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-          background: #fff;
-        }
+      
+      .mat-select-arrow {
+        color: $primary-color;
       }
+    }
+  }
+}
+
+// Form row for side-by-side inputs
+.form-row {
+  display: flex;
+  gap: 1rem;
   
-      button {
-        width: 100%;
-        padding: 0.75rem;
-        background-color: #007bff;
-        color: white;
-        font-size: 1rem;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.3s ease-in-out;
+  .form-group {
+    flex: 1;
+  }
+}
+
+// Card element container
+.card-element-container {
+  margin-bottom: 1.5rem;
   
-        &:hover {
-          background-color: #0056b3;
-        }
+  .card-element {
+    padding: 1rem;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    background-color: $light-bg-color;
+    min-height: 40px;
+  }
+}
+
+// Error messages
+.error-text {
+  color: $error-color;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.error-message {
+  background-color: rgba($error-color, 0.1);
+  color: $error-color;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
   
-        &:disabled {
-          background-color: #ccc;
-          cursor: not-allowed;
-        }
+  i {
+    margin-right: 0.5rem;
+  }
+}
+
+// Delivery info
+.delivery-info {
+  margin-top: 1.5rem;
+  background-color: $light-bg-color;
+  border-radius: 8px;
+  padding: 1rem;
+  
+  .delivery-option {
+    display: flex;
+    align-items: center;
+    
+    i {
+      color: $primary-color;
+      font-size: 1.2rem;
+      margin-right: 1rem;
+    }
+    
+    .delivery-text {
+      display: flex;
+      flex-direction: column;
+      
+      .delivery-title {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
       }
+      
+      .delivery-estimate {
+        font-size: 0.85rem;
+        color: #666;
+      }
+    }
+  }
+}
+
+// Order summary
+.order-summary {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background-color: $light-bg-color;
+  border-radius: 8px;
   
-      .error-message {
-        margin-top: 1rem;
-        color: red;
-        font-size: 0.9rem;
-        text-align: center;
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+  
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $border-color;
+    
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      
+      .product-name {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+      
+      .product-quantity {
+        font-size: 0.85rem;
+        color: #666;
+      }
+    }
+    
+    .product-price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      
+      .current-price {
+        font-weight: 600;
+        color: $primary-color;
+      }
+      
+      .original-price {
+        font-size: 0.85rem;
+        text-decoration: line-through;
+        color: #999;
       }
     }
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .payment-container {
-      form {
-        flex-direction: column;
-  
-        .payment-card {
-          &.left {
-            border-right: none;
-          }
-        }
-      }
+  .order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    
+    .total-price {
+      color: $primary-color;
+      font-size: 1.1rem;
     }
   }
+}
+
+// Secure payment info
+.secure-payment-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
   
+  i {
+    color: $success-color;
+    margin-right: 0.5rem;
+  }
+}
+
+// Pay button
+.pay-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 5%);
+  }
+  
+  &:disabled {
+    background-color: lighten($primary-color, 20%);
+    cursor: not-allowed;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      margin-right: 0.5rem;
+    }
+    
+    .spinning {
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .payment-card {
+    padding: 1.25rem;
+  }
+}

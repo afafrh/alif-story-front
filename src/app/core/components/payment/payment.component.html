@@ -1,72 +1,156 @@
 <div class="payment-container">
-    <form [formGroup]="paymentForm" (ngSubmit)="pay()">
-      
+  <div class="payment-header">
+    <h1>Finaliser votre commande</h1>
+    <p class="subtitle">Complétez vos informations pour recevoir votre produit</p>
+  </div>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="pay()">
+    <div class="payment-cards-container">
       <!-- Left Column: Shipping Information -->
-      <div class="payment-card left">
-        <h2>Adresse de Livraison</h2>
-  
-        <div class="form-group">
-          <label>Nom et Prénom</label>
-          <input type="text" formControlName="fullName" placeholder="John Doe" required />
+      <div class="payment-card shipping-info">
+        <div class="card-header">
+          <div class="icon-container">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <h2>Adresse de Livraison</h2>
         </div>
-  
+
         <div class="form-group">
-          <label>Adresse</label>
-          <input type="text" formControlName="address" placeholder="123 Rue de Paris" required />
+          <label for="fullName">Nom et Prénom</label>
+          <input type="text" id="fullName" formControlName="fullName" placeholder="John Doe" required />
+          <div *ngIf="paymentForm.get('fullName')?.invalid && paymentForm.get('fullName')?.touched" class="error-text">
+            Veuillez entrer votre nom complet
+          </div>
         </div>
-  
+
         <div class="form-group">
-          <label>Code Postal</label>
-          <input type="text" formControlName="zipCode" placeholder="75000" required />
+          <label for="address">Adresse</label>
+          <input type="text" id="address" formControlName="address" placeholder="123 Rue de Paris" required />
+          <div *ngIf="paymentForm.get('address')?.invalid && paymentForm.get('address')?.touched" class="error-text">
+            Veuillez entrer votre adresse
+          </div>
         </div>
-  
-        <div class="form-group">
-          <label>Ville</label>
-          <input type="text" formControlName="city" placeholder="Paris" required />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="zipCode">Code Postal</label>
+            <input type="text" id="zipCode" formControlName="zipCode" placeholder="75000" required />
+            <div *ngIf="paymentForm.get('zipCode')?.invalid && paymentForm.get('zipCode')?.touched" class="error-text">
+              Code postal invalide
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="city">Ville</label>
+            <input type="text" id="city" formControlName="city" placeholder="Paris" required />
+            <div *ngIf="paymentForm.get('city')?.invalid && paymentForm.get('city')?.touched" class="error-text">
+              Veuillez entrer votre ville
+            </div>
+          </div>
         </div>
-  
+
         <div class="form-group">
-          <label>Pays</label>
+          <label for="country">Pays</label>
           <mat-form-field appearance="outline">
-            <mat-select formControlName="country" required>
+            <mat-select id="country" formControlName="country" required>
               <mat-option *ngFor="let country of countries" [value]="country.value">
                 {{ country.viewValue }}
               </mat-option>
             </mat-select>
           </mat-form-field>
+          <div *ngIf="paymentForm.get('country')?.invalid && paymentForm.get('country')?.touched" class="error-text">
+            Veuillez sélectionner un pays
+          </div>
+        </div>
+
+        <div class="delivery-info">
+          <div class="delivery-option">
+            <i class="bi bi-truck"></i>
+            <div class="delivery-text">
+              <span class="delivery-title">Livraison gratuite en points relais</span>
+              <span class="delivery-estimate">Livraison estimée: 2-3 jours ouvrés</span>
+            </div>
+          </div>
         </div>
       </div>
-  
+
       <!-- Right Column: Payment Details -->
-      <div class="payment-card right">
-        <h2>Paiement Sécurisé</h2>
-  
-        <div class="form-group">
-          <label>Nom du titulaire</label>
-          <input type="text" formControlName="name" placeholder="John Doe" required />
-        </div>
-  
-        <div class="form-group">
-          <label>Téléphone</label>
-          <input type="phone" formControlName="phone" placeholder="+3300000000" required />
+      <div class="payment-card payment-info">
+        <div class="card-header">
+          <div class="icon-container">
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <h2>Paiement Sécurisé</h2>
         </div>
 
         <div class="form-group">
-          <label>Adresse mail</label>
-          <input type="email" formControlName="email" placeholder="john.doe@gmail.com" required />
+          <label for="name">Nom du titulaire</label>
+          <input type="text" id="name" formControlName="name" placeholder="John Doe" required />
+          <div *ngIf="paymentForm.get('name')?.invalid && paymentForm.get('name')?.touched" class="error-text">
+            Veuillez entrer le nom du titulaire
+          </div>
         </div>
-  
-        <div class="form-group">
-          <label>Données de paiement</label>
-          <div id="card-element"></div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" formControlName="phone" placeholder="+33 6 00 00 00 00" required />
+            <div *ngIf="paymentForm.get('phone')?.invalid && paymentForm.get('phone')?.touched" class="error-text">
+              Numéro de téléphone invalide
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Adresse mail</label>
+            <input type="email" id="email" formControlName="email" placeholder="john.doe@gmail.com" required />
+            <div *ngIf="paymentForm.get('email')?.invalid && paymentForm.get('email')?.touched" class="error-text">
+              Email invalide
+            </div>
+          </div>
         </div>
-  
-        <button type="submit" [disabled]="loading">Payer</button>
-  
+
+        <div class="form-group card-element-container">
+          <label for="card-element">Données de paiement</label>
+          <div id="card-element" class="card-element"></div>
+          <div id="card-errors" class="error-text" role="alert"></div>
+        </div>
+
+        <div class="order-summary">
+          <h3>Récapitulatif</h3>
+          <div class="product-item">
+            <div class="product-info">
+              <span class="product-name">Totem - 160 jeux ludiques</span>
+              <span class="product-quantity">Quantité: 1</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">44,95 €</span>
+              <span class="original-price">59,95 €</span>
+            </div>
+          </div>
+          <div class="order-total">
+            <span>Total</span>
+            <span class="total-price">44,95 €</span>
+          </div>
+        </div>
+
+        <div class="secure-payment-info">
+          <i class="bi bi-shield-lock"></i>
+          <span>Paiement 100% sécurisé</span>
+        </div>
+
+        <button type="submit" [disabled]="loading || paymentForm.invalid" class="pay-button">
+          <span *ngIf="!loading">Payer maintenant</span>
+          <span *ngIf="loading" class="loading-spinner">
+            <i class="bi bi-arrow-repeat spinning"></i>
+            Traitement en cours...
+          </span>
+        </button>
+
         <div *ngIf="errorMessage" class="error-message">
+          <i class="bi bi-exclamation-circle"></i>
           {{ errorMessage }}
         </div>
       </div>
-    </form>
-  </div>
-  
+    </div>
+  </form>
+</div>
