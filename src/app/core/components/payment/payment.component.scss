@@ -1,21 +1,9 @@
-// Variables to match Morphée's color scheme
-$primary-color: #2a9d8f;
-$secondary-color: #e76f51;
-$background-color: #ffffff;
-$light-bg-color: #f8f9fa;
-$text-color: #333333;
-$border-color: #e0e0e0;
-$error-color: #e74c3c;
-$success-color: #27ae60;
-
 // Mixins
 @mixin card-shadow {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 @mixin input-focus {
-  border-color: $primary-color;
-  box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
 }
 
 // Main container
@@ -24,7 +12,6 @@ $success-color: #27ae60;
   margin: 0 auto;
   padding: 2rem 1rem;
   font-family: 'Poppins', 'Helvetica Neue', sans-serif;
-  color: $text-color;
 }
 
 // Header styles
@@ -36,7 +23,6 @@ $success-color: #27ae60;
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: $text-color;
   }
   
   .subtitle {
@@ -59,7 +45,6 @@ $success-color: #27ae60;
 
 // Card styles
 .payment-card {
-  background-color: $background-color;
   border-radius: 12px;
   padding: 1.5rem;
   flex: 1;
@@ -79,14 +64,12 @@ $success-color: #27ae60;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: rgba($primary-color, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 1rem;
       
       i {
-        color: $primary-color;
         font-size: 1.2rem;
       }
     }
@@ -95,7 +78,6 @@ $success-color: #27ae60;
       font-size: 1.25rem;
       font-weight: 600;
       margin: 0;
-      color: $text-color;
     }
   }
 }
@@ -115,7 +97,7 @@ $success-color: #27ae60;
   input {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid $border-color;
+    border: 1px solid black;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.2s ease;
@@ -140,16 +122,15 @@ $success-color: #27ae60;
       }
       
       .mat-form-field-outline {
-        color: $border-color;
       }
       
-      .mat-form-field-outline-thick {
-        color: $primary-color;
-      }
+      // .mat-form-field-outline-thick {
+      //   color: ;
+      // }
       
-      .mat-select-arrow {
-        color: $primary-color;
-      }
+      // .mat-select-arrow {
+      //   color: ;
+      // }
     }
   }
 }
@@ -170,23 +151,19 @@ $success-color: #27ae60;
   
   .card-element {
     padding: 1rem;
-    border: 1px solid $border-color;
+    border: 1px solid;
     border-radius: 8px;
-    background-color: $light-bg-color;
     min-height: 40px;
   }
 }
 
 // Error messages
 .error-text {
-  color: $error-color;
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
 
 .error-message {
-  background-color: rgba($error-color, 0.1);
-  color: $error-color;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   margin-top: 1rem;
@@ -201,7 +178,6 @@ $success-color: #27ae60;
 // Delivery info
 .delivery-info {
   margin-top: 1.5rem;
-  background-color: $light-bg-color;
   border-radius: 8px;
   padding: 1rem;
   
@@ -210,7 +186,6 @@ $success-color: #27ae60;
     align-items: center;
     
     i {
-      color: $primary-color;
       font-size: 1.2rem;
       margin-right: 1rem;
     }
@@ -236,14 +211,12 @@ $success-color: #27ae60;
 .order-summary {
   margin: 1.5rem 0;
   padding: 1.25rem;
-  background-color: $light-bg-color;
   border-radius: 8px;
   
   h3 {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: $text-color;
   }
   
   .product-item {
@@ -252,7 +225,7 @@ $success-color: #27ae60;
     align-items: center;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid;
     
     .product-info {
       display: flex;
@@ -276,7 +249,6 @@ $success-color: #27ae60;
       
       .current-price {
         font-weight: 600;
-        color: $primary-color;
       }
       
       .original-price {
@@ -293,7 +265,6 @@ $success-color: #27ae60;
     font-weight: 600;
     
     .total-price {
-      color: $primary-color;
       font-size: 1.1rem;
     }
   }
@@ -309,7 +280,6 @@ $success-color: #27ae60;
   font-size: 0.9rem;
   
   i {
-    color: $success-color;
     margin-right: 0.5rem;
   }
 }
@@ -318,7 +288,6 @@ $success-color: #27ae60;
 .pay-button {
   width: 100%;
   padding: 1rem;
-  background-color: $primary-color;
   color: white;
   border: none;
   border-radius: 8px;
@@ -328,11 +297,9 @@ $success-color: #27ae60;
   transition: background-color 0.2s ease;
   
   &:hover {
-    background-color: darken($primary-color, 5%);
   }
   
   &:disabled {
-    background-color: lighten($primary-color, 20%);
     cursor: not-allowed;
   }
   
