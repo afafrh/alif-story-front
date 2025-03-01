@@ -1,5 +1,8 @@
+<!-- Updated card template with image container -->
 <div class="card">
-  <img [src]="img" [style.width]="width" />
+  <div class="image-container">
+    <img [src]="img" />
+  </div>
   <h1>{{ title }}</h1>
   <p>{{ description }}</p>
 </div>

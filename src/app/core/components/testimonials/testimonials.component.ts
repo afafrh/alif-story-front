@@ -11,7 +11,7 @@ export class TestimonialsComponent {
   testimonials = [
     {
       title: 'LOREM IPSUM',
-      name: 'Maman de Sofian',
+      name: '● Maman de Sofian',
       message:
         'Un cadeau parfait pour un enfant, cette boite est magnifique et ludique à la fois, un vrai plaisir !',
       path: '../../../../assets/images/home/testimonial.jpg',
@@ -19,7 +19,7 @@ export class TestimonialsComponent {
     },
     {
       title: 'LOREM IPSUM',
-      name: 'Papa de Théo',
+      name: '● Papa de Théo',
       message:
         'Un cadeau parfait pour un enfant, cette boite est magnifique et ludique à la fois, un vrai plaisir !',
       path: '../../../../assets/images/home/testimonial.jpg',

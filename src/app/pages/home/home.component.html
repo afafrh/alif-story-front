@@ -1,152 +1,140 @@
 <div class="alif-home">
-  <section>
-    <alif-header></alif-header>
-    <div class="hero" data-aos="fade-up" data-aos-duration="2000">
-      <div class="img">
-        <img
-          src="../../../assets/images/home/boitier-new.svg"
-          class="boite-img"
-          alt=""
-        />
-      </div>
-      <div class="content">
-        <h2>La conteuse Alif</h2>
-        <p>Voyager à travers notre Histoire & notre Héritage.</p>
-        <div class="btns">
-          <alif-secondary-button
-            btnText="En savoir plus"
-          ></alif-secondary-button>
+  <!-- Loader overlay -->
+  <div class="loader-container" *ngIf="isLoading">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Main content - will be visible when isLoading is false -->
+  <div [ngClass]="{ 'content-hidden': isLoading }">
+    <section>
+      <alif-header></alif-header>
+      <div class="hero" data-aos="fade-up" data-aos-duration="2000">
+        <div class="img">
+          <button (click)="precommand()">
+            <img [src]="getBoiteImage()" class="boite-img" alt="" />
+          </button>
         </div>
       </div>
-    </div>
-    <div class="cards">
-      <alif-mini-card
-        *ngFor="let element of elements"
-        title="{{ element.title }}"
-        description="{{ element.description }}"
-        img="{{ element.img }}"
-        width="{{ element.width }}"
-      ></alif-mini-card>
-    </div>
-    <div class="quote">
-      <h4>
-        “Simple d’utilisation, sans onde, et conçu pour les enfants : voici
-        comment notre conteuse rend l’apprentissage accessible et apaisant.
-        Partons ensemble à la découverte de notre histoire et de notre héritage”
-      </h4>
-      <img src="../../../assets/images/home/taous.svg" alt="" />
-    </div>
-    <div>
-      <div class="widgets">
-        <div class="widget" *ngFor="let widget of widgets">
-          <div *ngIf="widget.type === 'content'" class="content">
-            <img alt="" [src]="widget.src" />
-            {{ widget.title }}
-          </div>
-          <div *ngIf="widget.type === 'separator' && windowWidth > 768">
-            <img src="../../../assets/images/home/separator.svg" alt="" />
+      <div class="cards">
+        <alif-mini-card
+          *ngFor="let element of elements"
+          title="{{ element.title }}"
+          description="{{ element.description }}"
+          img="{{ element.img }}"
+          width="{{ element.width }}"
+        ></alif-mini-card>
+      </div>
+      <div class="quote">
+        <h1>
+          "Simple d'utilisation, sans onde, et conçu pour les enfants : voici
+          comment notre conteuse rend l'apprentissage accessible et apaisant.
+          Partons ensemble à la découverte de notre histoire et de notre
+          héritage"
+        </h1>
+        <img src="../../../assets/images/home/taous.svg" alt="" />
+      </div>
+      <div>
+        <div class="widgets">
+          <div class="widget" *ngFor="let widget of widgets">
+            <div *ngIf="widget.type === 'content'" class="content">
+              <img alt="" [src]="widget.src" />
+              {{ widget.title }}
+            </div>
+            <div *ngIf="widget.type === 'separator' && windowWidth > 768">
+              <img src="../../../assets/images/home/separator.svg" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="for-you">
-    <h1>Les 5 raisons d’adopter Alif :</h1>
-    <div class="container">
-      <div class="list">
-        <div class="bullets">
-          <p>
-            <b>Des histoires inspirantes :</b> soigneusement sélectionnées pour
-            offrir aux enfants des récits imprégnés de sagesse.
-          </p>
-          <p>
-            <b>Sans ondes :</b> une alternative saine aux écrans favorisant
-            ainsi l’imagination, la concentration, la détente...
-          </p>
-        </div>
-        <div class="bullets">
-          <p>
-            <b>Une expérience sonore immersive :</b> grâce à des effets sonores
-            et une narration dynamique, chaque histoire prend vie.
-          </p>
-          <p>
-            <b>Un outil divertissant et éducatif :</b> apprendre tout en
-            s’amusant afin d’éveiller la curiosité de nos enfants autour de
-            notre riche histoire.
-          </p>
-        </div>
-        <div class="last-item bullets">
-          <p>
-            <b>Nomade, facile à transporter :</b> Alif vous accompagne où que
-            vous alliez.
-          </p>
+    <div class="for-you">
+      <h1>Alif Story est fait pour vous si</h1>
+      <div class="container">
+        <div class="list">
+          <div class="bullets">
+            <p>
+              Vous vous sentez démunie face aux crises de colère de votre enfant
+            </p>
+            <p>
+              Vous aimeriez récupérer vos soirées et que le coucher soit plus
+              serein et rapide
+            </p>
+          </div>
+          <div class="bullets">
+            <p>Vous voulez que votre enfant ait confiance en lui</p>
+            <p>
+              Vous avez besoin d'un super partenaire pour vous épauler dans les
+              situations du quotidien : repas, habillage, lavage de nez, pot...
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="carousel">
-    <alif-slider></alif-slider>
-  </div>
-
-  <div class="baleine">
-    <img
-      src="../../../assets/images/home/baleine.svg"
-      alt=""
-      [style.margin]="'auto'"
-    />
-  </div>
-  <section>
-    <div class="experiences">
-      <div class="experience" *ngFor="let experience of experiences">
-        <alif-experience
-          [title]="experience.title"
-          [description]="experience.description"
-          [path]="experience.path"
-          [number]="experience.number"
-          [direction]="experience.direction"
-          *ngIf="windowWidth > 768"
-        ></alif-experience>
-        <alif-experience
-          title="{{ experience.title }}"
-          description="{{ experience.description }}"
-          path="{{ experience.path }}"
-          *ngIf="windowWidth <= 768"
-        ></alif-experience>
-      </div>
+    <div class="carousel">
+      <alif-slider></alif-slider>
     </div>
-  </section>
 
-  <div class="scroll-container">
-    <app-products />
-
-    <app-testimonials />
-    <div class="last-section">
-      <h1>LES QUESTIONS LES PLUS FREQUENTES</h1>
-      <div class="faq-section">
-        <alif-faq-card
-          *ngFor="let faq of faqs"
-          [question]="faq.question"
-          [answer]="faq.answer"
-          [link]="faq.link"
-        ></alif-faq-card>
-      </div>
-
-      <div class="service-client">
-        <h1>Vous n'avez pas trouvé la réponse ?</h1>
-        <alif-primary-button
-          [btnText]="'Contacter le service client'"
-        ></alif-primary-button>
-      </div>
-
-      <div class="icons">
-        <div class="icon" *ngFor="let icon of icons">
-          <img [src]="icon.src" />
-          <span>{{ icon.txt }}</span>
+    <div class="baleine">
+      <img
+        src="../../../assets/images/home/baleine.svg"
+        alt=""
+        [style.margin]="'auto'"
+      />
+    </div>
+    <section>
+      <div class="experiences">
+        <div class="experience" *ngFor="let experience of experiences">
+          <alif-experience
+            [title]="experience.title"
+            [description]="experience.description"
+            [path]="experience.path"
+            [number]="experience.number"
+            [direction]="experience.direction"
+            *ngIf="windowWidth > 768"
+          ></alif-experience>
+          <alif-experience
+            title="{{ experience.title }}"
+            description="{{ experience.description }}"
+            path="{{ experience.path }}"
+            [number]="experience.number"
+            *ngIf="windowWidth <= 768"
+          ></alif-experience>
         </div>
       </div>
+    </section>
+
+    <div class="scroll-container">
+      <app-products />
+
+      <app-testimonials />
+      <div class="last-section">
+        <h1>LES QUESTIONS LES PLUS FREQUENTES</h1>
+        <div class="faq-section">
+          <alif-faq-card
+            *ngFor="let faq of faqs"
+            [question]="faq.question"
+            [answer]="faq.answer"
+            [link]="faq.link"
+          ></alif-faq-card>
+        </div>
+
+        <div class="service-client">
+          <h1>Vous n'avez pas trouvé la réponse ?</h1>
+          <alif-primary-button
+            [btnText]="'Contacter le service client'"
+          ></alif-primary-button>
+        </div>
+
+        <div class="icons">
+          <div class="icon" *ngFor="let icon of icons">
+            <img [src]="icon.src" />
+            <span>{{ icon.txt }}</span>
+          </div>
+        </div>
+      </div>
+      <alif-footer></alif-footer>
     </div>
-    <alif-footer></alif-footer>
   </div>
 </div>

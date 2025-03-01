@@ -1,23 +1,23 @@
 @import "../../../styles.scss";
 .alif-home {
   .hero {
-    background-image: url("../../../assets/images/home/background.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 38px 120px 87px 120px;
-    gap: 100px;
-    height: 80vh;
+    height: max-content;
+    button {
+      border: none;
+      padding: 0px;
+      margin: 0px;
+    }
     .img {
-      width: 50%;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       img {
-        width: 360px;
+        width: 100%;
+        height: 100%;
       }
     }
     .content {
@@ -46,21 +46,23 @@
     }
   }
   .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    margin: 50px 100px;
-    gap: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 4rem;
   }
   .quote {
     display: flex;
     flex-direction: column;
     padding: 40px 40px 0px 40px;
-    h4 {
+    h1 {
       font-family: "Belle Allure CE - Light", sans-serif;
-      text-align: center;
-      line-height: 3rem;
       margin: 2rem 4rem 8rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 54px;
+      text-align: center;
+      color: #003542;
     }
     img {
       height: 25%;
@@ -83,15 +85,15 @@
       display: flex;
       flex-direction: row;
       .content {
-        color: $dark-brown;
-        font-family: "Poppins", sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
         text-align: center;
-        line-height: normal;
         display: flex;
         flex-direction: column;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        color: rgba(78, 81, 126, 1);
         img {
           margin: auto;
           margin-bottom: 24px;
@@ -107,10 +109,13 @@
   }
 
   .carousel {
-    margin-top: 48px;
-    height: 90vh;
-    background: linear-gradient(180deg, #e9e2c8 0%, #ffffff 100%);
-    border-radius: 28px;
+    width: 100%;
+    min-height: 700px;
+    background-image: url("../../../assets/images/home/rectangle-back2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-top: 4rem;
   }
 
   .baleine {
@@ -120,10 +125,12 @@
     margin: 0px 48px 48px 48px;
   }
   .experiences {
+    height: auto;
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    padding: 2rem 15rem 2rem 15rem;
+    justify-content: space-around;
+    padding: 2rem 14rem;
+    gap: 6rem;
     h3 {
       color: $dark-brown;
       text-align: center;
@@ -139,12 +146,13 @@
   .for-you {
     padding: 0 48px;
     font-size: 22px;
+    padding-bottom: 2rem;
 
     h1 {
       text-align: center;
       font-family: "Belle Allure CE - Bold";
       font-size: 32px;
-      color: rgba(163, 102, 55, 1);
+      color: rgb(78, 81, 126);
       line-height: 70px;
     }
 
@@ -161,28 +169,35 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      padding: 3rem 0;
     }
 
     .list {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 3rem;
       width: 100%;
       margin-top: 30px;
     }
 
     .bullets {
-      width: calc(50% - 10px);
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
     }
 
     .bullets p {
       position: relative;
       padding-left: 40px;
       margin: 10px 0;
-      font-size: 16px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 33px;
+      color: #003542;
+      width: calc(50%);
     }
 
     .bullets p::before {
@@ -192,7 +207,7 @@
       top: 50%;
       width: 20px;
       height: 20px;
-      background-color: rgba(163, 102, 55, 1);
+      background-color: rgba(78, 81, 126, 1);
       border-radius: 50%;
       transform: translateY(-50%);
     }
@@ -206,22 +221,6 @@
     .last-item p::before {
       background-color: rgba(78, 81, 126, 1);
     }
-
-    @media (max-width: 768px) {
-      .list {
-        font-size: 18px;
-        flex-direction: column;
-      }
-      .bullets {
-        width: 100%;
-      }
-
-      .last-item p {
-        text-align: start;
-
-        max-width: 100%;
-      }
-    }
   }
   //
 
@@ -229,11 +228,14 @@
     background: linear-gradient(180deg, #e9e2c8 0%, #ffffff 100%);
     margin: 4rem 0;
     h1 {
-      font-family: "Letters for Learners", sans-serif;
-      font-size: 4rem;
+      font-style: normal;
+      font-family: "Belle Allure CM - Light";
+      font-weight: 700;
+      font-size: 42px;
+      color: rgb(78, 81, 126);
       text-align: center;
       text-transform: uppercase;
-      color: rgba(78, 81, 126, 1);
+      padding-top: 4rem;
     }
     .faq-section {
       display: flex;
@@ -246,22 +248,28 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 4rem;
       h1 {
-        font-family: "Letters for Learners", sans-serif;
-        font-size: 5rem;
+        font-style: normal;
+        font-family: "Belle Allure CM - Light";
+        font-weight: 700;
+        font-size: 42px;
+        color: rgb(78, 81, 126);
         text-align: center;
         text-transform: uppercase;
-        color: rgba(78, 81, 126, 1);
+        padding-top: 4rem;
       }
     }
     .icons {
       margin-top: 6rem;
       display: flex;
       justify-content: space-around;
+      margin-bottom: 8rem;
       .icon {
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 260px;
         img {
           margin: 8px;
         }
@@ -282,11 +290,9 @@
 @media (max-width: 1024px) {
   .alif-home {
     .hero {
-      background: $light-brown;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 37px 50px 75px;
       gap: 50px;
       img {
         width: 200px;
@@ -362,7 +368,7 @@
     }
     .experiences {
       margin: 1rem 0rem 3rem 0rem;
-      padding: 2rem 2rem;
+      padding: 2rem 2rem !important;
       h3 {
         color: $dark-brown;
         text-align: center;
@@ -387,13 +393,12 @@
   .alif-home {
     height: 100vh;
     .hero {
-      background: $light-brown;
+      background: none;
       padding: 0px;
       height: 256px;
       flex-direction: column;
       align-items: center;
       height: auto;
-      padding: 30px 20px;
       .img {
         width: 100%;
         margin-bottom: 30px;
@@ -429,8 +434,68 @@
       margin: 25px 20px;
       gap: 24px;
     }
+    .quote {
+      padding: 0;
+      h1 {
+        font-family: "Belle Allure CE - Light", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 2.8;
+        text-align: center;
+        color: #003542;
+      }
+      img {
+        height: 42%;
+        width: 62%;
+        margin: auto;
+        z-index: 1000;
+        margin-bottom: -60px;
+      }
+    }
     .carousel {
-      height: 80%;
+      height: 50%;
+    }
+    .for-you {
+      h1 {
+        font-size: 25px;
+      }
+      .container {
+        padding: 0rem 0;
+        .list {
+          gap: 0;
+          .bullets {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            p {
+              position: relative;
+              padding-left: 40px;
+              margin: 10px 0;
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 33px;
+              color: #003542;
+              width: 100%;
+            }
+          }
+
+          .bullets p::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(78, 81, 126, 1);
+            border-radius: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
     }
     .widgets {
       margin: 32px 0px;
@@ -487,8 +552,10 @@
     .last-section {
       h1 {
         margin-top: 24px;
-        font-size: 24px;
+        line-height: 1.7;
         font-weight: 700;
+        text-transform: lowercase;
+        margin-bottom: 3rem;
       }
       .icons {
         flex-wrap: wrap;
@@ -515,7 +582,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 6rem 14rem;
+    gap: 6rem;
     h3 {
       font-size: 24px;
       font-style: normal;
@@ -528,4 +596,62 @@
 alif-header,
 alif-footer {
   margin: 0;
+}
+
+.loader-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    --R: 30px;
+    --g1: #514b82 96%, #0000;
+    --g2: #eeeeee 96%, #0000;
+    width: calc(2 * var(--R));
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    -webkit-mask: linear-gradient(#000 0 0);
+    animation: l30 2s infinite linear;
+  }
+  .loader::before,
+  .loader::after {
+    content: "";
+    grid-area: 1/1;
+    width: 50%;
+    background: radial-gradient(farthest-side, var(--g1))
+        calc(var(--R) + 0.866 * var(--R) - var(--R))
+        calc(var(--R) - 0.5 * var(--R) - var(--R)),
+      radial-gradient(farthest-side, var(--g1))
+        calc(var(--R) + 0.866 * var(--R) - var(--R))
+        calc(var(--R) - 0.5 * var(--R) - var(--R)),
+      radial-gradient(farthest-side, var(--g2))
+        calc(var(--R) + 0.5 * var(--R) - var(--R))
+        calc(var(--R) - 0.866 * var(--R) - var(--R)),
+      radial-gradient(farthest-side, var(--g1)) 0 calc(-1 * var(--R)),
+      radial-gradient(farthest-side, var(--g2))
+        calc(var(--R) - 0.5 * var(--R) - var(--R))
+        calc(var(--R) - 0.866 * var(--R) - var(--R)),
+      radial-gradient(farthest-side, var(--g1))
+        calc(var(--R) - 0.866 * var(--R) - var(--R))
+        calc(var(--R) - 0.5 * var(--R) - var(--R)),
+      radial-gradient(farthest-side, var(--g2)) calc(-1 * var(--R)) 0,
+      radial-gradient(farthest-side, var(--g1))
+        calc(var(--R) - 0.866 * var(--R) - var(--R))
+        calc(var(--R) + 0.5 * var(--R) - var(--R));
+    background-size: calc(2 * var(--R)) calc(2 * var(--R));
+    background-repeat: no-repeat;
+  }
+  .loader::after {
+    transform: rotate(180deg);
+    transform-origin: right;
+  }
+
+  @keyframes l30 {
+    100% {
+      transform: rotate(-1turn);
+    }
+  }
 }

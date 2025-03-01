@@ -2,35 +2,38 @@
 
 .alif-experience {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 3px 7px 23.5px 0px rgba(0, 0, 0, 0.25);
-  max-height: 360px;
+  min-height: 400px;
   background: white;
+  border-radius: 7.03785px;
+  overflow: hidden;
 
   .content {
     padding: 16px;
     width: 39%;
-    h4 {
-      color: $blue;
-      font-family: "Letters for Learners";
-      font-size: 32px;
+    h1 {
+      font-family: "Belle Allure CM - Light";
       font-style: normal;
       font-weight: 700;
+      font-size: 23px;
+      line-height: 65px;
+      align-items: center;
+      color: #4e517e;
       text-transform: uppercase;
     }
     p {
-      color: $dark-brown;
-      font-family: "Poppins", sans-serif;
-      font-size: 18px;
+      font-family: "Poppins";
       font-style: normal;
       font-weight: 400;
-      line-height: normal;
+      font-size: 15.8352px;
+      line-height: 24px;
+      color: #003542;
     }
   }
   .number {
-    padding: 12px;
-    display: none;
+    padding: 20px;
     align-items: start;
     img {
       min-height: 2rem;
@@ -38,10 +41,11 @@
     }
   }
   .img {
-    width: 53%;
+    width: 55%;
+    height: 100%;
     img {
       object-fit: cover;
-      max-height: 360px;
+      max-height: 400px;
       width: 100%;
     }
   }
@@ -49,35 +53,46 @@
 
 @media (max-width: 768px) {
   .alif-experience {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
 
-    .number {
-      display: none;
+    .img {
+      width: 100%;
+      height: 100%;
+      img {
+        object-fit: cover;
+        max-height: 250px;
+        width: 100%;
+      }
     }
 
     .content {
-      h4 {
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 25px;
+      width: 100%;
+      .number-title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 1rem;
+        .number {
+          padding: 0;
+          img {
+            height: 44px;
+            width: 68px;
+          }
+        }
+        h1 {
+          font-size: 13px;
+          margin: 0;
+        }
       }
+
       p {
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-      }
-    }
-
-    .img {
-      img {
-        object-fit: cover;
-        max-height: 250px;
-        width: 100%;
+        padding: 1rem;
       }
     }
   }

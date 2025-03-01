@@ -50,6 +50,7 @@ import { AppStarsComponent } from './core/components/stars/stars.component';
 import { TestimonialsComponent } from './core/components/testimonials/testimonials.component';
 import { ProductsComponent } from './core/components/products/products.component';
 import { ResponsePopupComponent } from './core/components/response-popup/response-popup.component';
+import { PaymentComponent } from './core/components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { ResponsePopupComponent } from './core/components/response-popup/respons
     TestimonialsComponent,
     ProductsComponent,
     ResponsePopupComponent,
+    PaymentComponent,
   ],
   imports: [
     AppRoutingModule,

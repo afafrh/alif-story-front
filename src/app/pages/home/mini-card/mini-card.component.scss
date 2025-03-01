@@ -1,52 +1,134 @@
 @import "../../../../styles.scss";
-.card{
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for image subtle zoom */
+@keyframes subtleZoom {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.card {
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 8px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #E9E2C8 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e9e2c8 100%);
   border: 1px solid rgba(217, 174, 99, 1);
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
-  gap: 12px;
-  min-height: 300px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  min-height: 450px;
   min-width: 230px;
-  max-width: 260px;
-  padding: 26px 25px 0px 25px;
+  max-width: 270px;
+  padding: 26px 25px 25px 25px;
+  position: relative;
+  justify-content: flex-start;
 
-  h1{
-    color: $dark-brown;
+  /* Initial render animation */
+  animation: fadeIn 0.8s ease-out;
+
+  /* Hover transition for smooth effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Hover effect */
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.15);
+
+    /* Subtle color change on hover */
+    background: linear-gradient(180deg, #ffffff 0%, #e9d9b8 100%);
+
+    /* Image zoom effect on hover */
+    .image-container img {
+      transform: scale(1.05);
+    }
+
+    /* Title color shift on hover */
+    h1 {
+      color: darken(#4e517e, 10%);
+    }
+  }
+
+  /* Create a fixed-height container for the image */
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 16px;
+    overflow: hidden; /* Keep zoomed image contained */
+
+    img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+      animation: subtleZoom 1s ease-out;
+      transition: transform 0.3s ease; /* Smooth image hover effect */
+    }
+  }
+
+  h1 {
     text-align: center;
     font-family: "Belle Allure CE - Light";
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    margin: 20px 0px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    color: #4e517e;
+    width: 100%;
+    transition: color 0.3s ease; /* Smooth color transition */
+    animation: fadeIn 0.8s ease-out 0.2s backwards; /* Delayed animation */
   }
-  p{
+
+  p {
     color: $dark-brown;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0 0 30px 0;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out 0.4s backwards; /* More delayed animation */
+  }
+}
+
+/* Add staggered animation for multiple cards */
+@for $i from 1 through 10 {
+  .card:nth-child(#{$i}) {
+    animation-delay: $i * 0.1s;
   }
 }
 
 @media (max-width: 768px) {
-  .card{
-    width: 85%;
-    min-height: 85%;
+  .card {
+    width: 75%;
+    min-height: 100%;
     max-width: 85%;
     margin: auto;
   }
 }
 
 @media (max-width: 1024px) {
-  .card{
-    width: 85%;
-    min-height: 85%;
-    max-width: 85%;
+  .card {
+    min-height: 100%;
+    max-width: 500px;
     margin: auto;
   }
 }

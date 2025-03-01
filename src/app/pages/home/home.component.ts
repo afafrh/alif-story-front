@@ -3,7 +3,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { NewsletterPopupComponent } from 'src/app/core/components/newsletter-popup/newsletter-popup.component';
-import { MailchimpService } from 'src/app/core/services/mailchimp.service';
+import { PaymentComponent } from 'src/app/core/components/payment/payment.component';
+
 @Component({
   selector: 'alif-home',
   templateUrl: './home.component.html',
@@ -16,28 +17,28 @@ export class HomeComponent implements OnInit {
       description:
         'Conçue pour susciter l’intérêt, la curiosité et l’émerveillement.',
       img: '../../../assets/images/home/pencil_stars.svg',
-      width: '5rem',
+      width: '6rem',
     },
     {
       title: 'Des récits authentiques',
       description:
         'Offrir à nos enfants la possibilité d’explorer les récits authentiques de nos prophètes selon une méthodologie rigoureuse.',
       img: '../../../assets/images/home/globe.svg',
-      width: '6rem',
+      width: '7rem',
     },
     {
       title: "L'ancrage dans nos valeurs",
       description:
         'Des ressources qui renforcent et préservent les valeurs fondamentales de l’Islam.',
       img: '../../../assets/images/home/pyramids.svg',
-      width: '7rem',
+      width: '8rem',
     },
     {
       title: 'Un accompagnement éducatif complet',
       description:
         'En plus des récits, des livrets pédagogiques qui favorisent le développement coginitif.',
       img: '../../../assets/images/home/kaaba.svg',
-      width: '4rem',
+      width: '6rem',
     },
   ];
 
@@ -90,7 +91,7 @@ export class HomeComponent implements OnInit {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       path: '../../../../assets/images/home/exp 1.png',
       number: '../../../../assets/images/home/1.svg',
-      direction: 'right',
+      direction: 'left',
     },
     {
       title: "Développer l'autonomie",
@@ -98,7 +99,7 @@ export class HomeComponent implements OnInit {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       path: '../../../../assets/images/home/exp 2.png',
       number: '../../../../assets/images/home/2.svg',
-      direction: 'left',
+      direction: 'right',
     },
     {
       title: 'Objet de cercle de savoir',
@@ -106,7 +107,7 @@ export class HomeComponent implements OnInit {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       path: '../../../../assets/images/home/exp 3.png',
       number: '../../../../assets/images/home/3.svg',
-      direction: 'right',
+      direction: 'left',
     },
   ];
 
@@ -166,6 +167,13 @@ export class HomeComponent implements OnInit {
   ];
 
   windowWidth = 0;
+  isMobile = false;
+  mobileBreakpoint = 500; // Standard mobile breakpoint
+  isLoading = true; // New loading state property
+
+  // Image paths based on device
+  desktopImage = '../../../assets/images/home/back2.png';
+  mobileImage = '../../../assets/images/home/back-M.png';
 
   alreadyOpen = false;
 
@@ -174,6 +182,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.windowWidth = window.innerWidth;
     this.onResize;
+    this.checkIfMobile();
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);
 
     this.router.queryParamMap.subscribe({
       next: (data) => {
@@ -190,14 +203,35 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onResize(event: never) {
+  onResize(event: any) {
     this.windowWidth = window.innerWidth;
+    this.checkIfMobile();
+    console.log('isMobile', this.isMobile);
+  }
+
+  checkIfMobile(): void {
+    this.isMobile = this.windowWidth <= this.mobileBreakpoint;
+  }
+
+  // Get the correct image source based on device
+  getBoiteImage(): string {
+    return this.isMobile ? this.mobileImage : this.desktopImage;
   }
 
   openDialog() {
     this.dialog.closeAll();
 
     const dialogRef = this.dialog.open(NewsletterPopupComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  precommand() {
+    const dialogRef = this.dialog.open(PaymentComponent, {
+      height: "94%"
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
