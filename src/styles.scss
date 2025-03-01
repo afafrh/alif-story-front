@@ -20,6 +20,7 @@ $gold-second-hover: #e8cea1;
 $bg: #f0efef;
 $primary-btn: linear-gradient(90deg, #daaf47 0%, #fce281 48%, #daaf47 100%);
 
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
 @font-face {
   font-family: "Belle Allure CE - Light";
   src: url("../src/assets/fonts/BelleAllureCE-Fin.otf") format("opentype");
@@ -80,4 +81,13 @@ body {
   border-radius: 4px;
   border: 1px solid var(--black-600-inactive, rgba(0, 0, 0, 0.54));
   width: 300px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

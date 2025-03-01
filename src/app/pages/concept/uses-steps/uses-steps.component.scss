@@ -1,102 +1,142 @@
-.steps {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
-}
-
-.content {
-  display: flex;
+.cycle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  gap: 10px;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-.title {
-  font-size: 48px;
-  text-align: center;
-  font-family: "Belle Allure CE - Bold", serif;
-  font-weight: 700;
-  line-height: normal;
-  color: rgba(78, 81, 126, 1);
-}
-
-.circle-container {
-  position: relative;
-  width: 638px;
-  height: 640px;
   margin: auto;
-}
-
-.circle-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.circle-item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "Belle Allure CE - Bold", serif;
-  color: rgba(78, 81, 126, 1);
-  max-width: 350px;
-}
-
-/* Position des 4 éléments autour du cercle */
-.item1 {
-  top: 10%;
-  left: 50%;
-  transform: translateX(50%);
-}
-.item2 {
-  top: 83%;
-  right: -30%;
-  transform: translateY(-50%);
-}
-.item3 {
-  bottom: 10%;
-  left: 5%;
-  transform: translateX(-50%);
-}
-.item4 {
-  top: 20%;
-  left: -35%;
-  transform: translateY(-50%);
-}
-
-.icon {
-  background: white;
-  border-radius: 50%;
-  padding: 5px;
-  font-size: 18px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Texte au centre du cercle */
-.circle-center-text {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 15px;
+  position: relative;
+}
 
-  h3 {
-    font-size: 38px;
-    font-weight: bold;
-    font-family: "Belle Allure CE - Bold", serif;
+.cycle-item {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  gap: 20px;
+  width: 300px;
+
+  p {
+    font-size: 23px;
+    font-family: "Belle Allure CE - Light", sans-serif;
+    font-weight: 700;
+    color: rgba(78, 81, 126, 1);
+  }
+}
+
+.top-row {
+  align-self: end;
+  justify-self: end;
+  align-items: flex-end;
+}
+
+.top-row.top-right {
+  align-self: end;
+  justify-self: start;
+}
+
+.botton-row {
+  align-self: start;
+  justify-self: start;
+  align-items: flex-start;
+}
+
+.botton-row.botton-left {
+  align-self: start;
+  justify-self: end;
+}
+
+.step-number {
+  img {
+    width: 50px;
+  }
+}
+
+.empty-center {
+  h2 {
+    font-size: 30px;
+    font-family: "Belle Allure CE - Light", sans-serif;
+
     color: rgba(78, 81, 126, 1);
   }
 
   p {
-    font-size: 13px;
+    font-size: 15px;
+  }
+}
+
+/* Arrow container */
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for SVG arrows */
+.arrow-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Rotating the same SVG for different directions */
+.rotate-left {
+  transform: rotate(-90deg);
+}
+
+.rotate-right {
+  transform: rotate(90deg);
+}
+
+.rotate-bottom {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+  .cycle-grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  .step-number img {
+    width: 30px;
+  }
+
+  .cycle-item {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 0px;
+    gap: 5px;
+  }
+
+  .cycle-item p {
+    font-size: 8px; /* Reduce text size for small screens */
+    font-weight: 300;
     font-family: "poppins", sans-serif;
-    color: rgba(78, 81, 126, 1);
+  }
+
+  .empty-center {
+    h2 {
+      font-size: 15px;
+      font-family: "Belle Allure CE - Light", sans-serif;
+
+      color: rgba(78, 81, 126, 1);
+    }
+
+    p {
+      font-size: 8px;
+    }
+  }
+
+  .top-row.top-right,
+  .botton-row.botton-left {
+    flex-direction: column-reverse;
+  }
+
+  .top-row.top-right,
+  .botton-row.botton-right {
+    align-items: flex-start;
   }
 }

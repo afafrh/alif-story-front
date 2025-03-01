@@ -1,25 +1,81 @@
-<mat-toolbar class="navbar">
-  <!-- Logo -->
-  <img
-    class="navbar-brand"
-    alt="Logo"
-    src="../../../../assets/images/logo/logo-dark.svg"
-    routerLink="/"
-  />
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-mobile-menu" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <!-- Navbar Links (Visible on Large Screens) -->
-  <div fxShow="true" class="nav-links">
-    <a mat-button routerLink="/concept">Concept</a>
-    <a mat-button routerLink="/about-us">Qui-sommes-nous</a>
+    <div class="navbar-logo">
+      <img
+        class="navbar-brand"
+        alt="Logo"
+        src="../../../../assets/images/logo/logo-dark.svg"
+        routerLink="/"
+      />
+    </div>
+
+    <div class="navbar-links">
+      <a
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Alif Story
+      </a>
+      <a
+        routerLink="/concept"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Concept
+      </a>
+      <a
+        routerLink="/about-us"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Qui-sommes-nous
+      </a>
+      <a
+        routerLink="#"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        D’autres histoires à télécharger
+      </a>
+      <a
+        routerLink="#"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Livrets pédagogiques
+      </a>
+      <a
+        routerLink="#"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        A propos d’éducation
+      </a>
+    </div>
+
+    <div class="navbar-icons">
+      <a routerLink="/login" routerLinkActive="active" class="icon-connect">
+        <img alt="user" src="../../../../assets/images/icons/user.svg" />
+      </a>
+      <a routerLink="/cart" routerLinkActive="active" class="icon-cart">
+        <img alt="panier" src="../../../../assets/images/icons/panier2.svg" />
+      </a>
+    </div>
   </div>
 
-  <!-- User & Cart Icons (Visible on All Screens) -->
-  <div class="account">
-    <a mat-icon-button routerLink="/login" routerLinkActive="active">
-      <img alt="user" src="../../../../assets/images/icons/user.svg" />
-    </a>
-    <a mat-icon-button routerLink="/cart" routerLinkActive="active">
-      <img alt="panier" src="../../../../assets/images/icons/panier2.svg" />
-    </a>
+  <div class="navbar-mobile-dropdown" [ngClass]="{ active: isMobileMenuOpen }">
+    <a routerLink="/">Alif Story</a>
+    <a routerLink="/concept">Concept</a>
+    <a routerLink="/about-us">Qui-sommes-nous</a>
+    <a routerLink="/">D’autres histoires à télécharger</a>
+    <a routerLink="/">Livrets pédagogiques</a>
+    <a routerLink="/">A propos d’éducation</a>
   </div>
-</mat-toolbar>
+</nav>

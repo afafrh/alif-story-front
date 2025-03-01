@@ -1,43 +1,44 @@
-import { Component } from '@angular/core';
-import { MailchimpService } from '../../services/mailchimp.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DialogRef } from '@angular/cdk/dialog';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-newsletter-popup',
   templateUrl: './newsletter-popup.component.html',
-  styleUrls: ['./newsletter-popup.component.scss']
+  styleUrls: ['./newsletter-popup.component.scss'],
 })
-export class NewsletterPopupComponent {
-  
-  signupForm: FormGroup;
+export class NewsletterPopupComponent implements OnInit {
+  @ViewChild('popup', { static: true }) popup!: ElementRef;
+  @ViewChild('popupContent', { static: true }) popupContent!: ElementRef;
+  @ViewChild('closeBtn', { static: true }) closeBtn!: ElementRef;
 
-  constructor(private mailchimp: MailchimpService, private fb: FormBuilder, private dialogRef: DialogRef<NewsletterPopupComponent>) {
-    this.signupForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      isChecked: [false, [Validators.required]],
+  constructor(private renderer: Renderer2) {}
+
+  ngOnInit() {
+    this.openPopup();
+
+    // Close popup when clicking outside of it
+    this.renderer.listen(this.popup.nativeElement, 'click', (event: Event) => {
+      if (!this.popupContent.nativeElement.contains(event.target as Node)) {
+        this.closePopup();
+      }
+    });
+
+    // Close popup on button click
+    this.renderer.listen(this.closeBtn.nativeElement, 'click', () => {
+      this.closePopup();
     });
   }
 
-  subscribeNewsletter() {
-    let bodyMailChimp = {
-      email: this.signupForm.value.email,
-      firstName: this.signupForm.value.firstName,
-      lastName: this.signupForm.value.lastName
-    };
-
-    if (this.signupForm.valid && this.signupForm.value.isChecked) {
-      this.mailchimp.subscribeToNewsletter(bodyMailChimp).subscribe({
-        next: () => {
-          this.dialogRef.close();
-        }
-      });
-    } else {
-      this.signupForm.markAllAsTouched();
-    }
+  openPopup() {
+    this.popup.nativeElement.style.display = 'flex';
   }
 
-  
+  closePopup() {
+    this.popup.nativeElement.style.display = 'none';
+  }
 }

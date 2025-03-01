@@ -1,52 +1,114 @@
 .navbar {
   display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  padding: 0px 46px;
+  box-shadow: none;
+  height: 100px;
+  justify-content: center;
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  flex-grow: 1;
   justify-content: space-between;
-  align-items: center;
+  padding: 0px 30px;
+  flex-direction: row;
+  gap: 20px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.navbar-links a.active-link {
+  border-bottom: 1.5px solid rgba(64, 58, 52, 1); /* Couleur du soulignement */
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-mobile-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-mobile-menu span {
+  width: 20px;
+  height: 3px;
+  background-color: black;
+  margin: 2px 0;
+  border-radius: 30px;
+}
+
+.navbar-mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  top: 60px;
+  left: 0;
+}
+
+.navbar-mobile-dropdown.active {
+  display: flex;
+}
+
+.navbar-mobile-dropdown a {
+  color: black;
+  text-decoration: none;
   padding: 10px 20px;
-  background-color: #fff;
-  font-family: "poppins", sans-serif;
-
-  .navbar-brand {
-    height: 40px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 18px;
-  }
-
-  .account {
-    display: flex;
-    gap: 18px;
-  }
-
-  /* Menu Button (Visible only on mobile) */
-  mat-icon-button {
-    display: none;
-  }
+  text-align: center;
 }
 
-.sidenav-container {
-  height: 100%;
-}
-
-mat-sidenav {
-  width: 250px;
-  background: #f4f4f4;
-}
-
-mat-sidenav mat-nav-list {
-  padding: 0;
-}
-
-mat-sidenav mat-list-item {
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .navbar {
-    .nav-links {
-      display: none;
+    padding: 0px 23px;
+    height: fit-content;
+  }
+
+  .navbar-logo {
+    padding-left: 30px;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-grow: 0;
+    justify-content: initial;
+    padding: 0;
+  }
+
+  .navbar-links a.active-link {
+    border-bottom: none;
+  }
+
+  .navbar-mobile-menu {
+    display: flex;
+  }
+
+  .navbar-mobile-dropdown {
+    display: none;
+    a {
+      font-size: 18px;
+      font-family: "popins", sans-serif;
+      color: rgba(46, 46, 46, 1);
     }
+  }
+
+  .navbar-mobile-dropdown.active {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-self: start;
   }
 }
