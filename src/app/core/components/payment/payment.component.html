@@ -1,0 +1,152 @@
+<mat-dialog-content class="payment-container">
+  <div class="payment-header">
+    <h1>Finaliser votre commande</h1>
+    <p class="subtitle">Complétez vos informations pour recevoir votre produit</p>
+  </div>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="pay()">
+    <div class="payment-cards-container">
+      <!-- Left Column: Shipping Information -->
+      <div class="payment-card shipping-info">
+        <div class="card-header">
+          <div class="icon-container">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <h2>Données de Livraison</h2>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('firstName')}">
+          <label for="firstName">Prénom</label>
+          <input type="text" id="firstName" formControlName="firstName" placeholder="John" required />
+          <div *ngIf="isInvalidField('firstName')" class="invalid-feedback">
+            {{ getErrorMessage('firstName') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('lastName')}">
+          <label for="lastName">Nom</label>
+          <input type="text" id="lastName" formControlName="lastName" placeholder="Doe" required />
+          <div *ngIf="isInvalidField('lastName')" class="invalid-feedback">
+            {{ getErrorMessage('lastName') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('phone')}">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" formControlName="phone" placeholder="+33 6 00 00 00 00" required />
+          <div *ngIf="isInvalidField('phone')" class="invalid-feedback">
+            {{ getErrorMessage('phone') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('email')}">
+          <label for="email">Adresse mail</label>
+          <input type="email" id="email" formControlName="email" placeholder="john.doe@gmail.com" required />
+          <div *ngIf="isInvalidField('email')" class="invalid-feedback">
+            {{ getErrorMessage('email') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('eemail')}">
+          <label for="eemail">Confirmation adresse mail</label>
+          <input type="email" id="eemail" formControlName="eemail" placeholder="john.doe@gmail.com" required />
+          <div *ngIf="isInvalidField('eemail')" class="invalid-feedback">
+            {{ getErrorMessage('eemail') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('address')}">
+          <label for="address">Adresse</label>
+          <input type="text" id="address" formControlName="address" placeholder="123 Rue de Paris" required />
+          <div *ngIf="isInvalidField('address')" class="invalid-feedback">
+            {{ getErrorMessage('address') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('zipCode')}">
+          <label for="zipCode">Code Postal</label>
+          <input type="text" id="zipCode" formControlName="zipCode" placeholder="75000" required />
+          <div *ngIf="isInvalidField('zipCode')" class="invalid-feedback">
+            {{ getErrorMessage('zipCode') }}
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('city')}">
+          <label for="city">Ville</label>
+          <input type="text" id="city" formControlName="city" placeholder="Paris" required />
+          <div *ngIf="isInvalidField('city')" class="invalid-feedback">
+            {{ getErrorMessage('city') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Pays</label>
+          <select id="country" class="form-select" [(ngModel)]="country" [ngModelOptions]="{standalone: true}" required>
+            <option *ngFor="let country of countries" [value]="country.value">
+              {{ country.viewValue }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Right Column: Payment Details -->
+      <div class="payment-card payment-info">
+        <div class="card-header">
+          <div class="icon-container">
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <h2>Paiement Sécurisé</h2>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error': isInvalidField('name')}">
+          <label for="name">Nom du titulaire</label>
+          <input type="text" id="name" formControlName="name" placeholder="John Doe" required />
+          <div *ngIf="isInvalidField('name')" class="invalid-feedback">
+            {{ getErrorMessage('name') }}
+          </div>
+        </div>
+
+        <div class="form-group card-element-container">
+          <label for="card-element">Données de paiement</label>
+          <div id="card-element" class="card-element"></div>
+          <div *ngIf="cardErrors" class="invalid-feedback" role="alert">{{ cardErrors }}</div>
+        </div>
+
+        <div class="order-summary">
+          <h3>Récapitulatif</h3>
+          <div class="product-item">
+            <div class="product-info">
+              <span class="product-name">Produit</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">66€</span>
+              <span class="original-price">70€</span>
+            </div>
+          </div>
+          <div class="order-total">
+            <span>Total</span>
+            <span class="total-price">66€</span>
+          </div>
+        </div>
+
+        <div class="secure-payment-info">
+          <i class="bi bi-shield-lock"></i>
+          <span>Paiement 100% sécurisé</span>
+        </div>
+
+        <button type="submit" [disabled]="loading" class="pay-button">
+          <span *ngIf="!loading">Payer maintenant</span>
+          <span *ngIf="loading" class="loading-spinner">
+            <i class="bi bi-arrow-repeat spinning"></i>
+            Traitement en cours...
+          </span>
+        </button>
+
+        <div *ngIf="errorMessage" [ngClass]="{'success-message': errorMessage.includes('successful'), 'invalid-feedback': !errorMessage.includes('successful')}" class="message-container">
+          <i [class]="errorMessage.includes('successful') ? 'bi bi-check-circle' : 'bi bi-exclamation-circle'"></i>
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
